@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/Font.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="font-Secundario">
+  <main class="grid grid-cols-[63%,37%] w-screen h-screen relative ">
+    <section class="bg-red-500 h-full bg-cover bg-no-repeat bg-center "
+      style="background-image: url('https://media-public.canva.com/MADQ5qWGUMo/1/screen.jpg');">
+    </section>
+
+    <section class="flex  flex-col text-center py-24 ">
+      <h1 class="font-Principal text-primario text-4xl ">RESTAURANTE DON SHOSHI</h1>
+
+      <form class="flex flex-col  my-28 mx-28" method="post">
+        <h2 class="text-4xl my-8 font-bold ">LOGIN</h2>
+        <input class=" shadow-md border-[1px] border-black rounded-lg py-4 px-2 mb-6 placeholder:text-ColorInput "
+          type="text" placeholder="Usuario">
+        <input class=" shadow-md border-[1px] border-black rounded-lg py-4 px-2 placeholder:text-ColorInput "
+          type="password" placeholder="Contraseña">
+        <button
+          class="bg-butonPrincipal text-white rounded-lg uppercase mx-14 py-4 mt-9  transition-transform duration-200 ease-in-out hover:scale-105 ">Iniciar
+          Sesión</button>
+      </form>
+
+    </section>
+    <button id="btn" class="absolute z-50 left-[92%] top-[90%] border-none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" style="fill:#ff1515">
+        <path
+          d="m17 4 2-2 3 3-2 2zM7 4 4 7 2 5l3-3zm5 0c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm1 14h-2v-2h2v2zm0-4h-2V8h2v6z" />
+      </svg>
+    </button>
+
+    <div
+      class="alert bg-white shadow-lg hidden alert-dismissible fade show  absolute  top-[40%] left-[40%]  flex-col justify-center items-center p-9 max-w-2xl"
+      role="alert">
+      <h3 class=" pb-3 text-2xl font-Principal">ADVERTENCIA</h3>
+      <p class="text-[17px] text-center">Si supera los tres intentos su usuario se bloqueara y deberá comunicarse con el
+        administrador.</p>
+    </div>
+  </main>
+
+</body>
+
+<script>
+  let btn = document.getElementById('btn');
+  let alert = document.querySelector('.alert');
+  btn.addEventListener('click', () => {
+    alert.classList.remove('hidden');
+    alert.classList.add('flex');
+    if (alert.classList.contains('flex')) {
+      setTimeout(() => {
+        alert.classList.remove('flex');
+        alert.classList.add('hidden');
+      }, 4000);
+    }
+  });
+
+  
+
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

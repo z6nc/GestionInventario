@@ -1,0 +1,16 @@
+/* fonts.css */
+
+@font-face {
+    font-family: 'Gagalin';
+    src: url('../css/Gagalin-Regular.otf') format('opentype'); /* Ruta relativa a la ubicación del archivo de fuentes */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Belleza';
+    src: url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

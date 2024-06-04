@@ -18,5 +18,9 @@ El Sistema de Gestión de Inventario para el Restaurante Don Shoshi tiene como o
 
 ## Uso local / Ejecución local
  El proyecto debe estar en la carpeta xampp/htdocs  para que se puede usar la base de datos
+
+ ```sh
+http://localhost/ProyectoSistemaDistribuido/src/Login.html
+```
    
 

@@ -12,19 +12,25 @@
 
 <body class="font-Secundario">
   <main class="grid grid-cols-[63%,37%] w-screen h-screen relative ">
-    <section class="bg-red-500 h-full bg-cover bg-no-repeat bg-center "
+    <section class="bg-red-500 h-full bg-cover bg-no-repeat bg-center flex justify-center items-center "
       style="background-image: url('https://media-public.canva.com/MADQ5qWGUMo/1/screen.jpg');">
+      <div class="max-w-3">
+        <h1 class="text-white text-5xl ">Hola,<br>Bienvendio <span class="font-bold font-Principal">Administrador</span> </h1>
+
+      </div>
     </section>
 
-    <section class="flex  flex-col text-center py-24 ">
-      <h1 class="font-Principal text-primario text-4xl ">RESTAURANTE DON SHOSHI</h1>
+    <section class="flex  flex-col py-24 ">
+      <h1 class="font-Principal text-primario text-4xl text-center ">RESTAURANTE DON SHOSHI</h1>
 
       <form class="flex flex-col  my-28 mx-28" action="../mvc/LoginMVC/LoginController.php"  method="POST">
-        <h2 class="text-4xl my-8 font-bold ">LOGIN</h2>
-        <input class=" shadow-md border-[1px] border-black rounded-lg py-3 px-2 mb-6 placeholder:text-ColorInput "
-          type="text" placeholder="Usuario" name="Usuario">
-        <input class=" shadow-md border-[1px] border-black rounded-lg py-3 px-2 placeholder:text-ColorInput "
-          type="password" placeholder="Contraseña" name="Contraseña">
+        <h2 class="text-4xl my-8 font-bold text-center  ">LOGIN</h2>
+        <span class="text-gray-500">Username</span>
+        <input class=" shadow-md text-xs rounded-lg py-3 px-2 mb-6 placeholder:text-ColorInput "
+          type="text" placeholder="Escriba su username" name="Usuario">
+        <span class="text-red-500">Contraseña</span>
+        <input class=" shadow-md rounded-lg py-3 px-2 placeholder:text-ColorInput  "
+          type="password" placeholder="Escriba su Contraseña" name="Contraseña">
         <button
           type="submit" class="bg-butonPrincipal text-white rounded-lg uppercase mx-14 py-3 mt-9  transition-transform duration-200 ease-in-out hover:scale-105 ">Iniciar
           Sesión</button>

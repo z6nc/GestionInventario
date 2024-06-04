@@ -24,7 +24,8 @@ Bienvenido al README para desarrolladores del proyecto Sistema de Gestión de In
 Puedes utilizar diferentes herramientas y tecnologías para diseñar la interfaz web del sistema. A continuación se detallan las opciones disponibles:
 
 1. ### Tailwind CSS
-    Si decides utilizar Tailwind CSS, puedes comenzar a diseñar tu interfaz directamente en los archivos HTML, utilizando las clases proporcionadas por Tailwind. No es necesario incluir un enlace rel en tu archivo HTML, ya que Tailwind está instalado en el proyecto.
+    Si decides utilizar Tailwind CSS, puedes comenzar a diseñar tu interfaz directamente en los archivos HTML, utilizando las clases proporcionadas por Tailwind.  es necesario incluir un este comando   en tu terminal de proyecto 
+      ` npx tailwindcss -i ./src/input.css -o ./src/output.css --watch `
 
 2. ### Bootstrap
     Si prefieres utilizar Bootstrap, asegúrate de incluir los siguientes enlaces en tu archivo HTML para utilizar la biblioteca de Bootstrap:

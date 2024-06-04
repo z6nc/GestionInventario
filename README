@@ -35,24 +35,6 @@ Puedes utilizar diferentes herramientas y tecnologías para diseñar la interfaz
     Si optas por utilizar CSS nativo, asegúrate de crear tu hoja de estilos dentro de la carpeta `src/css`. El nombre de tu archivo CSS debe ser coherente y reflejar lo que estás desarrollando en tu archivo.
 
 
-## Estilos para Títulos Importantes
-
-Para aplicar estilos a los títulos importantes, asegúrate de llamar al siguiente archivo de hoja de estilos en tu HTML:
-
-`<link rel="stylesheet" href="css/Font.css">`
-
-Este archivo `Font.css` contiene estilos específicos para los títulos importantes del proyecto. Asegúrate de utilizar las clases proporcionadas en este archivo para dar formato a tus títulos de manera coherente en todo el proyecto.
-
-
-
-
-
-## Otras Instrucciones
-
-A continuación, se pueden incluir otras instrucciones importantes para los desarrolladores, como configuraciones específicas, herramientas recomendadas, convenciones de codificación, etc.
-
-¡Gracias por tu contribución al proyecto!
-
 
 
 

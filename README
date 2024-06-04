@@ -1,0 +1,10 @@
+# Guía para Desarrolladores 🛠️
+
+Bienvenido al README para desarrolladores del proyecto Sistema de Gestión de Inventario para el Restaurante Don Shoshi. A continuación, encontrarás algunas instrucciones útiles para trabajar en el proyecto:
+
+## Estilos para Títulos Importantes
+
+Para aplicar estilos a los títulos importantes, asegúrate de llamar al siguiente archivo de hoja de estilos en tu HTML:
+
+```html
+<link rel="stylesheet" href="css/Font.css">

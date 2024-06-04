@@ -6,5 +6,13 @@ Bienvenido al README para desarrolladores del proyecto Sistema de Gestión de In
 
 Para aplicar estilos a los títulos importantes, asegúrate de llamar al siguiente archivo de hoja de estilos en tu HTML:
 
-```html
-<link rel="stylesheet" href="css/Font.css">
+`<link rel="stylesheet" href="css/Font.css">`
+
+Este archivo `Font.css` contiene estilos específicos para los títulos importantes del proyecto. Asegúrate de utilizar las clases proporcionadas en este archivo para dar formato a tus títulos de manera coherente en todo el proyecto.
+
+## Otras Instrucciones
+
+A continuación, se pueden incluir otras instrucciones importantes para los desarrolladores, como configuraciones específicas, herramientas recomendadas, convenciones de codificación, etc.
+
+¡Gracias por tu contribución al proyecto!
+

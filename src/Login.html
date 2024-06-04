@@ -19,17 +19,16 @@
     <section class="flex  flex-col text-center py-24 ">
       <h1 class="font-Principal text-primario text-4xl ">RESTAURANTE DON SHOSHI</h1>
 
-      <form class="flex flex-col  my-28 mx-28" method="post">
+      <form class="flex flex-col  my-28 mx-28" action="../mvc/LoginMVC/LoginController.php"  method="POST">
         <h2 class="text-4xl my-8 font-bold ">LOGIN</h2>
         <input class=" shadow-md border-[1px] border-black rounded-lg py-4 px-2 mb-6 placeholder:text-ColorInput "
-          type="text" placeholder="Usuario">
+          type="text" placeholder="Usuario" name="Usuario">
         <input class=" shadow-md border-[1px] border-black rounded-lg py-4 px-2 placeholder:text-ColorInput "
-          type="password" placeholder="Contraseña">
+          type="password" placeholder="Contraseña" name="Contraseña">
         <button
-          class="bg-butonPrincipal text-white rounded-lg uppercase mx-14 py-4 mt-9  transition-transform duration-200 ease-in-out hover:scale-105 ">Iniciar
+          type="submit" class="bg-butonPrincipal text-white rounded-lg uppercase mx-10 py-3 mt-9  transition-transform duration-200 ease-in-out hover:scale-105 ">Iniciar
           Sesión</button>
       </form>
-
     </section>
     <button id="btn" class="absolute z-50 left-[92%] top-[90%] border-none">
       <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" style="fill:#ff1515">

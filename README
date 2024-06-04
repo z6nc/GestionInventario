@@ -2,6 +2,24 @@
 
 Bienvenido al README para desarrolladores del proyecto Sistema de Gestión de Inventario para el Restaurante Don Shoshi. A continuación, encontrarás algunas instrucciones útiles para trabajar en el proyecto:
 
+## Creación de Archivos
+
+### Archivos para el Frontend
+
+1. Si estás creando archivos para el frontend, asegúrate de crearlos dentro de la carpeta `src`. Esta carpeta contiene todos los archivos relacionados con la interfaz de usuario y la lógica del cliente.
+
+   Por ejemplo, puedes crear archivos HTML, CSS y JavaScript dentro de la carpeta `src` para desarrollar la interfaz de usuario del sistema.
+
+### Archivos para el Backend
+
+1. Si estás creando archivos para el backend, debes seguir la estructura del patrón de diseño MVC (Modelo-Vista-Controlador). En este caso, crea tus archivos dentro de la carpeta `mvc`, que contiene las distintas partes del sistema backend.
+
+2. Por ejemplo, si estás creando un CRUD (Crear, Leer, Actualizar, Eliminar) para productos, primero crea una carpeta llamada `ProductoMVC` dentro de la carpeta `mvc`. 
+
+3. Luego, dentro de esta carpeta, puedes crear tus archivos MVC relacionados con la gestión de productos, como `ProductoModel.php`, `ProductoController.php` y `ProductoView.php`.
+
+
+
 ## Estilos para Títulos Importantes
 
 Para aplicar estilos a los títulos importantes, asegúrate de llamar al siguiente archivo de hoja de estilos en tu HTML:
@@ -10,9 +28,18 @@ Para aplicar estilos a los títulos importantes, asegúrate de llamar al siguien
 
 Este archivo `Font.css` contiene estilos específicos para los títulos importantes del proyecto. Asegúrate de utilizar las clases proporcionadas en este archivo para dar formato a tus títulos de manera coherente en todo el proyecto.
 
+
+
+
+
 ## Otras Instrucciones
 
 A continuación, se pueden incluir otras instrucciones importantes para los desarrolladores, como configuraciones específicas, herramientas recomendadas, convenciones de codificación, etc.
 
 ¡Gracias por tu contribución al proyecto!
+
+
+
+
+
 

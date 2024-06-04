@@ -1,6 +1,6 @@
-# Sistema de Gestión de Inventario para el Restaurante Don Shoshi
+#  Sistema de Gestión de Inventario para el Restaurante Don Shoshi 🍽️
 
-## Tecnologías Utilizadas
+## Tecnologías Utilizadas 💻
 - HTML
 - CSS
 - Tailwind CSS

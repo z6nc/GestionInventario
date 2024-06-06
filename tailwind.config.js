@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         Principal: ['Gagalin', 'sans-serif'], // Cambiar a Gagalin
-        Secundario: ['Belleza', 'sans-serif'], // Cambiar a Gagalin
+        Secundario: ['Barlow', 'sans-serif'], // Cambiar a Gagalin
       },
       colors: {
         primario: '#737373',

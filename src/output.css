@@ -582,6 +582,11 @@ video {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -648,6 +653,10 @@ video {
 
 .mt-40 {
   margin-top: 10rem;
+}
+
+.mt-32 {
+  margin-top: 8rem;
 }
 
 .flex {
@@ -804,6 +813,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-black {
   font-weight: 900;
 }
@@ -867,17 +881,82 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@media (min-width: 768px) {
+  .md\:mt-36 {
+    margin-top: 9rem;
+  }
+
+  .md\:mt-32 {
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mt-32 {
+    margin-top: 8rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .lg\:mt-14 {
+    margin-top: 3.5rem;
+  }
+
+  .lg\:mt-28 {
+    margin-top: 7rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .lg\:max-w-lg {
+    max-width: 32rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 @media (min-width: 1536px) {
   .\32xl\:mx-36 {
     margin-left: 9rem;
     margin-right: 9rem;
   }
 
+  .\32xl\:my-28 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .\32xl\:mx-56 {
+    margin-left: 14rem;
+    margin-right: 14rem;
+  }
+
   .\32xl\:mt-3 {
     margin-top: 0.75rem;
   }
 
+  .\32xl\:mt-40 {
+    margin-top: 10rem;
+  }
+
   .\32xl\:max-w-xl {
     max-width: 36rem;
+  }
+
+  .\32xl\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .\32xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }

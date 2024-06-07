@@ -34,9 +34,11 @@ Puedes utilizar diferentes herramientas y tecnologías para diseñar la interfaz
 
 3. ### css Nativo
     Si optas por utilizar CSS nativo, asegúrate de crear tu hoja de estilos dentro de la carpeta `src/css`. El nombre de tu archivo CSS debe ser coherente y reflejar lo que estás desarrollando en tu archivo.
-
-
-
+    Asegurate que en tu archivo que creeeso este estos link 
+    ` <link rel="stylesheet" href="css/Font.css"> ` font-family principal
+    ` <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap">` font-family secundario
+    ` <link rel="stylesheet" href="css/EstilosPrincipal.css"> ` llamar las dos fuentes en clases , si quieres usar la principal 
+    en la clse llame  ` class="font-Principal"`  o  ` class="font-Secundario" `
 
 
 

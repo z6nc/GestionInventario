@@ -1,24 +1,91 @@
-
+/* Modo movil */
 .ContainerPrincipal {
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
   height: 100vh;
 }
-.ContainerPrincipal section {
+.ContainerPrincipal .PrimerSection {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.ContainerPrincipal section article:first-child{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 24px;
-    margin-bottom: 9px;
-  }
+.ContainerPrincipal .PrimerSection article:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 9px;
+}
+.ContainerPrincipal .PrimerSection article:first-child h1 {
+  color: white;
+  font-size: 2.5rem;
+  padding-bottom: 20px;
+  text-align: center;
+}
 
+.ContainerPrincipal .PrimerSection article:nth-child(2) {
+  text-align: center;
+  max-width: 36rem;
+  margin: auto;
+  margin-top: 0.75rem;
+}
+.ContainerPrincipal .PrimerSection article:nth-child(2) p {
+font-size: 20px;
+color: white;
+}
+.ContainerPrincipal .SecondSection {
+  display: flex;
+  flex-direction: column;
+}
+.ContainerPrincipal .SecondSection form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.ContainerPrincipal .SecondSection form h2 {
+  font-weight: 900;
+  color: #eb7223;
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+.ContainerPrincipal .SecondSection form p {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.ContainerPrincipal .SecondSection form span {
+  color: black;
+}
+.ContainerPrincipal .SecondSection form input {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+ font-size: 14px;
+ border-radius: 8px;
+padding: 12px 8px;
+margin-bottom: 24px;
+}
+.ContainerPrincipal .SecondSection form ::placeholder {
+  color: #CDC7BC;
+}
+.ContainerPrincipal .SecondSection form button {
+ background-color: #150D0A;
+ color: white;
+ font-size: 14px;
+ border-radius:8px ;
+ text-transform: uppercase;
+ padding: 12px 0px;
+ margin-top: 36px;
+ transition:all ease-in-out 200ms ;
+ 
+}
+.ContainerPrincipal .SecondSection form button:hover {
+  background-color: #eb7223;
+  transform: scale(1.1);
+  
+}
+
+
+/* Modo portatil - laptop */
 @media (min-width: 768px) {
   .ContainerPrincipal {
     display: grid;
@@ -26,12 +93,13 @@
     width: 100%;
     height: 100vh;
   }
-  .ContainerPrincipal section {
+  .ContainerPrincipal .PrimerSection {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #1f1303;
   }
-  .ContainerPrincipal section article:first-child{
+  .ContainerPrincipal .PrimerSection article:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,8 +107,72 @@
     margin-top: 14%;
     margin-bottom: 9px;
   }
+  .ContainerPrincipal .PrimerSection article:first-child h1 {
+    color: white;
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .ContainerPrincipal .PrimerSection article:nth-child(2) {
+    text-align: center;
+    max-width: 32rem;
+    margin: auto;
+  }
+  .ContainerPrincipal .PrimerSection article:nth-child(2) p {
+    font-size: 20px;
+    color: white;
+    }
+  .ContainerPrincipal .SecondSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .ContainerPrincipal .SecondSection form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .ContainerPrincipal .SecondSection form h2 {
+    font-weight: 900;
+    color: #eb7223;
+    margin-top: 32px;
+    margin-bottom: 4px;
+  }
+  .ContainerPrincipal .SecondSection form p {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+  .ContainerPrincipal .SecondSection form span {
+    color: black;
+  }
+  .ContainerPrincipal .SecondSection form input {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    font-size: 14px;
+    border-radius: 8px;
+   padding: 12px 8px;
+   margin-bottom: 24px;
+   }
+   .ContainerPrincipal .SecondSection form ::placeholder {
+     color: #CDC7BC;
+   }
+   .ContainerPrincipal .SecondSection form button {
+    background-color: #150D0A;
+    color: white;
+    font-size: 14px;
+    border-radius:8px ;
+    text-transform: uppercase;
+    padding: 12px 0px;
+    margin-top: 36px;
+    transition:all ease-in-out 200ms ;
+    
+   }
+   .ContainerPrincipal .SecondSection form button:hover {
+     background-color: #eb7223;
+     transform: scale(1.1);
+     
+   }
 }
 
+/* Modo PC  */
 @media (min-width: 1536px) {
   .ContainerPrincipal {
     display: grid;
@@ -48,12 +180,13 @@
     width: 100%;
     height: 100vh;
   }
-  .ContainerPrincipal section {
+  .ContainerPrincipal .PrimerSection {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #1f1303;
   }
-  .ContainerPrincipal section article:first-child{
+  .ContainerPrincipal .PrimerSection article:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +194,73 @@
     margin-top: 17%;
     margin-bottom: 9px;
   }
+  .ContainerPrincipal .PrimerSection article:first-child h1 {
+    color: white;
+    font-size: 2.5rem;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .ContainerPrincipal .PrimerSection article:nth-child(2) {
+    text-align: center;
+    max-width: 36rem;
+    margin: auto;
+    margin-top: 0.75rem;
+  }
+  .ContainerPrincipal .PrimerSection article:nth-child(2) p {
+    font-size: 24px;
+    color: white;
+    }
+  .ContainerPrincipal .SecondSection {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 96px;
+  }
+  .ContainerPrincipal .SecondSection form {
+    display: flex;
+    flex-direction: column;
+    margin: 12rem 7rem;
+  }
+  .ContainerPrincipal .SecondSection form h2 {
+    font-weight: 900;
+    color: #eb7223;
+    margin-top: 32px;
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+  .ContainerPrincipal .SecondSection form p {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+  .ContainerPrincipal .SecondSection form span {
+    color: black;
+  }
+  .ContainerPrincipal .SecondSection form input {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    font-size: 14px;
+    border-radius: 8px;
+   padding: 12px 8px;
+   margin-bottom: 24px;
+   }
+   .ContainerPrincipal .SecondSection form ::placeholder {
+     color: #CDC7BC;
+   }
+   .ContainerPrincipal .SecondSection form button {
+    background-color: #150D0A;
+    color: white;
+    font-size: 14px;
+    border-radius:8px ;
+    text-transform: uppercase;
+    padding: 12px 0px;
+    margin: 0px 144px;
+    margin-top: 36px;
+    transition:all ease-in-out 200ms ;
+    
+   }
+   .ContainerPrincipal .SecondSection form button:hover {
+     background-color: #eb7223;
+     transform: scale(1.1);
+     
+   }
 }
 
 section .hola {
@@ -69,5 +269,4 @@ section .hola {
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  ;
 }

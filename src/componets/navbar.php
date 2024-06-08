@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/Font.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap">
-  <link rel="stylesheet" href="../css/EstilosPrincipal.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body class="font-Secundario">
+
+
 <nav class="navbar ">
     <div class="container">
         <h2 class="font-Principal">DONSHOSHI - Inventario</h2>
@@ -60,7 +49,6 @@
           <a href="">Cerrar Session</a>
         </div>
     </div>
-</body>
 <style>
   .navbar{
     display: flex;
@@ -68,7 +56,7 @@
    flex-direction: column;
    max-width:300px;
    height: 100vh;
-
+  
   }
   .navbar .container{
    background-color:#16A085 ;
@@ -128,4 +116,3 @@
 
   }
 </style>
-</html>

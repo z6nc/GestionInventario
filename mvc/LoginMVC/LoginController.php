@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $result = $userModel->validateUser($username , $password, $conn);
     if ($result === true) {
-        $_SESSION['USUARIO'] = $username;
        header('Location: ../../src/inicio.php');
     } else{
        header('Location: ../../src/login.html?error=InvalidedYourUserOrPassword');

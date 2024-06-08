@@ -1,3 +1,11 @@
+<?php
+require_once '../mvc/BD/Conexion.php'; 
+session_start();
+$idusuario = $_SESSION['USUARIO'];
+if (!isset($idusuario)) {
+    header('Location: ../mvc/login.html');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +18,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1 class="font-Principal">sdkkas</h1>
- 
+<h1 class=""><?php echo $idusuario ?></h1>
+ <h1>hola mundi</h1>
 </body>
 </html>

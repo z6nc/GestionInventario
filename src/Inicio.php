@@ -25,7 +25,7 @@ include 'componets/informacion.php';
     main{
     display: grid;
   grid-template-columns: 300px 1fr   ;
-  grid-template-rows:  90px 1fr;
+  grid-template-rows:  80px 1fr;
   grid-template-areas: 
   "a b "
   "a c ";

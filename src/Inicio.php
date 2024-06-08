@@ -13,29 +13,25 @@ require_once '../mvc/SessionIniciada/Session.php';
   
     <title>Document</title>
 </head>
-<body class="font-Secundario" style="position: relative;">
-<main class="main">
-    <section class="main-Container">
-        <h1 class="main-Container-Title">Bienvenido</h1>
-        <p class="main-Container-Text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-    </section>
-</main>
-<section>
+<body class="font-Secundario" >
+<main>
 <?php
 include 'componets/navbar.php';
+include 'componets/navbarSecundario.php';
+include 'componets/informacion.php';
 ?>
-</section>
-
-
-
-</body>
-
+</main>
 <style>
     main{
-       display: flex;
-       justify-content: center;
-       margin-left: 1000px;
-       
-    }
+    display: grid;
+  grid-template-columns: 300px 1fr   ;
+  grid-template-rows:  90px 1fr;
+  grid-template-areas: 
+  "a b "
+  "a c ";
+  }
 </style>
+</body>
+
+
 </html>

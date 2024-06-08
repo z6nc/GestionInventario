@@ -1,6 +1,9 @@
 <?php
-require_once '../mvc/BD/Conexion.php';
+require_once '../mvc/BD/Conexion.php'; 
 session_start();
-$id = $_SESSION['USUARIO'];
+$idusuario = $_SESSION['USUARIO'];
+if (!isset($idusuario)) {
+    header('Location: ../mvc/login.html');
+}
 
 ?>

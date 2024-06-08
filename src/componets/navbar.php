@@ -38,7 +38,7 @@
           <a href="">Categoria</a>
         </li>
           <li>
-          <i class="fas fa-bars"></i>  
+          <i class="fas fa-utensils"></i>
           <a href="">Menu</a>
         </li>
           <li>

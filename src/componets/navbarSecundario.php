@@ -6,7 +6,7 @@
 
         </div>
         <div class="main-Container-User">
-          <a href="#">Bienvenido/a <?php echo $idusuario ?></a>
+          <a href="#">Bienvenido/a <span style="color:#16A085; font-weight: 900;"><?php echo $idusuario ?></span></a>
         </div>
     </aside>
 </section>

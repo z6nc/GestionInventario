@@ -6,7 +6,7 @@
 
         </div>
         <div class="main-Container-User">
-          //user 
+          <a href="#">Bienvenido/a <?php echo $idusuario ?></a>
         </div>
     </aside>
 </section>
@@ -29,6 +29,17 @@
     .main .main-Container .main-Container-Text p {
         font-size: 18px;
         color: #333;
+    }
+    .main .main-Container .main-Container-User a {
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        transition:all 0.2s ease-in-out;
+    }
+    .main .main-Container .main-Container-User a:hover{
+      color: #16A085;
+
     }
 </style>
 <script src="js/FechaHora.js"></script>

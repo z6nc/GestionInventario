@@ -197,5 +197,68 @@
     color: gray;
     cursor: default;
   }
+
+
+  .main-Container .main-Container-table .Container-table-Stock {
+    background: white;
+    border-radius: 9px;
+    padding: 10px  25px;
+    border-left: 9px solid #36b9cc;
+  }
+  .main-Container .main-Container-table .Container-table-Stock div{
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    padding: 9px 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
+    
+  }
+  .main-Container .main-Container-table .Container-table-Stock h2{
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .main-Container .main-Container-table .Container-table-Stock div h4{
+   font-size: 15px;
+   cursor: default;
+  }
+  .main-Container .main-Container-table .Container-table-Stock div p{
+    font-size: 14px;
+    color: gray;
+    cursor: default;
+  }
+ 
+  .main-Container .main-Container-table .Container-table-Vencer {
+    background: white;
+    border-radius: 9px;
+    padding: 10px  25px;
+    border-left: 9px solid orangered;
+  }
+  .main-Container .main-Container-table .Container-table-Vencer div{
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    padding: 9px 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
+    
+  }
+  .main-Container .main-Container-table .Container-table-Vencer h2{
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .main-Container .main-Container-table .Container-table-Vencer div h4{
+   font-size: 15px;
+   cursor: default;
+  }
+  .main-Container .main-Container-table .Container-table-Vencer div p{
+    font-size: 14px;
+    color: gray;
+    cursor: default;
+  }
  
 </style>

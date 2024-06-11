@@ -5,7 +5,7 @@
       <div class="container-information">
         <div>
         <a href="">Ganancias por Venta</a>
-          <p class="count">4</p>
+          <p class="count">s/ 3000.000</p>
         </div>
         <i class="fas fa-coins"></i>
       </div>
@@ -80,10 +80,26 @@
 
   .main-Container .main-Container-grid .container-information i {
     font-size: 50px;
+    color : gray;
+  }
+  .main-Container .main-Container-grid .container-information a{
+    color:#f6c23e ;
+    text-decoration: none;
+    font-weight: 600;
   }
 
- 
-
+ .main-Container .main-Container-grid .container-information p{
+  font-size: larger;
+ }
+ .main-Container .main-Container-grid .container-information-Two {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    padding: 0 24px;
+    align-items: center;
+    border-radius: 9px;
+    border-left: 9px solid #1cc88a;
+  }
 
 
 

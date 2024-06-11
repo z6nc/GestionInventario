@@ -38,12 +38,6 @@
           <p> INGRESO: <span>14/05/2024</span></p>
           <p> CATEGORIA: <span>Condimento</span></p>
         </div>
-        <div>
-          <img  width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/561008-450-450/20130448.jpg?v=637427417082570000" alt="">
-          <h4>SACO DE SAL DE MAR</h4><span>/</span>
-          <p> INGRESO: <span>14/05/2024</span></p>
-          <p> CATEGORIA: <span>Condimento</span></p>
-        </div>
       </div>
 
       <div class="Container-table-Stock">
@@ -69,7 +63,6 @@
   .Informacion {
     background-color: #F1F2F7;
     grid-area: c;
-    overflow-y: scroll;
   }
 
   .main-Container {

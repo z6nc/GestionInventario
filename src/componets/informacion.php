@@ -27,7 +27,7 @@
       </div>
 
     </aside>
-
+     
     <aside class="main-Container-table">
        <div class="Container-table-Product">
         <h2 class="font-Principal">Producto Recientemente Añadidos</h2>
@@ -58,11 +58,16 @@
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     padding: 20px;
+    margin: 0px 10px;
   }
   .main-Container .main-Container-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+  }
+  .main-Container .main-Container-table{
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
   }
 
 </style>

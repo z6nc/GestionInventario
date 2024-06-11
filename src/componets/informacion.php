@@ -20,7 +20,7 @@
 
       <div class="container-information-Three">
         <div>
-        <a href="">Producto por Vencer </a>
+        <a href="">Producto por Vencer  </a>
           <p class="Count">4</p>
         </div>
         <i class="fas fa-calendar-alt"></i>
@@ -31,15 +31,24 @@
 
     <aside class="main-Container-table">
       <div class="Container-table-Product">
-        <h2 class="font-Principal">Producto Recientemente Añadidos</h2>
+        <h2 >Producto Recientemente Añadidos</h2>
         <div>
-          <h4>SACO DE ARROZ DE MAR</h4>
-          <p> CONDIMENTO</p>
+          <img  width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/561008-450-450/20130448.jpg?v=637427417082570000" alt="">
+          <h4>SACO DE SAL DE MAR</h4>
+          <p>FECHA INGRESO <span>14/05/2024</span></p>
+          <p> CATEGORIA <span>Condimento</span></p>
         </div>
+        <div>
+          <img  width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/561008-450-450/20130448.jpg?v=637427417082570000" alt="">
+          <h4>SACO DE SAL DE MAR</h4>
+          <p>FECHA INGRESO <span>14/05/2024</span></p>
+          <p> CATEGORIA <span>Condimento</span></p>
+        </div>
+        <button><a href="">Ver mas</a></button>
       </div>
 
       <div class="Container-table-Stock">
-        <h2 class="font-Principal">Producto con Stock mínimo</h2>
+        <h2 >Producto con Stock mínimo</h2>
         <div>
           <h4>Aceite Vegetal PRIMOR 1.8L</h4>
           <p> Abarrotes</p>
@@ -57,7 +66,7 @@
 
   .main-Container {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 130px 1fr;
     gap: 20px;
     padding: 16px;
   }
@@ -149,6 +158,36 @@
 
   .main-Container .main-Container-table {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    height: auto;
+  }
+  .main-Container .main-Container-table .Container-table-Product {
+    background: white;
+    border-radius: 9px;
+    padding: 10px  25px;
+    border-left: 4px solid #4e73df;
+  }
+  .main-Container .main-Container-table .Container-table-Product div{
+    display: flex;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+    padding: 9px 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
+    
+  }
+  .main-Container .main-Container-table .Container-table-Product h2{
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .main-Container .main-Container-table .Container-table-Product div h4{
+   font-size: 15px;
+  }
+  .main-Container .main-Container-table .Container-table-Product div p{
+    font-size: 14px;
+    color: gray;
   }
 </style>

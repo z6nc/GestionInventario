@@ -5,7 +5,7 @@
       <div class="container-information">
         <div>
         <a href="">Ganancias por Venta</a>
-          <p class="count">s/ 3000.000</p>
+          <p class="count">S/ 3000.000</p>
         </div>
         <i class="fas fa-coins"></i>
       </div>
@@ -31,7 +31,7 @@
 
     <aside class="main-Container-table">
       <div class="Container-table-Product">
-        <h2 >Producto Recientemente Añadidos</h2>
+        <h2 >Producto Recientemente Añadidos </h2>
         <div>
           <img  width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/561008-450-450/20130448.jpg?v=637427417082570000" alt="">
           <h4>SACO DE SAL DE MAR</h4>
@@ -44,14 +44,22 @@
           <p>FECHA INGRESO <span>14/05/2024</span></p>
           <p> CATEGORIA <span>Condimento</span></p>
         </div>
-        <button><a href="">Ver mas</a></button>
       </div>
 
       <div class="Container-table-Stock">
-        <h2 >Producto con Stock mínimo</h2>
+        <h2 >Productos con Stock mínimo</h2>
         <div>
+          <img width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/28196096-1000-1000/20235718.jpg?v=638339051913100000" alt="">
           <h4>Aceite Vegetal PRIMOR 1.8L</h4>
-          <p> Abarrotes</p>
+          <p> Stock Disponible <span>2 unidades</span></p>
+        </div>
+      </div>
+      <div class="Container-table-Vencer">
+        <h2 >Productos vencidos</h2>
+        <div>
+          <img width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/414950-1000-1000/20173303.jpg?v=637370978131700000" alt="">
+          <h4>Sillao KIKKO Bidón 5L</h4>
+          <p> Caducido el <span>11/06/2024</span></p>
         </div>
       </div>
     </aside>
@@ -153,12 +161,9 @@
   font-size: larger;
  }
 
-
-
-
   .main-Container .main-Container-table {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     gap: 15px;
     height: auto;
   }
@@ -166,7 +171,7 @@
     background: white;
     border-radius: 9px;
     padding: 10px  25px;
-    border-left: 4px solid #4e73df;
+    border-left: 9px solid #4e73df;
   }
   .main-Container .main-Container-table .Container-table-Product div{
     display: flex;
@@ -185,9 +190,12 @@
   }
   .main-Container .main-Container-table .Container-table-Product div h4{
    font-size: 15px;
+   cursor: default;
   }
   .main-Container .main-Container-table .Container-table-Product div p{
     font-size: 14px;
     color: gray;
+    cursor: default;
   }
+ 
 </style>

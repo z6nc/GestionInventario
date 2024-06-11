@@ -13,7 +13,7 @@
       <div class="container-information-Two">
         <div>
         <a href="">Producto registrados</a>
-          <p class="count">3</p>
+          <p class="count">40</p>
         </div>
         <i class="fas fa-clipboard-check registered-product-icon"></i>
       </div>
@@ -67,6 +67,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
+ 
+
 
   .main-Container .main-Container-grid .container-information {
     display: flex;
@@ -80,12 +82,13 @@
 
   .main-Container .main-Container-grid .container-information i {
     font-size: 50px;
-    color : gray;
+    color : #dddfeb;
   }
   .main-Container .main-Container-grid .container-information a{
     color:#f6c23e ;
     text-decoration: none;
     font-weight: 600;
+    text-transform: uppercase;
   }
 
  .main-Container .main-Container-grid .container-information p{
@@ -100,6 +103,47 @@
     border-radius: 9px;
     border-left: 9px solid #1cc88a;
   }
+
+  .main-Container .main-Container-grid .container-information-Two i {
+    font-size: 50px;
+    color : #dddfeb;
+  }
+  .main-Container .main-Container-grid .container-information-Two a{
+    color:#1cc88a ;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+ .main-Container .main-Container-grid .container-information-Two p{
+  font-size: larger;
+ }
+
+ .main-Container .main-Container-grid .container-information-Three {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    padding: 0 24px;
+    align-items: center;
+    border-radius: 9px;
+    border-left: 9px solid #e74a3b;
+  }
+
+  .main-Container .main-Container-grid .container-information-Three i {
+    font-size: 50px;
+    color : #dddfeb ;
+  }
+  .main-Container .main-Container-grid .container-information-Three a{
+    color:#e74a3b ;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+ .main-Container .main-Container-grid .container-information-Three p{
+  font-size: larger;
+ }
+
 
 
 

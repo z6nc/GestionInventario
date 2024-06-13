@@ -1,21 +1,19 @@
 <?php
-// User.php (Modelo)
 require_once '../BD/Conexion.php'; 
-class LoginModel {
+class ContarProductoModel {
     private $conn;
     public function __construct($conn) {
         $this->conn = $conn;
     }
-    function validateUser($username, $password) {
-        $sql = "SELECT IDUSUARIO, NOMBRE, CONTRASEÑA FROM USUARIO WHERE USUARIO = ? AND CONTRASEÑA = ?";
+    function ContarProducto() {
+        $sql = "SELECT COUNT(*) AS TotalProductos FROM PRODUCTO; ";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
      
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $_SESSION['USUARIO'] = $row['NOMBRE'];
+            $ProductosTotales=$row['TotalProductos'];
             return  true ;// Usuario encontrado
         } else {
             return false; // Usuario no encontrado

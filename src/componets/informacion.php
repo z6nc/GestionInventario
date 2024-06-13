@@ -13,7 +13,7 @@
       <div class="container-information-Two">
         <div>
         <a href="">Producto registrados</a>
-          <p class="count">40</p>
+          <p class="count"><?php $Totalproductos ?></p>
         </div>
         <i class="fas fa-clipboard-check registered-product-icon"></i>
       </div>

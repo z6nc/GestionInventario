@@ -1,0 +1,65 @@
+.productos.marco{
+    padding: 20px;
+    border: 1px black solid;
+}
+
+.productos .encabezado{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productos .encabezado > button {
+    border: 2px #b7ffc8 solid;
+    border-radius: 15px;
+    padding: 17px 50px;
+    background-color: #28a745;
+    color: white;
+}
+
+.productos .filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productos .filtros > .fila-1,
+.productos .filtros > .fila-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.productos .filtros > .fila-3 {
+    padding: 25px 0px;
+    padding-left: 80%;
+}
+
+.productos .filtros > .fila-3 > button {
+    border: 2px #abe6ff solid;
+    border-radius: 25px;
+    padding: 9px 35px;
+    background-color: #7acbee;
+    color: white;
+}
+.productos .container-table {
+    height: 50vh;
+    overflow-y: scroll;
+    border: double;
+    background-color: gray;}
+
+.productos table,
+.productos td,
+.productos th {
+    border: 1px solid;
+}
+
+
+
+.productos table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: white;
+}

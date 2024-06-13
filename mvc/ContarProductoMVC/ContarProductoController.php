@@ -1,10 +1,10 @@
 <?php 
-require_once '../BD/Conexion.php'; 
-require_once 'ContarProductoModel.php'; 
-$ProductoContado = new ContarProductoModel($conn);
+require 'ContarProductoModel.php'; // Incluye
 
-if ($ProductoContado) {
-    $Totalproductos = $ProductoContado->ContarProducto();
+$ProductosTotales = new ContarProductoModel($conn); // Instancia la clase
+
+if ($ProductosTotales) {
+    $Totalproductos = $ProductosTotales->ContarProducto();
 } else {
     echo "Error al contar los productos";
 }

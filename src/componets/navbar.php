@@ -22,7 +22,7 @@
           </li>
           <li>
           <i class="fas fa-box-open"></i>  
-          <a href="">Inventario</a>
+          <a href="../src/productos.php">Inventario</a>
         </li>
           <li>
           <i class="fas fa-tags"></i>  

@@ -1,6 +1,7 @@
 <?php
 // User.php (Modelo)
 include '../BD/Conexion.php'; 
+session_start();
 class LoginModel {
     private $conn;
     public function __construct($conn) {

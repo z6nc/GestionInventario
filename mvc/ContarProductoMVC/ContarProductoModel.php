@@ -1,4 +1,6 @@
 <?php
+require 'Conexion.php'; 
+
 class ContarProductoModel {
     private $conn;
     public function __construct($conn) {
@@ -13,9 +15,9 @@ class ContarProductoModel {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $ProductosTotales=$row['TotalProductos'];
-            return  $ProductosTotales ;// Usuario encontrado
+            return  $ProductosTotales ;
         } else {
-            return 0; // Usuario no encontrado
+            return 0; 
         }
     }
     

@@ -21,7 +21,7 @@
       <div class="container-information-Three">
         <div>
         <a href="">Producto por Vencer  </a>
-          <p class="Count">4</p>
+          <p class="Count"><?php echo  $ProductoVencimientos?></p>
         </div>
         <i class="fas fa-calendar-alt"></i>
 

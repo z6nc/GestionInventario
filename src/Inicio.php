@@ -1,6 +1,7 @@
 <?php
 include '../mvc/SessionIniciada/Session.php';
 include '../mvc/ContarProductoMVC/ContarProductoController.php';
+include '../mvc/ProductosVencidosMVC/ProVencidoController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,6 @@
 <?php
-require_once '../mvc/SessionIniciada/Session.php';
-require_once '../mvc/ContarProductoMVC/ContarProductoController.php';
+include '../mvc/SessionIniciada/Session.php';
+include '../mvc/ContarProductoMVC/ContarProductoController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

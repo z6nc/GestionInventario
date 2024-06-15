@@ -1,6 +1,6 @@
 <?php
 // User.php (Modelo)
-require_once '../BD/Conexion.php'; 
+include '../BD/Conexion.php'; 
 class LoginModel {
     private $conn;
     public function __construct($conn) {

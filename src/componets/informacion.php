@@ -5,7 +5,7 @@
       <div class="container-information">
         <div>
         <a href="">Ganancias por Venta</a>
-          <p class="count">S/ 3000.000</p>
+          <p class="count">S/ 3000.000 stand By</p>
         </div>
         <i class="fas fa-coins"></i>
       </div>
@@ -32,12 +32,14 @@
     <aside class="main-Container-table">
       <div class="Container-table-Product">
         <h2 >Producto Recientemente Añadidos </h2>
+          <?php foreach ($ResultadoProducto as $producto) : ?>
         <div>
-          <img  width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/561008-450-450/20130448.jpg?v=637427417082570000" alt="">
-          <h4>SACO DE SAL DE MAR</h4><span>/</span>
-          <p> INGRESO: <span>14/05/2024</span></p>
-          <p> CATEGORIA: <span>Condimento</span></p>
+          <img  width="15%" src=<?php echo htmlspecialchars($producto['URL_IMG']); ?> alt="">
+          <h4><?php echo htmlspecialchars($producto['NOM_PRODUCTO']); ?></h4><span>/</span>
+          <p> INGRESO: <span><?php echo htmlspecialchars($producto['FECHA_INGRESO']); ?></span></p>
+          <p> Stock: <span><?php echo htmlspecialchars($producto['STOCK']); ?>Unidades</span></p>
         </div>
+        <?php  endforeach; ?>
       </div>
 
       <div class="Container-table-Stock">

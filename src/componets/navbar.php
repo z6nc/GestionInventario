@@ -20,9 +20,14 @@
           <i class="fas fa-box"></i>
             <a href="">Proveedor</a>
           </li>
-          <li>
+          <li id="navbar-inventario">
           <i class="fas fa-box-open"></i>  
-          <a href="../src/productos.php">Inventario</a>
+          <ul>
+            <li>Inventario</li>
+            <li><a href="../src/productos-opciones.php">Registrar Producto</a></li>
+            <li><a href="../src/productos.php">Listar Producto</a></li>
+            <li><a href="../src/productos.php">Productos por vencer</a></li>
+          </ul>
         </li>
           <li>
           <i class="fas fa-tags"></i>  

@@ -75,3 +75,52 @@ main{
     border-collapse: collapse;
     background-color: white;
 }
+
+.productos-accion.marco {
+    width: 100%;
+    display: flex;
+    border: 1px black solid;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.productos-accion .fila-1 > h1 {
+    margin: 0px 0px;
+}
+
+.productos-accion .fila-1 {
+    background-color: #f9f9f9;
+    padding: 10px 53px;
+}
+
+.productos-accion .fila-2 {
+    display: flex;
+    padding: 10px 25px;
+    flex-wrap: wrap;
+}
+
+.productos-accion .fila-2 > label {
+    margin: 10px 10px;
+    max-width: 180px;
+}
+
+.productos-accion .fila-2 > :last-child {
+    max-width: 350px;
+}
+
+.productos-accion .fila-2 > label input[type="text"] {
+    max-width: 150px;
+}
+
+.productos-accion .fila-3 {
+    padding: 0px 25px 25px 30px;
+}
+
+.productos-accion .fila-3 > button {
+    padding: 12px 40px;
+    border-radius: 10px;
+    background-color: #28a745;
+    border: 1px #3ef768 solid;
+    color: white;
+}

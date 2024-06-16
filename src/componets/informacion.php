@@ -46,7 +46,7 @@
         <?php foreach ($ResultadoProductosStock as $productoMinimos) : ?>
         <div>
           <img width="15%" src=<?php echo htmlspecialchars($productoMinimos['URL_IMG']); ?> alt="">
-          <h4><?php echo htmlspecialchars($productoMinimos['NOM_PRODUCTO']); ?></h4> <span>/</span>
+          <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoMinimos['NOM_PRODUCTO']); ?></h4> <span>/</span>
           <p> Stock Disponible <span><?php echo htmlspecialchars($productoMinimos['STOCK']); ?> unidades</span></p>
         </div>
         <?php  endforeach; ?>

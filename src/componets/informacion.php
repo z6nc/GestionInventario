@@ -52,7 +52,7 @@
         <?php  endforeach; ?>
       </div>
       <div class="Container-table-Vencer">
-        <h2 >Productos vencidos</h2>
+        <h2 >Productos vencidos Hoy</h2>
         <?php foreach ($ResultadoProductoCaducidos as $productoCaducidos) : ?>
         <div>
           <img width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">

@@ -53,11 +53,13 @@
       </div>
       <div class="Container-table-Vencer">
         <h2 >Productos vencidos</h2>
+        <?php foreach ($ResultadoProductoCaducidos as $productoCaducidos) : ?>
         <div>
-          <img width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/414950-1000-1000/20173303.jpg?v=637370978131700000" alt="">
-          <h4>Sillao KIKKO Bidón 5L</h4><span>/</span>
-          <p> Caducido el <span>11/06/2024</span></p>
+          <img width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">
+          <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoCaducidos['NOM_PRODUCTO']); ?></h4><span>/</span>
+          <p> Vencido el <span><?php echo htmlspecialchars($productoCaducidos['FECHA_CADUCIDAD']); ?></span></p>
         </div>
+        <?php  endforeach; ?>
       </div>
     </aside>
   </article>

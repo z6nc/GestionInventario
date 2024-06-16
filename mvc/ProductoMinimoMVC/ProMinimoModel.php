@@ -9,7 +9,6 @@ class ProductoMinimoMode
     }
     function ProductosMinimoStock()
     {
-        $Mensaje="Tienes todo Bien echo ";
         $sql = "SELECT NOM_PRODUCTO , STOCK , URL_IMG
         FROM PRODUCTO WHERE STOCK <= 2
         LIMIT 3;";

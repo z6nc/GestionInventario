@@ -3,6 +3,7 @@ include '../mvc/SessionIniciada/Session.php';
 include '../mvc/ContarProductoMVC/ContarProductoController.php';
 include '../mvc/ProductosVencidosMVC/ProVencidoController.php';
 include '../mvc/ProductoAñadidoMVC/ProductoAñadidoController.php';
+include '../mvc/ProductoMinimoMVC/ProMinimoController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

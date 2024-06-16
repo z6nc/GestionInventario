@@ -43,11 +43,13 @@
 
       <div class="Container-table-Stock">
         <h2 >Productos con Stock mínimo</h2>
+        <?php foreach ($ResultadoProductosStock as $productoMinimos) : ?>
         <div>
-          <img width="15%" src="https://plazavea.vteximg.com.br/arquivos/ids/28196096-1000-1000/20235718.jpg?v=638339051913100000" alt="">
-          <h4>Aceite Vegetal PRIMOR 1.8L</h4> <span>/</span>
-          <p> Stock Disponible <span>2 unidades</span></p>
+          <img width="15%" src=<?php echo htmlspecialchars($productoMinimos['URL_IMG']); ?> alt="">
+          <h4><?php echo htmlspecialchars($productoMinimos['NOM_PRODUCTO']); ?></h4> <span>/</span>
+          <p> Stock Disponible <span><?php echo htmlspecialchars($productoMinimos['STOCK']); ?> unidades</span></p>
         </div>
+        <?php  endforeach; ?>
       </div>
       <div class="Container-table-Vencer">
         <h2 >Productos vencidos</h2>

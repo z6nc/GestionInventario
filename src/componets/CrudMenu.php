@@ -1,18 +1,15 @@
-
-
-
 <section style="background-color: #f1f1f1; " class="Container-Menu">
   
     <article class="shadows" style="width: 100%;display: flex; justify-content:space-between; align-items: center; padding: 10px 10px; background-color: white; max-width: 90%; margin: auto; margin-top: 3%; border-radius: 5px; ">
    <div style="display: flex;  justify-content: center ; align-items: center; gap: 10px; ">
    <i style="font-size: 22px;   "  class="fas fa-utensils"></i>
-   <h1 class="font-Principal" style="font-size: 22px; letter-spacing: 2px;"> MENU</h1>  
+   <h1 class="" style="font-size: 22px; letter-spacing: 2px;"> MENU</h1>  
    </div>
         <a href="#" style="background-color:#198754 ; padding: 7px 9px; text-decoration: none; border-radius: 5px; color: white;" >Agregar Menu</a>
     </article>
     
 <table class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
-<thead class=" " style=" background-color: red; "  >
+<thead class=" " style=" background-color: whitesmoke; "  >
     <tr class=""  >
       <th scope="col">#</th>
       <th scope="col">IDMENU</th>

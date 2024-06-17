@@ -9,28 +9,30 @@
     </article>
     
 <table class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
-<thead class=" " style=" background-color: whitesmoke; "  >
-    <tr class=""  >
-      <th scope="col">#</th>
-      <th scope="col">IDMENU</th>
-      <th scope="col">NOMBRE MENU</th>
-      <th scope="col">PRECIO MENU </th>
-      <th scope="col">ACCIONES </th>
+<thead class=" " style=" background-color:  #16a085; "  >
+
+    <tr class="" style="color: white;" >
+      <th class="borders" style=" padding: 10px 0px;" scope="col">IDMENU</th>
+      <th class="borders" scope="col">NOMBRE MENU</th>
+      <th class="borders" scope="col">PRECIO MENU</th>
+      <th class="borders" scope="col">ESTADO MENU </th>
+      <th class="borders" scope="col">ACCIONES </th>
 
     </tr>
   </thead>
   <tbody class="table-group-divider " style="text-align: center;">
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>
-        <button type="button" class="btn btn-primary">Editar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
+    <?php foreach ($ResultadoListarMenu as $Menu) : ?>
+    <tr style="color:gray; ">
+      <th  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Menu['IDMENU']); ?></th>
+      <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Menu['NOMBRE_MENU']); ?></td>
+      <td><?php echo htmlspecialchars($Menu['PRECIOVENTA']); ?></td>
+      <td><?php echo htmlspecialchars($Menu['EstadoMenu']); ?></td>
+      <td style="display: flex; justify-content: center; gap: 10px; padding: 10px 0px; ">
+        <a href=""><i style="color: yellow;" class="fas fa-edit"></i></a> 
+         <a href=""><i style="color: red;" class="fas fa-trash"></i></a>  
       </td>
-
     </tr>
+    <?php  endforeach; ?>
   </tbody>
 </table>
 </section>
@@ -39,4 +41,8 @@
 .shadows{
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+.borders{
+  border-bottom: 2px solid black;
+}
+
 </style>

@@ -23,13 +23,13 @@
   <tbody class="table-group-divider " style="text-align: center;">
     <?php foreach ($ResultadoListarMenu as $Menu) : ?>
     <tr style="color:gray;  ">
-      <th  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Menu['IDMENU']); ?></th>
+      <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Menu['IDMENU']); ?></td>
       <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Menu['NOMBRE_MENU']); ?></td>
-      <td><?php echo htmlspecialchars($Menu['PRECIOVENTA']); ?></td>
+      <td>S/ <?php echo htmlspecialchars($Menu['PRECIOVENTA']); ?></td>
       <td><?php echo htmlspecialchars($Menu['EstadoMenu']); ?></td>
       <td style="display: flex; justify-content: center; gap: 10px; padding: 10px 0px; ">
-        <a href=""><i style="color: blue; font-size: 18px;" class="fas fa-edit"></i></a> 
-         <a href=""><i style="color: red;font-size: 18px;" class="fas fa-trash"></i></a>  
+        <button style="background-color: #ffcb66 ; padding:8px 10px;  border: none; border-radius: 4px;"><a href=""><i style=" color: black; font-size: 18px;" class="fas fa-edit"></i></a> </button> 
+         <button style="background-color:#f66549 ; padding:8px 10px;  border: none; border-radius: 4px;"><a href=""><i style="color: black;  font-size: 18px;" class="fas fa-trash"></i></a>  </button>
       </td>
     </tr>
     <?php  endforeach; ?>
@@ -44,8 +44,8 @@
 .borders{
   border-bottom: 2px solid black;
 }
-tr:hover{
-  background-color: blue;
+tr:hover>:not(th){
+  background-color: #f1f1f19c;
 }
 
 </style>

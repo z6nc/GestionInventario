@@ -12,7 +12,7 @@
 <thead class=" " style=" background-color:  #16a085; "  >
 
     <tr class="" style="color: white;" >
-      <th class="borders" style=" padding: 10px 0px;" scope="col">IDMENU</th>
+      <th class="borders" style=" padding: 10px 0px;" scope="col">ID</th>
       <th class="borders" scope="col">NOMBRE MENU</th>
       <th class="borders" scope="col">PRECIO MENU</th>
       <th class="borders" scope="col">ESTADO MENU </th>
@@ -28,8 +28,8 @@
       <td><?php echo htmlspecialchars($Menu['PRECIOVENTA']); ?></td>
       <td><?php echo htmlspecialchars($Menu['EstadoMenu']); ?></td>
       <td style="display: flex; justify-content: center; gap: 10px; padding: 10px 0px; ">
-        <a href=""><i style="color: yellow;" class="fas fa-edit"></i></a> 
-         <a href=""><i style="color: red;" class="fas fa-trash"></i></a>  
+        <a href=""><i style="color: blue; font-size: 18px;" class="fas fa-edit"></i></a> 
+         <a href=""><i style="color: red;font-size: 18px;" class="fas fa-trash"></i></a>  
       </td>
     </tr>
     <?php  endforeach; ?>

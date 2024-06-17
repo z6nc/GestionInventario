@@ -22,7 +22,7 @@
   </thead>
   <tbody class="table-group-divider " style="text-align: center;">
     <?php foreach ($ResultadoListarMenu as $Menu) : ?>
-    <tr style="color:gray; ">
+    <tr style="color:gray;  ">
       <th  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Menu['IDMENU']); ?></th>
       <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Menu['NOMBRE_MENU']); ?></td>
       <td><?php echo htmlspecialchars($Menu['PRECIOVENTA']); ?></td>
@@ -43,6 +43,9 @@
 }
 .borders{
   border-bottom: 2px solid black;
+}
+tr:hover{
+  background-color: blue;
 }
 
 </style>

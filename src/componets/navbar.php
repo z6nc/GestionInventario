@@ -48,7 +48,7 @@
         </ul>
         <div class="botonCerrar">
         <i class="fas fa-door-open"></i>
-          <a href="">Cerrar Session</a>
+          <a href="../mvc/SessionIniciada/CerrarSession.php">Cerrar Session</a>
         </div>
     </div>
 </nav>

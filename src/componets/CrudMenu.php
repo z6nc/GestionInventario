@@ -10,7 +10,7 @@
 
      <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
-        <button style="background-color: #88b9eb; border: none; padding: 9px 12px; "><a href="" style="text-decoration: none ;color: black; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
+        <button style="background-color: #88b9eb; border: none; padding: 9px 12px; "><a href="Menuadd.php" style="text-decoration: none ;color: black; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
         <button style="background-color: gray; border: none; padding: 9px 12px; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">
@@ -19,7 +19,7 @@
        </div>
        <div class="Container_Result">
        <label for="opciones">Resultado</label>
-        <select id="opciones" name="opciones">
+        <select style="border: none; padding: 3px 7px;" id="opciones" name="opciones">
             <option value="opcion1">5</option>
             <option value="opcion2">10</option>
             <option value="opcion3">20</option>

@@ -1,11 +1,18 @@
-<section style="background-color: whitesmoke;">
-<form action="" method="POST">
-    <input type="text" name="nombre" placeholder="Nombre del platillo" required>
-    <input type="text" name="precio" placeholder="Precio" required>
-    <input type="text" name="descripcion" placeholder="Descripcion" required>
-    <input type="text" name="imagen" placeholder="URL de la imagen" required>
-    <input type="submit" value="Agregar platillo">
-
+<section style="background-color: whitesmoke; ">
+ <form style="background-color: white;" >
+  <div class="">
+    <label for="exampleInputEmail1" class="form-label">Nombre del Menu</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="">
+    <label for="exampleInputPassword1" class="form-label">Precio Menu</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="">
+    <label for="exampleInputPassword1" class="form-label">Estado del Menu</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </section>

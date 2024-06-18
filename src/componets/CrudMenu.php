@@ -3,15 +3,15 @@
 <section style="background-color: #f1f1f1; " class="Container-Menu">
   
     <article style=" padding:1.5% 5% 0% 5%;">
-     <div style="display: flex;align-items: center;  margin: 12px 0px;" class="Container_House">
+     <div style="display: flex;align-items: center;  margin: 12px 0px; gap:5px;" class="Container_House">
       <a href="" > <i  style="color: #16a085;" class="fas fa-home"></i></a>
-      <p >/ Menu</p>
+      <p style="color:#5c5b60;">/ Menu</p>
      </div>
 
-     <div style="display: flex; align-items: center; justify-content: space-between; " class="Container_Filtro">
+     <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
-        <button><a href=""><i class="fas fa-plus-circle"></i> Agregar  Nuevo</a></button>
-        <button><a href=""> <i class="fas fa-upload"></i> Exportar</a></button>
+        <button style="background-color: #88b9eb; border: none; padding: 9px 12px; "><a href="" style="text-decoration: none ;color: black; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
+        <button style="background-color: gray; border: none; padding: 9px 12px; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">
           <input type="text" placeholder="Buscar Menu" style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; ">

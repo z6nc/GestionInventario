@@ -4,7 +4,7 @@
   
     <article style=" padding:1.5% 5% 0% 5%;">
      <div style="display: flex;align-items: center;  margin: 12px 0px; gap:5px;" class="Container_House">
-      <a href="" > <i  style="color: #16a085;" class="fas fa-home"></i></a>
+      <a href="../src/inicio.php" > <i  style="color: #16a085;" class="fas fa-home"></i></a>
       <p style="color:#5c5b60;">/ Menu</p>
      </div>
 

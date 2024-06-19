@@ -10,8 +10,8 @@
 
      <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
-        <button style="background-color: #88b9eb; border: none; padding: 9px 12px;border-radius: 5px; "><a href="Menuadd.php" style="text-decoration: none ;color: black; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
-        <button style="background-color: gray; border: none; padding: 9px 12px; border-radius: 5px;"><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
+        <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="Menuadd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
+        <button class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">
           <input type="text" placeholder="Buscar Menu" style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; ">
@@ -74,4 +74,13 @@ tr:hover>:not(th){
   background-color: #f1f1f19c;
 }
 
+.butomsCustmomers{
+  border: none; 
+  padding: 9px 12px;
+  border-radius: 5px; 
+  transition: all 0.1s ease-in-out;
+}
+.butomsCustmomers:hover{
+  transform: scale(1.05);
+}
 </style>

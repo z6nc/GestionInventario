@@ -1,7 +1,6 @@
 <?php
 require_once '../LoginMVC/LoginModel.php'; // Incluye
 require_once '../BD/Conexion.php'; // Incluye tu archivo de conexión
-session_start();
 $userModel = new LoginModel($conn);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

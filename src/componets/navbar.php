@@ -10,7 +10,7 @@
         <ul>
           <li>
           <i class="fas fa-home"></i>
-            <a href=""> Panel de Inicio</a>
+            <a href="Inicio.php"> Panel de Inicio</a>
           </li>
           <li>
           <i class="fas fa-key"></i>
@@ -35,7 +35,7 @@
         </li>
           <li>
           <i class="fas fa-utensils"></i>
-          <a href="">Menu</a>
+          <a href="Menu.php">Menu</a>
         </li>
           <li>
           <i class="fas fa-carrot"></i>
@@ -53,7 +53,7 @@
         </ul>
         <div class="botonCerrar">
         <i class="fas fa-door-open"></i>
-          <a href="">Cerrar Session</a>
+          <a href="../mvc/SessionIniciada/CerrarSession.php">Cerrar Session</a>
         </div>
     </div>
 </nav>

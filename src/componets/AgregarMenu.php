@@ -16,8 +16,8 @@
       <div class="" style=" flex: 1 1 400px; display: flex; align-items: center;gap: 9px;">
         <label style="font-size: 18px; color: gray;"  class="form-label">Estado del Menu: </label>
         <select style="padding: 3px 3px; font-size: 17px;" name="EstadoMenu" required>
-          <option value="opcion1" name="EstadoMenu"  >HABILITADO</option>
-          <option value="opcion2" name="EstadoMenu" >INHABILITADO</option>
+          <option value="HABILITADO">HABILITADO</option>
+          <option value="INHABILITADO">INHABILITADO</option>
     </select>
       </div>
 

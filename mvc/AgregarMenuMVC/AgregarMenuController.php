@@ -1,6 +1,6 @@
 <?php
 include '../BD/Conexion.php'; // Incluye el archivo de conexion a la base de datos
-require 'AgregarMenuModel.php'; // Incluye
+require 'CrudMenuModel.php'; // Incluye
 $MenuModel = new MenuModel($conn);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $result = $MenuModel->InsertMenu($NombreMenu , $PrecioMenu, $EstadoMenu,$conn);
-    if ($result === true) {
+    if ($result) {
        header('Location: ../../src/Menu.php?success=MenuRegisteredSuccessfully');
        
     } else{

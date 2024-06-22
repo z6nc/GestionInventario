@@ -2,7 +2,7 @@
 
   <form class="shadows" action="../mvc/AgregarMenuMVC/AgregarMenuController.php" method="POST">
     <div style="background-color: #16a085;">
-      <h1 style=" margin-top: 20px;color: white; padding-left: 20px; ">REGISTRAR NUEVO USUARIO</h1>
+      <h1 style=" margin-top: 20px;color: white; padding-left: 20px; ">REGISTRAR NUEVO MENU</h1>
     </div>
     <div class="" style="padding: 23px 15px;  display: flex;  flex-wrap: wrap; gap: 25px; text-align: center;">
       <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
@@ -31,6 +31,7 @@
 
 
   </form>
+  
 
 </section>
 <style>

@@ -28,16 +28,37 @@ class MenuModel {
         if ($stmt === false) {
             return false;
         }
-    
         // Asumir que IDMENU es un entero, usar 'i' en lugar de 's' si es necesario
         $stmt->bind_param("i", $IdMenu);
-    
         $executeResult = $stmt->execute();
-    
         // Cerrar el statement
         $stmt->close();
-    
         // Retornar el resultado de la ejecución
+        return $executeResult;
+    }
+
+    function GetMenuById($IdMenu) {
+        $sql = "SELECT * FROM menu WHERE IDMENU = ?";
+        $stmt = $this->conn->prepare($sql);
+        if ($stmt === false) {
+            return false;
+        }
+        $stmt->bind_param("i", $IdMenu);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        return $result->fetch_assoc();
+    }
+
+    function UpdateMenu($IdMenu, $NombreMenu, $PrecioMenu, $EstadoMenu) {
+        $sql = "UPDATE menu SET NOMBRE_MENU = ?, PRECIOVENTA = ?, EstadoMenu = ? WHERE IDMENU = ?";
+        $stmt = $this->conn->prepare($sql);
+        if ($stmt === false) {
+            return false;
+        }
+        $stmt->bind_param("sisi", $NombreMenu, $PrecioMenu, $EstadoMenu, $IdMenu);
+        $executeResult = $stmt->execute();
+        $stmt->close();
         return $executeResult;
     }
     

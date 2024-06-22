@@ -1,5 +1,7 @@
 
-
+<head>
+  <link rel="stylesheet" href="css/ListarMenu.css">
+</head>
 <section style="background-color: #f1f1f1;position: relative; " class="Container-Menu">
   
     <article style=" padding:1.5% 5% 0% 5%;">
@@ -80,51 +82,6 @@
 </div>
 </section>
 
-<style>
-  .VistaRespuesta{
-    position: absolute;
-    top: 0px;
-    width: 90%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    margin-top: 21px;
-    margin-left: 5%;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-     display: none;
-  }
-.StyleSuceess{
-  background-color: #e4f2f0;
-  color: #47736d;
-}
-.StyleError{
-  background-color: #f8d7da;
-  color: #842029;
-}
-
-.shadows{
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-.borders{
-  border-bottom: 2px solid black;
-}
-tr:hover>:not(th){
-  background-color: #f1f1f19c;
-}
-
-.butomsCustmomers{
-  border: none; 
-  padding: 9px 12px;
-  border-radius: 5px; 
-  transition: all 0.1s ease-in-out;
-}
-.butomsCustmomers:hover{
-  transform: scale(1.05);
-}
-</style>
 <script>
 window.onload = function () {
     let TextoRespuesta = document.getElementById('TextoRespuesta');

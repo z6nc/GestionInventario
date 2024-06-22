@@ -153,7 +153,6 @@ window.onload = function () {
       TextoRespuesta.innerText = 'Menu eliminado Correctamente';
     }
 
-    
     document.querySelector('#alerta span').addEventListener('click', () => {
       alerta.style.display = 'none';
     });

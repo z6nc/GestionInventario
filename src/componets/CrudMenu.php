@@ -69,14 +69,14 @@
     <?php  endforeach; ?>
   </tbody>
 </table>
-<div id="alerta" class="VistaRespuesta StyleSuceess  " role="alert">
+<div id="alerta" class="VistaRespuesta   " role="alert">
     <div style="display: grid; grid-template-columns: 70px 1fr; gap: 10px; ">
       <div class=" " style="background-color: #77c0b5; display: flex; align-items: center; justify-content: center; ">
       <i  style="font-size: 22px; color: white; " class="fas fa-check-circle"></i>
       </div> 
-      <p>Menu registrado Correctamente</p>
+      <p id="TextoRespuesta"></p>
     </div>
-    <span>X</span>
+    <span style="padding-right: 9px; cursor: pointer;">X</span>
 </div>
 </section>
 
@@ -91,9 +91,10 @@
     justify-content: space-between;
     background-color: white;
     margin-top: 21px;
-    margin-left: 3%;
+    margin-left: 5%;
     border-radius: 5px;
-    border: .1px solid black;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+     display: none;
   }
 .StyleSuceess{
   background-color: #e4f2f0;
@@ -124,3 +125,28 @@ tr:hover>:not(th){
   transform: scale(1.05);
 }
 </style>
+<script>
+window.onload = function () {
+    let TextoRespuesta = document.getElementById('TextoRespuesta');
+    const urlParams = new URLSearchParams(window.location.search);
+    const exitoMenu = urlParams.get('success');
+    const errorMenu = urlParams.get('error');
+    let alerta = document.getElementById('alerta');
+
+    if (exitoMenu === 'MenuRegisteredSuccessfully') {
+      alerta.style.display = 'flex';
+      alerta.classList.add('StyleSuceess');
+      TextoRespuesta.innerText = 'Menu registrado Correctamente';
+    } else if (errorMenu === 'MenuNotRegisteredSuccessfull'){
+      alerta.style.display = 'flex';
+       alerta.classList.add('StyleError');
+      TextoRespuesta.innerText = 'Menu no registrado Correctamente';
+
+    }
+    document.querySelector('#alerta span').addEventListener('click', () => {
+      alerta.style.display = 'none';
+    });
+  };
+
+
+</script>

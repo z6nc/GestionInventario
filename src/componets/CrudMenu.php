@@ -141,8 +141,19 @@ window.onload = function () {
       alerta.style.display = 'flex';
        alerta.classList.add('StyleError');
       TextoRespuesta.innerText = 'Menu no registrado Correctamente';
-
     }
+      else if (errorMenu === 'MenuNotDeletedSuccessfull'){
+        alerta.style.display = 'flex';
+        alerta.classList.add('StyleError');
+        TextoRespuesta.innerText = 'Menu no eliminado Correctamente';
+      }
+    else if (exitoMenu === 'MenuDeletedSuccessfully'){
+      alerta.style.display = 'flex';
+       alerta.classList.add('StyleSuceess');
+      TextoRespuesta.innerText = 'Menu eliminado Correctamente';
+    }
+
+    
     document.querySelector('#alerta span').addEventListener('click', () => {
       alerta.style.display = 'none';
     });

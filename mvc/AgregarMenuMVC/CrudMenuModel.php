@@ -17,6 +17,7 @@ class MenuModel {
         $stmt->close();
     
         return $executeResult;
+
     }
     
 
@@ -36,18 +37,23 @@ class MenuModel {
         // Retornar el resultado de la ejecución
         return $executeResult;
     }
-
-    function GetMenuById($IdMenu) {
+    
+    public function getMenuById($IDMENU) {
         $sql = "SELECT * FROM menu WHERE IDMENU = ?";
         $stmt = $this->conn->prepare($sql);
-        if ($stmt === false) {
-            return false;
-        }
-        $stmt->bind_param("i", $IdMenu);
+        $stmt->bind_param("i", $IDMENU);
         $stmt->execute();
         $result = $stmt->get_result();
+
+        if ($result->num_rows == 0) {
+            return false;
+        }
+
+        $menuData = $result->fetch_assoc();
+
         $stmt->close();
-        return $result->fetch_assoc();
+
+        return $menuData;
     }
 
     function UpdateMenu($IdMenu, $NombreMenu, $PrecioMenu, $EstadoMenu) {

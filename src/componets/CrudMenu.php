@@ -57,7 +57,7 @@
       <td><?php echo htmlspecialchars($Menu['EstadoMenu']); ?></td>
       <td style="display: flex; justify-content: center; gap: 10px; padding: 10px 0px; ">
         <button style="background-color: #ffcb66 ; padding:8px 10px;  border: none; border-radius: 4px;">
-          <a href="">
+          <a href="../mvc/AgregarMenuMVC/ObtenerMenuIDController.php?IDMENU=<?php echo $Menu['IDMENU']; ?>">
             <i style=" color: black; font-size: 18px;" class="fas fa-edit"></i>
            </a>
        </button> 

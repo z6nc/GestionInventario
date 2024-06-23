@@ -11,5 +11,6 @@ if ($result) {
     header('Location: ../../src/Menu.php?error=MenuNotDeletedSuccessfull');
 }
 
+    $conn->close();
 
 ?>

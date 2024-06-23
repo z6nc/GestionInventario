@@ -6,7 +6,7 @@ $EstadoMenu = $_GET['EstadoMenu'];
 ?>
 <section style="background-color: whitesmoke; ">
 
-  <form class="shadows" action="../mvc/AgregarMenuMVC/AgregarMenuController.php" method="POST">
+  <form class="shadows" action="../mvc/AgregarMenuMVC/EditarMenuController.php" method="POST">
     <div style="background-color: #16a085;">
       <h1 style=" margin-top: 20px;color: white; padding-left: 20px; ">EDITAR  MENU</h1>
     </div>

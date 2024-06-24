@@ -13,7 +13,7 @@
      <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
         <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="Menuadd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
-        <button class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
+        <button id="exportButton"  class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">
           <input type="text" placeholder="Buscar Menu" style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; ">
@@ -36,7 +36,7 @@
    
     
 
-<table class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
+<table id="menuTable" class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
 <thead class=" " style=" background-color:  #16a085; "  >
 
     <tr class="" style="color: white;" >
@@ -116,4 +116,17 @@ window.onload = function () {
   };
 
 
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+<script>
+  document.getElementById('exportButton').addEventListener('click', function() {
+    exportTableToExcel('menuTable', 'lista_menus');
+  });
+
+  function exportTableToExcel(tableID, filename = '') {
+    let table = document.getElementById(tableID);
+    let workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+    XLSX.writeFile(workbook, filename ? filename + '.xlsx' : 'excel_data.xlsx');
+  }
 </script>

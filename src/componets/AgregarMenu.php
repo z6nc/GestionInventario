@@ -7,7 +7,7 @@
     <div class="" style="padding: 23px 15px;  display: flex;  flex-wrap: wrap; gap: 25px; text-align: center;">
       <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
         <label style="font-size: 18px; color: gray;"  class="form-label">Nombre del Menu:</label>
-        <input style="padding: 3px 3px; font-size: 17px;" type="text"  name="NomMenu" required>
+        <input style="padding: 3px 3px; font-size: 17px; text-transform: uppercase;" type="text"  name="NomMenu" required>
       </div>
       <div style="display: flex; align-items: center;   flex: 1 1 400px; gap: 9px;">
         <labe style="font-size: 18px; color: gray;"  class="form-label">Precio Menu: </labe>

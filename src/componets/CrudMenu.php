@@ -1,6 +1,8 @@
 
 <head>
   <link rel="stylesheet" href="css/ListarMenu.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-style/0.8.13/xlsx-style.min.js"></script>
 </head>
 <section style="background-color: #f1f1f1;position: relative; " class="Container-Menu">
   
@@ -117,8 +119,6 @@ window.onload = function () {
 
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
 <script>
   document.getElementById('exportButton').addEventListener('click', function() {
     exportTableToExcel('menuTable', 'lista_menus');
@@ -127,6 +127,15 @@ window.onload = function () {
   function exportTableToExcel(tableID, filename = '') {
     let table = document.getElementById(tableID);
     let workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+
+    // Agregar estilos CSS personalizados al archivo de Excel
+    workbook.Sheets["Sheet1"]["!cols"] = [
+     { wch: 10, s: { font: { italic: true }, fill: { bgColor: { rgb: "ADD8E6" } } } }, // Estilo cursiva y color de fondo de la primera columna
+     { wch: 30, s: { font: { italic: true }, fill: { bgColor: { rgb: "ADD8E6" } } } }, // Estilo cursiva y color de fondo de la segunda columna
+     { wch: 20, s: { font: { italic: true }, fill: { bgColor: { rgb: "ADD8E6" } } } }, // Estilo cursiva y color de fondo de la tercera columna
+     { wch: 20, s: { font: { italic: true }, fill: { bgColor: { rgb: "ADD8E6" } } } }  // Estilo cursiva y color de fondo de la cuarta columna
+    ];
+
     XLSX.writeFile(workbook, filename ? filename + '.xlsx' : 'excel_data.xlsx');
   }
 </script>

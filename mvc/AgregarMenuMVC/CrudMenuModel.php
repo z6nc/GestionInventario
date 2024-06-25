@@ -4,6 +4,26 @@ class MenuModel {
     public function __construct($conn) {
         $this->conn = $conn;
     }
+    function CheckMenuName($NombreMenu) {
+        $sql = "SELECT NOMBRE_MENU FROM menu WHERE NOMBRE_MENU = ?";
+        $stmt = $this->conn->prepare($sql);
+        if ($stmt === false) {
+            return false;
+        }
+        $stmt->bind_param("s", $NombreMenu);
+        $stmt->execute();
+        $stmt->store_result();
+        
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($existingMenuName);
+            $stmt->fetch();
+            $stmt->close();
+            return $existingMenuName;
+        }
+        $stmt->close();
+        return null;
+    }
+    
     function InsertMenu($NombreMenu, $PrecioMenu, $EstadoMenu) {
         $sql = "INSERT INTO menu (NOMBRE_MENU, PRECIOVENTA, EstadoMenu) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
@@ -12,17 +32,11 @@ class MenuModel {
         }
         $stmt->bind_param("sis", $NombreMenu, $PrecioMenu, $EstadoMenu);
         $executeResult = $stmt->execute();
-        if ($executeResult->num_rows > 0) {
-            while ($row = $executeResult->fetch_assoc()) {
-              $MenuNombre= $row['NOMBRE_MENU'];
-            }
-        }
-    
         $stmt->close();
     
         return $executeResult;
-
     }
+    
     
 
     function DeleteMenu($IdMenu) {

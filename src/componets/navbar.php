@@ -18,7 +18,7 @@
           </li>
           <li>
           <i class="fas fa-key"></i>
-            <a href="">Acceso</a>
+            <a href="">Usuarios</a>
           </li>
           <li>
           <i class="fas fa-box"></i>
@@ -46,13 +46,9 @@
             <a href="">Ingredientes</a>
           </li>
           <li>
-          <i class="fas fa-receipt"></i>  
-          <a href="">Gastos</a>
+          <i class="fas fa-chart-line"></i>  
+          <a href="">Reportes</a>
         </li>
-          <li>
-          <i class="fas fa-chart-bar"></i>
-            <a href="">Reportes</a>
-          </li>
 
         </ul>
         <div class="botonCerrar">

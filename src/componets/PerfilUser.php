@@ -21,15 +21,15 @@ $NombreUsuario = "maria.fm";
         <div class="ContainerTableData">
                <table style="text-align: center;">
                     <tr>
-                        <td>Nombre:</td>
+                        <td  class="ItemTable">Nombre:</td>
                         <td><?php echo $NombreReal ?></td>
                     </tr>
                     <tr>
-                        <td>Apellido:</td>
+                        <td class="ItemTable">Apellido:</td>
                         <td><?php echo $ApellidoUsuario ?></td>
                     </tr>
                     <tr>
-                        <td>Usuario:</td>
+                        <td class="ItemTable">Usuario:</td>
                         <td><?php echo $NombreUsuario ?></td>
                     </tr>
                     <tr>
@@ -66,6 +66,15 @@ $NombreUsuario = "maria.fm";
         border-radius: 50%;
         margin: 20px;
         border: 1px solid #16A080;
+      }
+      table{
+        margin: 10px ;
+        font-size: 18px;
+      }
+      table  .ItemTable{
+        color: gray;
+        padding: 3px 0px;
+        font-weight: 500;
       }
     }
 </style>

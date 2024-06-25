@@ -6,10 +6,13 @@ $NombreUsuario = "maria.fm";
 
 <section class="ContainerPerfilUser">
     <div class="ContainerTitle">
-    <h1 class="text-center">Perfil de Usuario</h1>
+    <div style="display: flex;align-items: center;  margin: 12px 10px; gap:5px;" class="Container_House">
+      <a href="../src/inicio.php" > <i  style="color: #16a085;" class="fas fa-home"></i></a>
+      <p style="color:#5c5b60;">/ Perfil</p>
+     </div>
     </div>
     <div class="SectionPerfilUser">
-    <h2 class="text-center">Bienvenido/a <?php echo $idusuario ?></h2>
+    <h2 >Bienvenido/a <?php echo $idusuario ?></h2>
 
         <div>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/640px-User_icon_2.svg.png" alt="">
@@ -48,6 +51,7 @@ $NombreUsuario = "maria.fm";
     .SectionPerfilUser{
         background-color: white;
         display: flex;
+        border-left: 7px solid #16A085;
         justify-content: center;
         margin: auto;
         width: auto;
@@ -61,7 +65,7 @@ $NombreUsuario = "maria.fm";
         height: 150px;
         border-radius: 50%;
         margin: 20px;
-        border: 2px solid #16A085;
+        border: 1px solid #16A080;
       }
     }
 </style>

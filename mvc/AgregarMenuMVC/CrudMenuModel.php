@@ -4,6 +4,7 @@ class MenuModel {
     public function __construct($conn) {
         $this->conn = $conn;
     }
+    
     function CheckMenuName($NombreMenu) {
         $sql = "SELECT NOMBRE_MENU FROM menu WHERE NOMBRE_MENU = ?";
         $stmt = $this->conn->prepare($sql);

@@ -20,22 +20,23 @@ $NombreUsuario = "maria.fm";
     
         <div class="ContainerTableData">
                <table style="text-align: center;">
-                    <tr>
+                    <tr class="columnTable">
                         <td  class="ItemTable">Nombre:</td>
                         <td><?php echo $NombreReal ?></td>
                     </tr>
-                    <tr>
+                    <tr class="columnTable">
                         <td class="ItemTable">Apellido:</td>
                         <td><?php echo $ApellidoUsuario ?></td>
                     </tr>
-                    <tr>
+                    <tr class="columnTable">
                         <td class="ItemTable">Usuario:</td>
                         <td><?php echo $NombreUsuario ?></td>
                     </tr>
-                    <tr>
-                    <td><a href="">Editar Perfi</a></td>
-                    <td><a href="">Cerrar Session</a></td>
+                    <tr class="columnTable">
+                        <td ><a href="" class="BtnEditar">Editar Perfil</a></td>
+                        <td><a href="" class="BtnCerrar">Cerrar Sesión</a></td>
                     </tr>
+                   
                </table>
         </div>
     </div>
@@ -46,18 +47,18 @@ $NombreUsuario = "maria.fm";
 <style>
     .ContainerPerfilUser{
         background-color: whitesmoke;
-
+        width: 100%;
     }
     .SectionPerfilUser{
         background-color: white;
+        margin: auto;
         display: flex;
         border-left: 7px solid #16A085;
         justify-content: center;
-        margin: auto;
         width: auto;
         align-items: center;
         flex-direction: column;
-        margin: 0px 36%;
+        margin: 0px auto;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         border-radius: 10px;
       img{
@@ -73,8 +74,29 @@ $NombreUsuario = "maria.fm";
       }
       table  .ItemTable{
         color: gray;
-        padding: 3px 0px;
         font-weight: 500;
+      }
+        table td{
+            padding: 8px 0px;
+        }
+      .BtnEditar{
+        background-color: #88b9eb;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+        .BtnEditar:hover{
+            background-color: skyblue;
+        }
+        .BtnCerrar{
+        background-color: #88b9eb;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
       }
     }
 </style>

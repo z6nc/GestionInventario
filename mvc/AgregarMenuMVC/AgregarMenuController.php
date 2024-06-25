@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result) {
        header('Location: ../../src/Menu.php?success=MenuRegisteredSuccessfully');
        
-    } else{
+    } else {
        header('Location: ../../src/Menu.php?error=MenuNotRegisteredSuccessfull');
     }
 

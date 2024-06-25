@@ -11,8 +11,12 @@ class MenuModel {
             return false;
         }
         $stmt->bind_param("sis", $NombreMenu, $PrecioMenu, $EstadoMenu);
-    
         $executeResult = $stmt->execute();
+        if ($executeResult->num_rows > 0) {
+            while ($row = $executeResult->fetch_assoc()) {
+              $MenuNombre= $row['NOMBRE_MENU'];
+            }
+        }
     
         $stmt->close();
     

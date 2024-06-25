@@ -2,9 +2,9 @@
 .navbar{
     display: flex;
    flex-direction: column;
+  
    height: 100vh;
    grid-area: a;
-  
   }
   .navbar .container{
    background-color:#16A085 ;
@@ -37,6 +37,7 @@
     align-items: center;
     gap: 7px;
    transition: all .1s ease-in-out;
+   flex: none;
 
   }
   .navbar .container-Second ul li  i {
@@ -53,6 +54,7 @@
    color: white;
    font-size: 17px;
     text-decoration: none;
+    display: block;
   }
   .navbar .container-Second .botonCerrar{
     background-color: #16A085;

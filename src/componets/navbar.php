@@ -13,6 +13,10 @@
             <a href="Inicio.php"> Panel de Inicio</a>
           </li>
           <li>
+            <i class="fas fa-tachometer-alt"></i>
+            <a href="Inicio.php"> DashBoard</a>
+          </li>
+          <li>
           <i class="fas fa-key"></i>
             <a href="">Acceso</a>
           </li>

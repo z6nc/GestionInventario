@@ -35,7 +35,7 @@
         </li>
           <li>
           <i class="fas fa-tags"></i>  
-          <a href="">Categoria</a>
+          <a href="Categoria.php">Categorias</a>
         </li>
           <li>
           <i class="fas fa-utensils"></i>

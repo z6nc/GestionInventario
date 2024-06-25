@@ -21,12 +21,27 @@ window.onload = function () {
         alerta.classList.add('StyleSuceess');
         TextoRespuesta.innerText = 'Menu editado Correctamente';
         break;
+        case 'Menuexist':
+          alerta.style.display = 'flex';
+          alerta.classList.add('StyleError');
+          TextoRespuesta.innerText = 'El nombre del menu ya existe';
+          break;
       default:
-        if (errorMenu === 'MenuNotRegisteredSuccessfull' || errorMenu === 'MenuNotDeletedSuccessfull' || errorMenu === 'MenuNotMenuEdited') {
+        if (errorMenu === 'MenuNotRegisteredSuccessfull') {
           alerta.style.display = 'flex';
           alerta.classList.add('StyleError');
           TextoRespuesta.innerText = 'Menu no registrado Correctamente';
-        } else {
+        } else if (errorMenu === 'MenuNotDeletedSuccessfull') {
+          alerta.style.display = 'flex';
+          alerta.classList.add('StyleError');
+          TextoRespuesta.innerText = 'Menu no se pudo eliminar';
+          
+        } else if (errorMenu === 'MenuNotMenuEdited') {
+          alerta.style.display = 'flex';
+          alerta.classList.add('StyleError');
+          TextoRespuesta.innerText = 'Menu no se pudo Editar';
+        } 
+        else {
           alerta.style.display = 'none';
         }
     }

@@ -13,7 +13,7 @@ class MenuModel {
         $stmt->bind_param("s", $NombreMenu);
         $stmt->execute();
         $stmt->store_result();
-        
+        $existingMenuName= "";
         if ($stmt->num_rows > 0) {
             $stmt->bind_result($existingMenuName);
             $stmt->fetch();

@@ -9,8 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    $existingMenuName = $MenuModel->CheckMenuName($NombreMenu);
    if ($existingMenuName) {
-      header('Location: ../../src/Menu.php?error=MenuNameAlreadyExists');
-      exit();
+      header('Location: ../../src/Menu.php?success=Menuexist');
    } else {
       $result = $MenuModel->InsertMenu($NombreMenu, $PrecioMenu, $EstadoMenu, $conn);
       if ($result) {

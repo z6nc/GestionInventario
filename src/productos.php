@@ -4,17 +4,18 @@ require_once '../mvc/SessionIniciada/Session.php';
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    
     <?php include 'componets/head-elements.php';?>
     <title>Productos</title>
 </head>
-<body>
+<body class="font-Secundario">
     <main>
 <?php
 include 'componets/navbar.php';
 include 'componets/navbarSecundario.php';
 ?>
 
-        <div class="productos marco">
+        <div class="productos marco" >
             <div class="encabezado">
                 <h1>Lista de productos</h1>
                 <button>Agregar Producto</button>

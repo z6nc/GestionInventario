@@ -22,15 +22,15 @@ $NombreUsuario = "maria.fm";
                <table style="text-align: center;">
                     <tr class="columnTable">
                         <td  class="ItemTable">Nombre:</td>
-                        <td><?php echo $NombreReal ?></td>
+                        <td><?php echo $idusuario ?></td>
                     </tr>
                     <tr class="columnTable">
                         <td class="ItemTable">Apellido:</td>
-                        <td><?php echo $ApellidoUsuario ?></td>
+                        <td><?php echo $apellido ?></td>
                     </tr>
                     <tr class="columnTable">
-                        <td class="ItemTable">Usuario:</td>
-                        <td><?php echo $NombreUsuario ?></td>
+                        <td class="ItemTable">Jerarquia:</td>
+                        <td><?php echo $Jerarquia ?></td>
                     </tr>
                     <tr class="columnTable">
                         <td ><a href="" class="BtnEditar">Editar Perfil</a></td>

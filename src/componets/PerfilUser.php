@@ -12,9 +12,9 @@ $NombreUsuario = "maria.fm";
      </div>
     </div>
     <div class="SectionPerfilUser">
-    <h2 >Bienvenido/a <?php echo $idusuario ?></h2>
 
-        <div>
+        <div class="ContainerImg">
+           <h2 >Bienvenido/a <?php echo $idusuario ?></h2>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/640px-User_icon_2.svg.png" alt="">
         </div>
     
@@ -33,8 +33,8 @@ $NombreUsuario = "maria.fm";
                         <td><?php echo $Jerarquia ?></td>
                     </tr>
                     <tr class="columnTable">
-                        <td ><a href="" class="BtnEditar">Editar Perfil</a></td>
-                        <td><a href="" class="BtnCerrar">Cerrar Sesión</a></td>
+                        <td ><a href="" class="BtnEditar"><i style="  font-size: 21px;" class="fas fa-edit"></i></a></td>
+                        <td><a href="" class="BtnCerrar"><i style="  font-size: 21px;" class="fas fa-door-open"></i></a></td>
                     </tr>
                    
                </table>
@@ -51,22 +51,36 @@ $NombreUsuario = "maria.fm";
     }
     .SectionPerfilUser{
         background-color: white;
+        max-width: 54%;
         margin: auto;
-        display: flex;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         text-align: center;
         border-left: 7px solid #16A085;
-        justify-content: center;
-        width: auto;
-        align-items: center;
-        flex-direction: column;
-        margin: 0px auto;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         border-radius: 10px;
+        height: 50%;
       img{
         width: 150px;
         height: 150px;
         border-radius: 50%;
         margin: 20px;
         border: 1px solid #16A080;
+      }
+      .ContainerTableData 
+       {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+       .ContainerImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #16A085;
+
       }
       table{
         margin: 10px ;
@@ -77,12 +91,14 @@ $NombreUsuario = "maria.fm";
         font-weight: 500;
       }
         table td{
-            padding: 8px 0px;
+            padding: 12px 0px;
         }
+
+
       .BtnEditar{
-        background-color: #88b9eb;
+        background-color: #007cfd;
         color: white;
-        padding: 5px 10px;
+        padding: 7px 26px;
         border-radius: 5px;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
@@ -91,9 +107,9 @@ $NombreUsuario = "maria.fm";
             background-color: skyblue;
         }
         .BtnCerrar{
-        background-color: #88b9eb;
+        background-color: #f66549;
         color: white;
-        padding: 5px 10px;
+        padding: 7px 26px;
         border-radius: 5px;
         text-decoration: none;
         transition: all 0.2s ease-in-out;

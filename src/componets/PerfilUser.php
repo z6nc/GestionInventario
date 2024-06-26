@@ -47,7 +47,7 @@ $NombreUsuario = "maria.fm";
 <style>
     .ContainerPerfilUser{
         background-color: whitesmoke;
-        width: 90%;
+        width: 100%;
     }
     .SectionPerfilUser{
         background-color: white;

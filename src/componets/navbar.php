@@ -22,7 +22,7 @@
           </li>
           <li>
           <i class="fas fa-box"></i>
-            <a href="">Proveedor</a>
+            <a href="Proveedor.php">Proveedor</a>
           </li>
           <li id="navbar-inventario">
           <i class="fas fa-box-open"></i>  

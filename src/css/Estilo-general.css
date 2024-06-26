@@ -68,6 +68,10 @@ main{
 .productos th {
     border: 1px solid;
 }
+.productos td.image-contain-table > img {
+    width: 85px;
+    height: 85px;
+}
 
 
 
@@ -80,7 +84,7 @@ main{
 
 .productos-accion.marco {
     padding: 50px 25px 25px 25px;
-    margin: 34px;
+    margin: 0px 20px 20px 20px;
     border: 1px black solid;
 }
 
@@ -122,4 +126,20 @@ main{
     background-color: #28a745;
     border: 1px #3ef768 solid;
     color: white;
+}
+
+button.btn-delete,
+button.btn-edit {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px;
+    margin: 3px 6px;
+}
+button.btn-delete {
+    background-image: url(../images/icon/cross.png);
+    background-color: red;
+}
+button.btn-edit {
+    background-image: url(../images/icon/edit.png);
+    background-color: lightgreen;    
 }

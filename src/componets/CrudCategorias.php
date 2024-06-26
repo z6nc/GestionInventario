@@ -51,7 +51,7 @@
         </thead>
         <tbody class="table-group-divider " style="text-align: center;">
           <?php
-          $opcion_seleccionada = $_POST['opciones'];
+          $opcion_seleccionada = $_POST['opciones'] ?? null;
           if($opcion_seleccionada === "1"){
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 foreach ($ResultadoCategorias1 as $Categoria) : 

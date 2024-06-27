@@ -8,11 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['Contraseña'];
 
     $result = $userModel->validateUser($username , $password, $conn);
+    $ResultadoJerarquia = $userModel-> VerificarJerarquia($username, $conn);
     if ($result === true) {
+      if ($ResultadoJerarquia === true) {
        header('Location: ../../src/inicio.php');
+      } else{
+         header('Location: ../../src/inicioEmpleado.php');
+      }
     } else{
        header('Location: ../../src/login.html?error=InvalidedYourUserOrPassword');
-
     }
 
     $conn->close();

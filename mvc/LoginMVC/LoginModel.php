@@ -28,6 +28,28 @@ class LoginModel {
             return false; // 
         }
     }
+    function VerificarJerarquia($username){
+        $sql = "SELECT jerarquia.JERARQUIA
+                FROM USUARIO
+                INNER JOIN jerarquia ON jerarquia.IDJERARQUIA = USUARIO.IDJERARQUIA
+                WHERE USUARIO = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $ResultadoJerarquia = $stmt->get_result();
+    
+        if ($ResultadoJerarquia->num_rows > 0) {
+            $row = $ResultadoJerarquia->fetch_assoc();
+            if ($row['JERARQUIA'] === 'ADMINISTRADOR') {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false; // No se encontró el usuario
+        }
+    }
+    
     
    
  

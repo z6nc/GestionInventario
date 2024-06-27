@@ -34,7 +34,7 @@ $NombreUsuario = "maria.fm";
                     </tr>
                     <tr class="columnTable">
                         <td ><a href="" class="BtnEditar"><i style="  font-size: 21px;" class="fas fa-edit"></i></a></td>
-                        <td><a href="" class="BtnCerrar"><i style="  font-size: 21px;" class="fas fa-door-open"></i></a></td>
+                        <td><a href="../mvc/SessionIniciada/CerrarSession.php" class="BtnCerrar"><i style="  font-size: 21px;" class="fas fa-door-open"></i></a></td>
                     </tr>
                    
                </table>
@@ -51,7 +51,7 @@ $NombreUsuario = "maria.fm";
     }
     .SectionPerfilUser{
         background-color: white;
-        max-width: 54%;
+        max-width: 58%;
         margin: auto;
          display: grid;
          grid-template-columns: 1fr 1fr;
@@ -65,7 +65,6 @@ $NombreUsuario = "maria.fm";
         height: 150px;
         border-radius: 50%;
         margin: 20px;
-        border: 1px solid #16A080;
       }
       .ContainerTableData 
        {
@@ -82,6 +81,11 @@ $NombreUsuario = "maria.fm";
         background-color: #16A085;
 
       }
+      .ContainerImg h2{
+        color: white;
+        font-size: 26px;
+        margin: 10px;
+      }
       table{
         margin: 10px ;
         font-size: 18px;
@@ -96,15 +100,25 @@ $NombreUsuario = "maria.fm";
 
 
       .BtnEditar{
-        background-color: #007cfd;
+        background-color: #007afd;
         color: white;
         padding: 7px 26px;
         border-radius: 5px;
         text-decoration: none;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
       }
+      .BtnEditar i,
+      .BtnCerrar i{
+        transition: all 0.3s ease-in-out;
+      }
+
+        .BtnEditar:hover  i{
+          transform: scale(1.1);
+        }
         .BtnEditar:hover{
-            background-color: skyblue;
+        background: blue;
+
         }
         .BtnCerrar{
         background-color: #f66549;
@@ -114,5 +128,12 @@ $NombreUsuario = "maria.fm";
         text-decoration: none;
         transition: all 0.2s ease-in-out;
       }
+      .BtnCerrar:hover  i{
+          transform: scale(1.1);
+        }
+        .BtnCerrar:hover{
+        background: red;
+
+        }
     }
 </style>

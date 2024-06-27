@@ -46,7 +46,7 @@ class LoginModel {
                 return false;
             }
         } else {
-            return false; // No se encontró el usuario
+            return false; 
         }
     }
     

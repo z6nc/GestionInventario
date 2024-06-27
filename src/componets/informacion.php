@@ -180,8 +180,8 @@
     margin: 10px 0;
     padding: 9px 0;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
-    
   }
+ 
   .main-Container .main-Container-table .Container-table-Product h2{
     font-size: 20px;
     font-weight: 900;

@@ -14,7 +14,7 @@
           </li>
           <li>
             <i class="fas fa-tachometer-alt"></i>
-            <a href="Inicio.php"> DashBoard</a>
+            <a href="Dashboard.php"> DashBoard</a>
           </li>
           <li>
           <i class="fas fa-key"></i>

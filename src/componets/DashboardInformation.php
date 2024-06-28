@@ -9,8 +9,8 @@ include 'GraficosDashboard.php'
       background-color: whitesmoke;
       display: grid;
       grid-template-areas: 
-      "GraficoA GraficoB"
-      "GraficoC GraficoC";
+      "GraficoA GraficoB GraficoC"
+      "GraficoD GraficoD GraficoD";
       
     }
 </style>

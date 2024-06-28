@@ -4,7 +4,7 @@
     <aside class="main-Container-grid">
       <div class="container-information">
         <div>
-        <a href="">Ganancias por Venta</a>
+        <a href="">Ganancias del dia</a>
           <p class="count">S/ 3000.000 </p>
         </div>
         <i class="fas fa-coins"></i>

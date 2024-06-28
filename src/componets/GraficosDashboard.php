@@ -1,5 +1,5 @@
 <article class="ArticleDasboardA">
-<h1>Productos Poco Stock</h1>
+<h1>Productos con Mayor Stock</h1>
 
 </article>
 <article class="ArticleDasboardB">
@@ -8,8 +8,14 @@
 </article >
 <article class="ArticleDasboardC">
 
-</article>
+<h1>
+Productos Más Vendidos
 
+</h1>
+</article>
+<article class="ArticleDasboardD">
+    <h1>Gasto por mes  </h1>
+</article>
 <style>
     .ArticleDasboardA{
         grid-area: GraficoA;
@@ -27,6 +33,13 @@
     }
     .ArticleDasboardC{
         grid-area: GraficoC;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .ArticleDasboardD{
+        grid-area: GraficoD;
         background-color: white;
         border-radius: 10px;
         margin: 10px;

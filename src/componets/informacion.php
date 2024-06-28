@@ -5,7 +5,7 @@
       <div class="container-information">
         <div>
         <a href="">Ganancias por Venta</a>
-          <p class="count">S/ 3000.000 stand By</p>
+          <p class="count">S/ 3000.000 </p>
         </div>
         <i class="fas fa-coins"></i>
       </div>
@@ -34,7 +34,8 @@
         <h2 >Producto Recientemente Añadidos </h2>
           <?php foreach ($ResultadoProducto as $producto) : ?>
         <div>
-          <img  width="15%" src=<?php echo htmlspecialchars($producto['URL_IMG']); ?> alt="">
+          <img loading="lazy"
+           width="15%" src=<?php echo htmlspecialchars($producto['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($producto['NOM_PRODUCTO']); ?></h4><span>/</span>
           <p> INGRESO: <span ><?php echo htmlspecialchars($producto['FECHA_INGRESO']); ?></span></p>
         </div>
@@ -45,7 +46,8 @@
         <h2 >Productos con Stock mínimo</h2>
         <?php foreach ($ResultadoProductosStock as $productoMinimos) : ?>
         <div>
-          <img width="15%" src=<?php echo htmlspecialchars($productoMinimos['URL_IMG']); ?> alt="">
+          <img loading="lazy"
+          width="15%" src=<?php echo htmlspecialchars($productoMinimos['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoMinimos['NOM_PRODUCTO']); ?></h4> <span>/</span>
           <p> Stock Disponible <span><?php echo htmlspecialchars($productoMinimos['STOCK']); ?> unidades</span></p>
         </div>
@@ -55,7 +57,8 @@
         <h2 >Productos vencidos - Pendientes</h2>
         <?php foreach ($ResultadoProductoCaducidos as $productoCaducidos) : ?>
         <div>
-          <img width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">
+          <img loading="lazy"
+          width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoCaducidos['NOM_PRODUCTO']); ?></h4><span>/</span>
           <p> Vencido el <span><?php echo htmlspecialchars($productoCaducidos['FECHA_CADUCIDAD']); ?></span></p>
         </div>

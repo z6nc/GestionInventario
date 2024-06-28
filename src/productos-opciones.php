@@ -1,5 +1,5 @@
 <?php
-require_once '../mvc/SessionIniciada/Session.php';
+include '../mvc/SessionIniciada/Session.php';
 require_once('../mvc/lista-ProductosMVC/ListaProductos.php');
 
 $listaProductos = new ListasProductos();

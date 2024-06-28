@@ -1,6 +1,6 @@
 <?php
-require_once '../mvc/SessionIniciada/Session.php';
-require_once('../mvc/lista-ProductosMVC/ListaProductos.php');
+include '../mvc/SessionIniciada/Session.php';
+include '../mvc/lista-ProductosMVC/ListaProductos.php';
 
 $listaProductos = new ListasProductos();
 

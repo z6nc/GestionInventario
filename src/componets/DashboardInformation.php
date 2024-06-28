@@ -12,5 +12,6 @@ include 'GraficosDashboard.php'
       "GraficoA GraficoB"
       "GraficoA GraficoD"
       "GraficoC GraficoC";
+      
     }
 </style>

@@ -3,6 +3,9 @@ require_once '../mvc/SessionIniciada/Session.php';
 require_once('../mvc/lista-ProductosMVC/ListaProductos.php');
 
 $listaProductos = new ListasProductos();
+$productosFila = (isset($_GET['IDP']))?$listaProductos->getRowTable($_GET['IDP']):null;
+
+
 ?>
 <html lang="es">
 <head>
@@ -17,37 +20,44 @@ include 'componets/navbarSecundario.php';
 ?>
     <div class="productos-accion marco">
         <div class="fila-1">
-            <h1>Agregar Producto</h1>
+            <h1><?= (isset($_GET['IDP']))?'Editar Producto':'Agregar Producto'?></h1>
         </div>
         <form action="../mvc/lista-ProductosMVC/ListaProductosControll.php" method="post" id="form-agregar-productos" enctype="multipart/form-data" >
             <div class="fila-2">
-                <label>Nombre: <input type="text" name="nombre"></label>
-                <label>Ubicacion del producto: <input type="text" name="ubicacion"></label>
+                <label>Nombre: <input type="text" name="nombre" value="<?= $productosFila['NOM_PRODUCTO'] ?? '' ?>"></label>
+                <label>Ubicacion del producto: <input type="text" name="ubicacion" value="<?= $productosFila['UBICACIONPRODUCTO'] ?? '' ?>"></label>
                 <label>Proveedor:
                     <select name="proveedor">
-                        <option selected value>proveedor</option>
                         <?php 
-                        $listaProductos->comboBoxProveedores();
+                        $listaProductos->comboBoxColumna('proveedor','IDPROVEEDOR','RAZON_SOCIAL',$productosFila['IDPROVEEDOR']);
                         ?>
                     </select>
                 </label>
                 <label>Categoria: 
                     <select name="categoria">
-                        <option selected value>categoria</option>
                         <?php 
-                        $listaProductos->comboBoxCategorias();
+                        $listaProductos->comboBoxColumna('categoria','idCategoria','nomCat',$productosFila['idCategoria']);
                         ?>
                     </select>
                 </label>
-                <label>Stock: <input type="number" name="stock" min="0"></label>
-                <label>Precio Compra: <input type="text" name="precio"></label>
-                <label>Fecha Ingreso: <input type="date" name="fecha-ingreso"></label>
-                <label>Fecha Vencimiento: <input type="date" name="fecha-vencimiento"></label>
+                <label>Stock: <input type="number" name="stock" min="0" value="<?= $productosFila['STOCK'] ?? null ?>"></label>
+                <label>Precio Compra: <input type="text" name="precio" value="<?= $productosFila['PRECIOCOMPRA']?? null ?>"></label>
+                <label>Fecha Ingreso: <input type="date" name="fecha-ingreso" value="<?= $productosFila['FECHA_INGRESO']?? null ?>"></label>
+                <label>Fecha Vencimiento: <input type="date" name="fecha-vencimiento" value="<?= $productosFila['FECHA_CADUCIDAD'] ?? null?>"></label>
                 <label>Imagen: <input type="file" name="fileToUpload"></label>                       
             </div>
         </form> 
         <div class="fila-3">
-            <button type="submit" form="form-agregar-productos" name="submit-agregar-productos">Agregar Producto</button>
+            <?php
+            if(isset($_GET['IDP'])){
+                
+                echo '<input type="hidden" name="ID" value="'.($productosFila['IDPRODUCTO'] ?? '').'">';
+                echo '<input type="hidden" name="oldFile" value="'.($productosFila['URL_IMG'] ?? '').'">';
+                echo '<button type="submit" form="form-agregar-productos" name="submit-editar-productos">Editar Producto</button>';
+            }else{
+                echo '<button type="submit" form="form-agregar-productos" name="submit-agregar-productos">Agregar Producto</button>';
+            }
+            ?>            
         </div>
     </div>
     

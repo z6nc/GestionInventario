@@ -30,7 +30,7 @@
             // Datos para el segundo gráfico (Gasto por Mes)
             const labelsGasto = <?php echo json_encode(array_column($ResultadoGastoPorMes, 'MES')); ?>.map(month => monthNames[month - 1]);
             const gastoData = <?php echo json_encode(array_column($ResultadoGastoPorMes, 'GASTO')); ?>;
-
+           
             // Configurar y crear el segundo gráfico
             const ctxGasto = document.getElementById('gastoChart').getContext('2d');
             new Chart(ctxGasto, {
@@ -39,7 +39,7 @@
                     labels: labelsGasto,
                     datasets: [{
                         label: 'Gasto por Mes (Soles)',
-                        data: gastoData,
+                        data: gastoData ,
                         backgroundColor: 'rgba(153, 102, 255, 0.2)',
                         borderColor: 'rgba(153, 102, 255, 1)',
                         borderWidth: 1

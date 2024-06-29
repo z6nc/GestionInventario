@@ -35,7 +35,7 @@ class DashBoardModel
         $sql = "SELECT NOM_PRODUCTO, STOCK
                 FROM PRODUCTO 
                 ORDER BY STOCK ASC 
-                LIMIT 10";
+                LIMIT 4";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -85,7 +85,7 @@ class DashBoardModel
                 FROM PRODUCTO 
                 WHERE FECHA_INGRESO >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
                 GROUP BY YEAR(FECHA_INGRESO), MONTH(FECHA_INGRESO)
-                ORDER BY Año DESC, Mes DESC";
+                ORDER BY Año ASC, Mes ASC";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

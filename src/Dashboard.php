@@ -25,7 +25,7 @@ include 'componets/DashboardInformation.php';
 <style>
     main{
     display: grid;
-  grid-template-columns: 300px 1fr   ;
+  grid-template-columns: 300px 1fr ;
   grid-template-rows:  auto 1fr;
   grid-template-areas: 
   "a b "

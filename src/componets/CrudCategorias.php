@@ -1,4 +1,7 @@
-
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-style/0.8.13/xlsx-style.min.js"></script>
+</head>
 <section style="background-color: #f1f1f1;position: relative; " class="Container-Menu">
   <article style=" padding:1.5% 5% 0% 5%;">
     <div style="display: flex;align-items: center;  margin: 12px 0px; gap:5px;" class="Container_House">
@@ -12,38 +15,35 @@
         }
     </script>
 
+    <div style="display: flex; align-items: center; " class="Container_Filtro">
+      <div class="Container_files">
+        <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="Categoriaadd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVA CATEGORIA</a></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br><br>
+      </div>
+      <div class="Container_files">
+        <button class="butomsCustmomers" style="background-color:#f66549; "><a href="Categoriadelete.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-trash"></i> ELIMINAR CATEGORIA</a></button>
+        <br><br>
+      </div>
+    </div>
+
     <div style="display: flex; align-items: center;" class="Container_Filtro">
       <div class="Container_Result">
         <form id="miFormulario" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          <label for="opciones">Categorias</label>
-            <select style="border: none; padding: 3px 7px;" id="opciones" name="opciones" onchange="enviarFormulario()">
+          <label for="opcionesSelect">Categorias</label>
+            <select style="border: none; padding: 3px 7px;" id="opcionesSelect" name="opcionesSelect" onchange="enviarFormulario()">
               <option value="0">Elija Una Opccion</option>
-              <option value="1">Aderesos</option>
-              <option value="2">Menestras</option>
-              <option value="3">Arroces</option>
-              <option value="4">Aceites</option>
-              <option value="5">Condimenntos</option>
-              <option value="6">Bebidas</option>
-              <option value="7">Lacteos</option>
-              <option value="8">Carnes</option>
-              <option value="9">Frutas y Verduras</option>
-              <option value="10">Pastas</option>
-              <option value="11">Panes y Repsoteria</option>
-              <option value="12">Enlatados</option>
-              <option value="13">Congelados</option>
-              <option value="14">Cereales y Legumbres</option>
-              <option value="16">Sales</option>
+              <?php echo $opciones; ?>
             </select>
         </form>
       </div>
     </div>
-
-
     <table class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
       <thead class=" " style=" background-color:  #16a085; "  >
 
           <tr class="" style="color: white;" >
-            <th class="borders" style=" padding: 10px 0px;" scope="col">ID</th>
+            <th class="borders" style=" padding: 10px 0px;" scope="col">ID CATEGORIA</th>
+            <th class="borders" scope="col">ID PRODUCTO</th>
             <th class="borders" scope="col">NOMBRE</th>
             <th class="borders" scope="col">STOCK</th>
             <th class="borders" scope="col">PRECIO</th>
@@ -51,219 +51,49 @@
         </thead>
         <tbody class="table-group-divider " style="text-align: center;">
           <?php
-          $opcion_seleccionada = $_POST['opciones'] ?? null;
-          if($opcion_seleccionada === "1"){
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias1 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
+
+              $opcion_seleccionada = $_POST['opcionesSelect'] ?? null;
+              $datoCat = $opcion_seleccionada ?? null;
+              $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria =".$datoCat.""; 
+              $stmt = $conn->prepare($sql);
+              $stmt->execute();
+              $result = $stmt->get_result();
+              if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                      $ResultadoCategorias[] = [
+                          'IDPRODUCTO' => $row['IDPRODUCTO'],
+                          'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
+                          'STOCK' => $row['STOCK'],
+                          'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
+                          'idCategoria' => $row['idCategoria'],
+                      ];
+                  }
+                  foreach ($ResultadoCategorias as $Categoria) : 
+                    ?>
+                    <tr style="color:gray;  ">
+                      <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['idCategoria']); ?></td>
+                      <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
+                      <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
+                      <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
+                      <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
+                    </tr>
                   <?php  endforeach;
+              }
             }
-          }
-          if($opcion_seleccionada === "2"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias2 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "3"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias3 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "4"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias4 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "5"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias5 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "6"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias6 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "7"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias7 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "8"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias8 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "9"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias9 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "10"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias10 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "11"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias11 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "12"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias12 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "13"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias13 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "14"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias14 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "15"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias15 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
-          if($opcion_seleccionada === "16"){
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                foreach ($ResultadoCategorias16 as $Categoria) : 
-                  ?>
-                  <tr style="color:gray;  ">
-                    <td  style=" padding: 10px 0px;" scope="row"><?php echo htmlspecialchars($Categoria['IDPRODUCTO']); ?></td>
-                    <td style="text-transform: uppercase;"><?php echo htmlspecialchars($Categoria['NOM_PRODUCTO']); ?></td>
-                    <td><?php echo htmlspecialchars($Categoria['STOCK']); ?></td>
-                    <td>S/ <?php echo htmlspecialchars($Categoria['PRECIOCOMPRA']); ?></td>
-                  </tr>
-                  <?php  endforeach;
-            }
-          }
             ?>
         </tbody>
       </table>
   </article>
+  <div id="alerta" class="VistaRespuesta   " role="alert">
+    <div style="display: grid; grid-template-columns: 70px 1fr; gap: 10px; ">
+      <div class=" " style="background-color: #77c0b5; display: flex; align-items: center; justify-content: center; ">
+      <i  style="font-size: 22px; color: white; " class="fas fa-check-circle"></i>
+      </div> 
+      <p id="TextoRespuesta"></p>
+    </div>
+    <span style="padding-right: 9px; cursor: pointer;">X</span>
+</div>
 </section>
 
 <style>
@@ -311,3 +141,5 @@ tr:hover>:not(th){
   transform: scale(1.05);
 }
 </style>
+
+<script src="js/AlertaRespuestCrudCategoria.js"></script>

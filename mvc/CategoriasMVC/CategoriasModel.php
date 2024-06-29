@@ -7,343 +7,64 @@ class CategoriasModel
     {
         $this->conn = $conn;
     }
-    function ListarCategorias1()
+    function CategoriasArray()
     {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 1"; 
+        $sql = "SELECT idCategoria, nomCat FROM categoria";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
+        $opciones = "";
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
+            while($row = $result->fetch_assoc()) {
+                $opciones .= "<option value='" . $row["idCategoria"] . "'>" . $row["nomCat"] . "</option>";
             }
-            return $ResultadoCategorias;
+            return $opciones;
         } else {
-            return [];
+            $opciones = "<option value=''>No hay datos disponibles</option>";
+            return $opciones;
         }
     }
-    function ListarCategorias2()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 2"; 
+    function CheckCategoriaName($NombreCategoria) {
+        $sql = "SELECT nomCat FROM categoria WHERE nomCat = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
+        if ($stmt === false) {
+            return false;
         }
+        $stmt->bind_param("s", $NombreCategoria);
+        $stmt->execute();
+        $stmt->store_result();
+        $existingCategoriaName= "";
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($existingCategoriaName);
+            $stmt->fetch();
+            $stmt->close();
+            return $existingCategoriaName;
+        }
+        $stmt->close();
+        return null;
     }
-    function ListarCategorias3()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 3"; 
+    
+    function InsertCategoria($NombreCategoria) {
+        $sql = "INSERT INTO categoria (nomCat) VALUES (?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
+        if ($stmt === false) {
+            return false;
         }
+        $stmt->bind_param("s", $NombreCategoria);
+        $executeResult = $stmt->execute();
+        $stmt->close();
+        return $executeResult;
     }
-    function ListarCategorias4()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 4"; 
+
+    function DeleteCategoria($NombreCategoria) {
+        $sql = "DELETE FROM categoria WHERE nomCat = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
+        if ($stmt === false) {
+            return false;
         }
-    }
-    function ListarCategorias5()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 5"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias6()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 6"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias7()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 7"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias8()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 8"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias9()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 9"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias10()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 10"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias11()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 11"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias12()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 12"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias13()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 13"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias14()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 14"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias15()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 15"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
-    }
-    function ListarCategorias16()
-    {
-        $sql = "SELECT IDPRODUCTO, NOM_PRODUCTO, STOCK, PRECIOCOMPRA, idCategoria FROM producto WHERE idCategoria = 16"; 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $ResultadoCategorias[] = [
-                    'IDPRODUCTO' => $row['IDPRODUCTO'],
-                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
-                    'STOCK' => $row['STOCK'],
-                    'PRECIOCOMPRA' => $row['PRECIOCOMPRA'],
-                    'idCategoria' => $row['idCategoria'],
-                ];
-            }
-            return $ResultadoCategorias;
-        } else {
-            return [];
-        }
+        $stmt->bind_param("s", $NombreCategoria);
+        $executeResult = $stmt->execute();
+        $stmt->close();
+        return $executeResult;
     }
 }
-
-
-?>

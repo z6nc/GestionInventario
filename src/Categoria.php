@@ -12,7 +12,7 @@ include '../mvc/CategoriasMVC/CategoriasController.php';
     <link rel="stylesheet" href="css/EstilosPrincipal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Document</title>
+    <title>Categorias</title>
 </head>
 <body class="font-Secundario">
     <main>
@@ -36,5 +36,6 @@ include 'componets/CrudCategorias.php';
 </style>
 </html>
 <?php
+
 include '../mvc/CategoriasMVC/CategoriasController.php';
 ?>

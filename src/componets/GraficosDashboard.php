@@ -6,20 +6,20 @@
 
 
      <article class="ArticleDasboardA BorderShadow">
-        <h1>Productos con Mayor Stock</h1>
+        <h1>PRODUCTOS CON STOCK ALTO</h1>
         <canvas id="productosChart" width="100%" height="60%"></canvas> 
 
     </article>
 
     <article  class="ArticleDasboardB BorderShadow">
-        <h1>Productos Poco Stock</h1>
+        <h1>PRODUCTOS CON STOCK MININO</h1>
         <canvas  id="productosMenorChart" width="100%" height="60%"></canvas> 
     </article>
     <article class="ArticleDasboardC BorderShadow">
-        <h1>Productos Vencidos</h1>
+        <h1>PRODUCTOS VENCIDO</h1>
     </article>
     <article class="ArticleDasboardD BorderShadow">
-        <h1>Gasto por mes</h1>
+        <h1>GASTOS POR MES EN PRODUCTOS</h1>
         <canvas id="gastoChart" width="100%" height="25%"></canvas>
     </article>
 
@@ -67,8 +67,8 @@
                     datasets: [{
                         label: 'Stock de Productos',
                         data: stockData,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: '#00ff0023',
+                        borderColor: 'green',
                         borderWidth: 1
                     }]
                 },

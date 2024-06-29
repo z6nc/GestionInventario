@@ -2,9 +2,10 @@
 .navbar{
     display: flex;
    flex-direction: column;
-  
+   position: fixed;
    height: 100vh;
    grid-area: a;
+   overflow: hidden;
   }
   .navbar .container{
    background-color:#16A085 ;

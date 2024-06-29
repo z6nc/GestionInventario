@@ -1,5 +1,6 @@
 <?php
 include '../mvc/SessionIniciada/Session.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,6 +11,7 @@ include '../mvc/SessionIniciada/Session.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap">
     <link rel="stylesheet" href="css/EstilosPrincipal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
     <title>Menu Principal</title>
 </head>

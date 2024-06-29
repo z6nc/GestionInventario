@@ -1,3 +1,4 @@
+
 <section class="ContainerDashboard">
 <?php
 include 'GraficosDashboard.php'
@@ -14,3 +15,4 @@ include 'GraficosDashboard.php'
       
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

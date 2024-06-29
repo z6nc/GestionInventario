@@ -10,10 +10,12 @@ include 'GraficosDashboard.php'
       background-color: whitesmoke;
       display: grid;
       grid-template-areas: 
+      "GraficoD GraficoD  "
       "GraficoA GraficoB "
-      "GraficoC GraficoC"
-      "GraficoD GraficoD ";
-      grid-template-columns: 1fr 1fr ;
+      "GraficoC GraficoC" ;
+
+      
+      grid-template-columns: 1fr 1fr  ;
       grid-template-rows: 1fr 1fr 
       1fr 1fr ;
       overflow: hidden;

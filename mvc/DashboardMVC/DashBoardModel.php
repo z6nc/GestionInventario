@@ -1,4 +1,5 @@
 <?php
+
 class DashBoardModel
 {
     private $conn;
@@ -30,8 +31,7 @@ class DashBoardModel
             return [];
         }
     }
-    function ProductosPocoStock()
-    {
+    function ProductosPocoStock(){
         $sql = "SELECT NOM_PRODUCTO, STOCK
                 FROM PRODUCTO 
                 ORDER BY STOCK ASC 
@@ -53,6 +53,7 @@ class DashBoardModel
             return [];
         }
     }
+
     function ProductosVencidos()
     {
         $sql = "SELECT NOM_PRODUCTO, FECHA_VENCIMIENTO
@@ -78,13 +79,13 @@ class DashBoardModel
     function GastoPorMes()
     {
         $sql = "SELECT 
-        MONTH(FECHA_INGRESO) AS Mes,
-        YEAR(FECHA_INGRESO) AS Año,
-        SUM(PRECIOCOMPRA * STOCK) AS GastoPorMes FROM 
-        PRODUCTO 
-        WHERE FECHAINGRESO >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
-        GROUP BY YEAR(FECHAINGRESO), MONTH(FECHAINGRESO)
-        ORDER BY  Año DESC, Mes DESC  ";
+                    MONTH(FECHA_INGRESO) AS Mes,
+                    YEAR(FECHA_INGRESO) AS Año,
+                    SUM(PRECIOCOMPRA * STOCK) AS GastoPorMes
+                FROM PRODUCTO 
+                WHERE FECHA_INGRESO >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+                GROUP BY YEAR(FECHA_INGRESO), MONTH(FECHA_INGRESO)
+                ORDER BY Año DESC, Mes DESC";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -93,8 +94,9 @@ class DashBoardModel
             $GastoPorMes = [];
             while ($row = $result->fetch_assoc()) {
                 $GastoPorMes[] = [
-                    'MES' => $row['MES'],
-                    'GASTO' => $row['GASTO'],
+                    'MES' => $row['Mes'],
+                    'AÑO' => $row['Año'],
+                    'GASTO' => $row['GastoPorMes'],
                 ];
             }
             return $GastoPorMes;

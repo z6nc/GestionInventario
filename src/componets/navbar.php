@@ -1,6 +1,5 @@
 
 <head>
-    <link rel="stylesheet" href="css/navbarPrincipal.css">
 </head>
 <nav class="navbar ">
     <div class="container">
@@ -57,5 +56,114 @@
         </div>
     </div>
 </nav>
+
+<style>
+  
+.navbar{
+    display: flex;
+   flex-direction: column;
+   height: 100vh;
+   grid-area: a;
+  }
+  .navbar .container{
+   background-color:#16A085 ;
+   color: white;
+   letter-spacing: 1px;
+   text-align: center;
+   font-size: 15px;
+
+  }
+  .navbar .container-Second{
+    background-color: #2A3542;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    overflow:hidden;
+   
+  }
+  .navbar .container-Second ul{
+   list-style: none;
+   overflow:hidden;
+   width: 100%;
+ 
+  }
+  .navbar .container-Second ul li {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+   transition: all .1s ease-in-out;
+   flex: none;
+
+  }
+  .navbar .container-Second ul li  i {
+   color: white;
+  }
+  .navbar .container-Second > ul > li:hover {
+   transform: scale(1.02);
+   -webkit-transform: scale(1.02);
+   -moz-transform: scale(1.02);
+   -ms-transform: scale(1.02);
+   -o-transform: scale(1.02);
+}
+  .navbar .container-Second ul li a{
+   color: white;
+   font-size: 17px;
+    text-decoration: none;
+    display: block;
+  }
+  .navbar .container-Second .botonCerrar{
+    background-color: #16A085;
+    width: 100%;
+    padding: 20px 0px;
+  }
+  .navbar .container-Second .botonCerrar a{
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  }
+  .navbar .container-Second .botonCerrar i {
+   color: white;
+  padding-left: 14px;
+
+  }
+
+  .navbar .container-Second li#navbar-inventario {
+    height: 17px;
+    align-items: normal;
+    color:white;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+
+.navbar .container-Second li#navbar-inventario > ul{
+  padding:0px;
+}
+
+.navbar .container-Second li#navbar-inventario > ul :first-child{
+  padding:0px 0px 15px 0px;
+  cursor:default;
+}
+
+.navbar .container-Second li#navbar-inventario > ul > li {
+    display:block;
+  }
+
+  .navbar .container-Second li#navbar-inventario > ul > li:hover:not(:first-child) {
+    background: #5e7694;
+    padding-left:7px;
+    cursor:pointer;
+  }
+
+  .navbar .container-Second li#navbar-inventario:hover {
+    height: 186px;    
+  }
+
+  
+
+</style>
 
 

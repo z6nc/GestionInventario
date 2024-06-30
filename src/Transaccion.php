@@ -1,6 +1,6 @@
 <?php
 include '../mvc/SessionIniciada/Session.php';
-include '../mvc/ListarMenuMVC/ListMenuController.php';
+include '../mvc/TransaccionMVC/ListarTransaccionController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

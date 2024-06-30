@@ -17,9 +17,9 @@ class TransaccionModel {
             while ($row = $result->fetch_assoc()) {
                 $ResultadoListarTransaccion[] = [
                     'ID_TRANSACCION' => $row['ID_TRANSACCION'],
-                    'FECHA_COMPRA' => $row['FECHA_COMPRA'],
                     'IDPRODUCTO' => $row['IDPRODUCTO'],
                     'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
+                    'FECHA_COMPRA' => $row['FECHA_COMPRA'],
                     'STOCK' => $row['STOCK'],
                     'PRECIO' => $row['PRECIO'],
                     'FECHA_CADUCIDAD' => $row['FECHA_CADUCIDAD'],
@@ -32,33 +32,14 @@ class TransaccionModel {
             return [];
         }
     }
-    function CheckMenuName($NombreMenu) {
-        $sql = "SELECT NOMBRE_MENU FROM menu WHERE NOMBRE_MENU = ?";
+   
+    function InsertTransaccion($FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado) {
+        $sql = "INSERT INTO transacciones (FECHA_COMPRA, IDPRODUCTO, STOCK,PRECIO,FECHA_CADUCIDAD,ESTADO) VALUES (?, ?, ?,?,?,?)";
         $stmt = $this->conn->prepare($sql);
         if ($stmt === false) {
             return false;
         }
-        $stmt->bind_param("s", $NombreMenu);
-        $stmt->execute();
-        $stmt->store_result();
-        $existingMenuName= "";
-        if ($stmt->num_rows > 0) {
-            $stmt->bind_result($existingMenuName);
-            $stmt->fetch();
-            $stmt->close();
-            return $existingMenuName;
-        }
-        $stmt->close();
-        return null;
-    }
-    
-    function InsertMenu($NombreMenu, $PrecioMenu, $EstadoMenu) {
-        $sql = "INSERT INTO menu (NOMBRE_MENU, PRECIOVENTA, EstadoMenu) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        if ($stmt === false) {
-            return false;
-        }
-        $stmt->bind_param("sis", $NombreMenu, $PrecioMenu, $EstadoMenu);
+        $stmt->bind_param("siidss", $FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado);
         $executeResult = $stmt->execute();
         $stmt->close();
     
@@ -67,8 +48,8 @@ class TransaccionModel {
     
     
 
-    function DeleteMenu($IdMenu) {
-        $sql = "DELETE FROM menu WHERE IDMENU = ?";
+    function DeleteTransacciones($IdTransccion) {
+        $sql = "DELETE FROM transacciones WHERE ID_TRANSACCION = ?";
         $stmt = $this->conn->prepare($sql);
     
         // Verificar si el prepare fue exitoso
@@ -76,7 +57,7 @@ class TransaccionModel {
             return false;
         }
         // Asumir que IDMENU es un entero, usar 'i' en lugar de 's' si es necesario
-        $stmt->bind_param("i", $IdMenu);
+        $stmt->bind_param("i", $IdTransccion);
         $executeResult = $stmt->execute();
         // Cerrar el statement
         $stmt->close();
@@ -84,10 +65,10 @@ class TransaccionModel {
         return $executeResult;
     }
     
-    public function getMenuById($IDMENU) {
-        $sql = "SELECT * FROM menu WHERE IDMENU = ?";
+    public function getTransaccionesById($IdTransccion) {
+        $sql = "SELECT * FROM transacciones WHERE ID_TRANSACCION = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $IDMENU);
+        $stmt->bind_param("i", $IdTransccion);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -102,13 +83,13 @@ class TransaccionModel {
         return $menuData;
     }
 
-    function UpdateMenu($IdMenu, $NombreMenu, $PrecioMenu, $EstadoMenu) {
-        $sql = "UPDATE menu SET NOMBRE_MENU = ?, PRECIOVENTA = ?, EstadoMenu = ? WHERE IDMENU = ?";
+    function UpdateTransacciones($FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado, $IdTransaccion) {
+        $sql = "UPDATE transacciones SET  FECHA_COMPRA = ?, IDPRODUCTO = ?, STOCK = ?, PRECIO = ?, FECHA_CADUCIDAD = ?,  ESTADO = ? WHERE ID_TRANSACCION = ?";
         $stmt = $this->conn->prepare($sql);
         if ($stmt === false) {
             return false;
         }
-        $stmt->bind_param("sisi", $NombreMenu, $PrecioMenu, $EstadoMenu, $IdMenu);
+        $stmt->bind_param("siidssi", $FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado, $IdTransaccion);
         $executeResult = $stmt->execute();
         $stmt->close();
         return $executeResult;

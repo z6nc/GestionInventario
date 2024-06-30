@@ -134,36 +134,44 @@
 
   }
 
-  .navbar .container-Second li#navbar-inventario {
-    height: 17px;
-    align-items: normal;
-    color:white;
-    overflow: hidden;
-    transition: height .5s ease;
+li#navbar-inventario,
+li#navbar-usuarios{
+  height: 17px;
+  align-items: normal;
+  color:white;
+  overflow: hidden;
+  transition: height .5s ease;
 }
 
-.navbar .container-Second li#navbar-inventario > ul{
+li#navbar-inventario > ul,
+li#navbar-usuarios > ul{
   padding:0px;
 }
 
-.navbar .container-Second li#navbar-inventario > ul :first-child{
+li#navbar-inventario > ul > :first-child,
+li#navbar-usuarios > ul > :first-child{
   padding:0px 0px 15px 0px;
   cursor:default;
 }
 
-.navbar .container-Second li#navbar-inventario > ul > li {
-    display:block;
-  }
+li#navbar-inventario > ul > li,
+li#navbar-usuarios > ul > li{
+  display:block;
+  cursor:pointer;
+  padding:10px 0px 16px 0px;
+}
 
-  .navbar .container-Second li#navbar-inventario > ul > li:hover:not(:first-child) {
-    background: #5e7694;
-    padding-left:7px;
-    cursor:pointer;
-  }
+li#navbar-inventario > ul > li:hover:not(:first-child),
+li#navbar-usuarios > ul > li:hover:not(:first-child) {
+  background: #5e7694;
+  padding-left:7px;
+  cursor:pointer;
+}
 
-  .navbar .container-Second li#navbar-inventario:hover {
-    height: 186px;    
-  }
+li#navbar-inventario:hover,
+li#navbar-usuarios:hover{
+  height: 125px;    
+}
 
   
 

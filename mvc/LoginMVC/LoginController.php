@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     } else{
        header('Location: ../../src/login.html?error=InvalidedYourUserOrPassword');
+       
     }
 
     $conn->close();

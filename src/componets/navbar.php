@@ -15,23 +15,26 @@
             <i class="fas fa-tachometer-alt"></i>
             <a href="Dashboard.php"> DashBoard</a>
           </li>
-          <li>
-          <i class="fas fa-key"></i>
-            <a href="">Usuarios</a>
+          <li id="navbar-usuarios">
+            <i class="fas fa-key"></i>
+            <ul>
+              <li>Usuarios</li>
+              <li><a href="../src/Agregar-usuario.php">Agregar usuario</a></li>
+              <li><a href="../src/Usuarios-registro.php">Registro de usuarios</a></li>
+            </ul>
           </li>
           <li>
           <i class="fas fa-box"></i>
             <a href="Proveedor.php">Proveedor</a>
           </li>
           <li id="navbar-inventario">
-          <i class="fas fa-box-open"></i>  
-          <ul>
-            <li>Inventario</li>
-            <li><a href="../src/productos-opciones.php">Registrar Producto</a></li>
-            <li><a href="../src/productos.php">Listar Producto</a></li>
-            <li><a href="../src/productos.php">Productos por vencer</a></li>
-          </ul>
-        </li>
+            <i class="fas fa-box-open"></i>  
+            <ul>
+              <li>Inventario</li>
+              <li><a href="../src/productos-opciones.php">Registrar Producto</a></li>
+              <li><a href="../src/productos.php">Lista de Producto</a></li>
+            </ul>
+          </li>
           <li>
           <i class="fas fa-tags"></i>  
           <a href="Categoria.php">Categorias</a>

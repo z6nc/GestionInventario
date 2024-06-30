@@ -28,6 +28,14 @@ class FileSenderFTP{
         } 
     }
 
+    public function deleteFile(string $file_name){
+        if(!$this->login){
+            echo "Error permision, not possible login.";
+            return;
+        }
+        ftp_delete($this->connection, $file_name);
+    }
+
     public function getPathSaved():string{
         return "/src/images/$this->file_name";
     }

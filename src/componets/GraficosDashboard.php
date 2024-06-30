@@ -6,7 +6,7 @@
 
 
      <article class="ArticleDasboardA BorderShadow">
-        <h1>PRODUCTOS CON STOCK ALTOs</h1>
+        <h1>PRODUCTOS CON STOCK ALTO</h1>
         <canvas id="productosChart" width="100%" height="60%"></canvas> 
 
     </article>

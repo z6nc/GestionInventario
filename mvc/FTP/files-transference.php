@@ -33,11 +33,14 @@ class FileSenderFTP{
             echo "Error permision, not possible login.";
             return;
         }
-        ftp_delete($this->connection, $file_name);
+        if(file_exists('../../src/images/$file_name')){
+            ftp_delete($this->connection, $file_name);
+        }
+        
     }
 
-    public function getPathSaved():string{
-        return "/src/images/$this->file_name";
+    public function getFileName():string{
+        return $this->file_name;
     }
 
     public function __destruct(){

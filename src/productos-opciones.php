@@ -24,7 +24,7 @@ include 'componets/navbarSecundario.php';
         </div>
         <form action="../mvc/lista-ProductosMVC/ListaProductosControll.php" method="post" id="form-agregar-productos" enctype="multipart/form-data" >
             <div class="fila-2">
-                <label>Nombre: <input type="text" name="nombre" value="<?= $productosFila['NOM_PRODUCTO'] ?? '' ?>"></label>
+                <label>Nombre: <input type="text" name="nombre" value="<?= $productosFila['NOM_PRODUCTO'] ?? '' ?>"><br><span style="color:red"><?=isset($_GET['ERRNAME'])?'Ese nombre ya existe':''?></span></label>
                 <label>Ubicacion del producto: <input type="text" name="ubicacion" value="<?= $productosFila['UBICACIONPRODUCTO'] ?? '' ?>"></label>
                 <label>Proveedor:
                     <select name="proveedor">
@@ -52,7 +52,7 @@ include 'componets/navbarSecundario.php';
             if(isset($_GET['IDP'])){
                 
                 echo '<input type="hidden" name="ID" value="'.($productosFila['IDPRODUCTO'] ?? '').'">';
-                echo '<input type="hidden" name="oldFile" value="'.($productosFila['URL_IMG'] ?? '').'">';
+                echo '<input type="hidden" name="oldFile" value="'.($productosFila['URL_IMG'] ?? 'null').'">';
                 echo '<button type="submit" form="form-agregar-productos" name="submit-editar-productos">Editar Producto</button>';
             }else{
                 echo '<button type="submit" form="form-agregar-productos" name="submit-agregar-productos">Agregar Producto</button>';

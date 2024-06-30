@@ -27,7 +27,12 @@
           <i class="fas fa-box"></i>
             <a href="Proveedor.php">Proveedor</a>
           </li>
-          <li id="navbar-inventario">
+         
+          <li>
+          <i class="fas fa-tags"></i>  
+          <a href="Categoria.php">Categorias</a>
+        </li>
+        <li id="navbar-inventario">
             <i class="fas fa-box-open"></i>  
             <ul>
               <li>Inventario</li>
@@ -35,23 +40,16 @@
               <li><a href="../src/productos.php">Lista de Producto</a></li>
             </ul>
           </li>
+         
           <li>
-          <i class="fas fa-tags"></i>  
-          <a href="Categoria.php">Categorias</a>
-        </li>
+          <i class="fas fa-exchange-alt"></i>
+            <a href="Transacion.php">Transacciones</a>
+          </li>
           <li>
           <i class="fas fa-utensils"></i>
           <a href="Menu.php">Menu</a>
         </li>
-          <li>
-          <i class="fas fa-carrot"></i>
-            <a href="">Ingredientes</a>
-          </li>
-          <li>
-          <i class="fas fa-chart-line"></i>  
-          <a href="">Reportes</a>
-        </li>
-
+        
         </ul>
         <div class="botonCerrar">
         <i class="fas fa-door-open"></i>

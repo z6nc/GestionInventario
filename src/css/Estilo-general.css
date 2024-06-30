@@ -128,18 +128,36 @@ main{
     color: white;
 }
 
-button.btn-delete,
-button.btn-edit {
+table button.btn-delete,
+table button.btn-edit {
     background-repeat: no-repeat;
     background-position: center;
     padding: 10px;
     margin: 3px 6px;
 }
-button.btn-delete {
+table button.btn-delete {
     background-image: url(../images/icon/cross.png);
     background-color: red;
 }
-button.btn-edit {
+table button.btn-edit {
     background-image: url(../images/icon/edit.png);
     background-color: lightgreen;    
+}
+
+td.estado {
+    height: 50px;
+}
+td.estado > span.activo {
+    border: 1px #d2fe93 solid;
+    background-color: #a3c86d;
+    color: white;
+    border-radius: 7px;
+    padding: 4px 11px;
+}
+td.estado > span.inactivo {
+    border: 1px #ff6e6e solid;
+    background-color: #ff3131;
+    color: white;
+    border-radius: 7px;
+    padding: 4px;
 }

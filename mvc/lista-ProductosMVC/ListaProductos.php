@@ -1,9 +1,7 @@
 <?php
 
-$fullPath = realpath("..\mvc\BD\BDconexion.php");
-if (!in_array($fullPath, get_included_files())) {
-    require_once($fullPath);
-}
+require_once($_SERVER['DOCUMENT_ROOT'] .'\ProyectoSistemaDistribuido\mvc\BD\BDconexion.php');
+
 
 class ListasProductos extends DataBaseConnection{
 

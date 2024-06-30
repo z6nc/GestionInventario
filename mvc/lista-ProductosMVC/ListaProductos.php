@@ -1,5 +1,10 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/mvc/BD/BDconexion.php");
+
+$fullPath = $_SERVER['DOCUMENT_ROOT']."\mvc\BD\BDconexion.php";
+if (!in_array($fullPath, get_included_files())) {
+    require_once($fullPath);
+}
+
 class ListasProductos extends DataBaseConnection{
 
     private array $rowTable;
@@ -26,7 +31,7 @@ class ListasProductos extends DataBaseConnection{
         while($row = $resultSet->fetch_assoc()) {
             echo '<tr>';
             echo "<td>{$row['IDPRODUCTO']}</td>";
-            echo '<td class="image-contain-table"><img src="//'.$_SERVER['HTTP_HOST']. $row['URL_IMG'].'" alt="imagen del producto" /></td>';
+            echo '<td class="image-contain-table"><img src="//'.$_SERVER['HTTP_HOST'].'/src/images/'. $row['URL_IMG'].'" alt="imagen del producto" /></td>';
             echo "<td>{$row['NOM_PRODUCTO']}</td>";
             echo '<td>'. $row['STOCK'].'</td>';
             echo '<td>'. $row['nomCat'].'</td>';
@@ -64,10 +69,14 @@ class ListasProductos extends DataBaseConnection{
         
     }
 
-    public function addNewProducto(string $nomProduct,string $fecha_in, string $fecha_Cad,int $stock, float $precio, string $ubicacion, int $idProvedor, int $idCategoria,string $urlIMG){        
-        $prepareStatement = $this->prepare("INSERT INTO producto(NOM_PRODUCTO,FECHA_INGRESO,FECHA_CADUCIDAD,STOCK,PRECIOCOMPRA,UBICACIONPRODUCTO, IDPROVEEDOR,idCategoria,URL_IMG) VALUES (?,?,?,?,?,?,?,?,?)");
-        $prepareStatement->bind_param("sssidsiis",$nomProduct, $fecha_in, $fecha_Cad,$stock,$precio,$ubicacion,$idProvedor,$idCategoria,$urlIMG);
-        $prepareStatement->execute();
+    public function addNewProducto(string $nomProduct,string $fecha_in, string $fecha_Cad,int $stock, float $precio, string $ubicacion, int $idProvedor, int $idCategoria,string $urlIMG){      
+        try{
+            $prepareStatement = $this->prepare("INSERT INTO producto(NOM_PRODUCTO,FECHA_INGRESO,FECHA_CADUCIDAD,STOCK,PRECIOCOMPRA,UBICACIONPRODUCTO, IDPROVEEDOR,idCategoria,URL_IMG) VALUES (?,?,?,?,?,?,?,?,?)");
+            $prepareStatement->bind_param("sssidsiis",$nomProduct, $fecha_in, $fecha_Cad,$stock,$precio,$ubicacion,$idProvedor,$idCategoria,$urlIMG);
+            $prepareStatement->execute();
+        } catch(exception $ex){
+            header('Location: ../../src/productos-opciones.php?ERR=123');
+        }        
     }
 
     public function editProducto(string $nomProduct,string $fecha_in, string $fecha_Cad,int $stock, float $precio, string $ubicacion, int $idProvedor, int $idCategoria,string $urlIMG){        

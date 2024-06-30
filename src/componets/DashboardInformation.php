@@ -11,14 +11,11 @@ include 'GraficosDashboard.php'
       display: grid;
       grid-template-areas: 
       "GraficoD GraficoD  "
-      "GraficoA GraficoB "
-      "GraficoC GraficoC" ;
+      "GraficoA GraficoB ";
 
       
       grid-template-columns: 1fr 1fr  ;
-      grid-template-rows: 1fr 1fr 
-      1fr 1fr ;
-      overflow: hidden;
+      grid-template-rows: 1fr 1fr ;      overflow: hidden;
     }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -1,6 +1,6 @@
 <?php
 
-$fullPath = realpath("..\mvc\BD\BDconexion.php");
+$fullPath = realpath("/ProyectoSistemaDistribuido/mvc/BD/BDconexion.php");
 if (!in_array($fullPath, get_included_files())) {
     require_once($fullPath);
 }

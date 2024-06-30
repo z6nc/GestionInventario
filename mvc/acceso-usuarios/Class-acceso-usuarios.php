@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/mvc/BD/BDconexion.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ProyectoSistemaDistribuido/mvc/BD/BDconexion.php");
 class AccesoUsuarios extends DataBaseConnection{
 
     private array $rowTable = array();

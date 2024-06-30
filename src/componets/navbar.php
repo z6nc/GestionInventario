@@ -43,7 +43,7 @@
          
           <li>
           <i class="fas fa-exchange-alt"></i>
-            <a href="Transacion.php">Transacciones</a>
+            <a href="Transaccion.php">Transacciones</a>
           </li>
           <li>
           <i class="fas fa-utensils"></i>

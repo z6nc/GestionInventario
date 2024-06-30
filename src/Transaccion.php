@@ -19,7 +19,7 @@ include '../mvc/ListarMenuMVC/ListMenuController.php';
     <?php
 include 'componets/navbar.php';
 include 'componets/navbarSecundario.php';
-include 'componets/CrudMenu.php';
+include 'componets/ListarTransaccion.php';
 ?>
     </main>
 </body>

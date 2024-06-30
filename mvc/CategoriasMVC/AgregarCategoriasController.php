@@ -1,6 +1,6 @@
 <?php
 include '../BD/Conexion.php'; 
-require 'CategoriasModel.php'; 
+require_once 'CategoriasModel.php'; 
 $CategoriaModel = new CategoriasModel($conn);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $NombreCategoria = $_POST['NomCat'];

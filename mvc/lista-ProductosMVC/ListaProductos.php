@@ -1,6 +1,6 @@
 <?php
 
-$fullPath = $_SERVER['DOCUMENT_ROOT']."\mvc\BD\BDconexion.php";
+$fullPath = realpath("..\mvc\BD\BDconexion.php");
 if (!in_array($fullPath, get_included_files())) {
     require_once($fullPath);
 }
@@ -75,7 +75,8 @@ class ListasProductos extends DataBaseConnection{
             $prepareStatement->bind_param("sssidsiis",$nomProduct, $fecha_in, $fecha_Cad,$stock,$precio,$ubicacion,$idProvedor,$idCategoria,$urlIMG);
             $prepareStatement->execute();
         } catch(exception $ex){
-            header('Location: ../../src/productos-opciones.php?ERR=123');
+            header('Location: ../../src/productos-opciones.php?ERRNAME=1');
+            exit();
         }        
     }
 

@@ -6,7 +6,7 @@ class ProductoPorVencerModel {
     }
     function VencerProducto() {
         $sql = "SELECT COUNT(*) AS ProductosVencer    
-        FROM PRODUCTO 
+        FROM transacciones 
         WHERE FECHA_CADUCIDAD BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 15 DAY);";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();

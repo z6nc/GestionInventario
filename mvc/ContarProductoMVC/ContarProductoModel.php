@@ -6,7 +6,8 @@ class ContarProductoModel {
         $this->conn = $conn;
     }
     function ContarProducto() {
-        $sql = "SELECT COUNT(*) AS TotalProductos FROM PRODUCTO; ";
+        $sql = "SELECT COUNT(*) AS TotalProductos FROM transacciones
+        WHERE transacciones.ESTADO = 'Revisado' OR transacciones.ESTADO = 'Pendiente';"; 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

@@ -15,9 +15,6 @@
         <h1>PRODUCTOS CON STOCK MININO</h1>
         <canvas  id="productosMenorChart" width="100%" height="60%"></canvas> 
     </article>
-    <article class="ArticleDasboardC BorderShadow">
-        <h1>PRODUCTOS VENCIDO</h1>
-    </article>
     <article class="ArticleDasboardD BorderShadow">
         <h1>GASTOS POR MES EN PRODUCTOS</h1>
         <canvas id="gastoChart" width="100%" height="25%"></canvas>
@@ -127,6 +124,5 @@
        
         .ArticleDasboardA { grid-area: GraficoA; }
         .ArticleDasboardB { grid-area: GraficoB; }
-        .ArticleDasboardC { grid-area: GraficoC; }
         .ArticleDasboardD { grid-area: GraficoD; }
     </style>

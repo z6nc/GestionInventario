@@ -37,7 +37,7 @@
           <img loading="lazy"
            width="15%" src=<?php echo htmlspecialchars($producto['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($producto['NOM_PRODUCTO']); ?></h4><span>/</span>
-          <p> INGRESO: <span ><?php echo htmlspecialchars($producto['FECHA_INGRESO']); ?></span></p>
+          <p> INGRESO: <span ><?php echo htmlspecialchars($producto['FECHA_COMPRA']); ?></span></p>
         </div>
         <?php  endforeach; ?>
       </div>

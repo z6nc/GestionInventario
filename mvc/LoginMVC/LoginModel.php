@@ -11,7 +11,7 @@ class LoginModel {
         $sql = "SELECT IDUSUARIO, NOMBRE, APELLIDO, CONTRASEÑA, jerarquia.JERARQUIA
         FROM USUARIO
         INNER JOIN jerarquia ON jerarquia.IDJERARQUIA = usuario.IDJERARQUIA
-        WHERE USUARIO = ? AND CONTRASEÑA = SHA1(?)";
+        WHERE USUARIO = ? AND CONTRASEÑA = ? ";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();

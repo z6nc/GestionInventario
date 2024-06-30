@@ -9,8 +9,10 @@ class ProductoMinimoMode
     }
     function ProductosMinimoStock()
     {
-        $sql = "SELECT NOM_PRODUCTO , STOCK , URL_IMG
-        FROM PRODUCTO WHERE STOCK <= 2
+        $sql = "SELECT p.NOM_PRODUCTO, t.STOCK, p.URL_IMG
+        FROM transacciones t
+        INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
+        WHERE (t.ESTADO = 'revisado' OR t.ESTADO = 'pendiente') AND t.STOCK <= 2
         LIMIT 3;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();

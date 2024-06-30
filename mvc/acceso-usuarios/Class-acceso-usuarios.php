@@ -1,11 +1,25 @@
 <?php
+<<<<<<< HEAD
 require_once($_SERVER['DOCUMENT_ROOT']."/ProyectoSistemaDistribuido/mvc/BD/BDconexion.php");
 class AccesoUsuarios extends DataBaseConnection{
+=======
+class AccesoUsuarios extends mysqli{
+>>>>>>> 8097c03091e51470d900e0f3b8215bcbc3268ff0
 
     private array $rowTable = array();
+
+    private const SERVER_NAME = "localhost";
+    private const USERNAME = "root";
+    private const PASSWORD = "";
+    private const DATABASE = "rest_chur";    
+    private const PORT = "3306";
     
     public function __construct(){
-        parent::__construct();        
+        parent::__construct(self::SERVER_NAME, self::USERNAME, self::PASSWORD, self::DATABASE, self::PORT);        
+    }
+
+    public function __destruct(){
+        $this->close();
     }
 
     public function tablaUsuarios(){

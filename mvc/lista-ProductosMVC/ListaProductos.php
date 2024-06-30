@@ -1,16 +1,30 @@
 <?php
 
+<<<<<<< HEAD
 $fullPath = realpath("..\mvc\BD\BDconexion.php");
 if (!in_array($fullPath, get_included_files())) {
     require_once($fullPath);
 }
 
 class ListasProductos extends DataBaseConnection{
+=======
+class ListasProductos extends mysqli{
+>>>>>>> 8097c03091e51470d900e0f3b8215bcbc3268ff0
 
     private array $rowTable;
+
+    private const SERVER_NAME = "localhost";
+    private const USERNAME = "root";
+    private const PASSWORD = "";
+    private const DATABASE = "rest_chur";    
+    private const PORT = "3306";
     
     public function __construct(){
-        parent::__construct();        
+        parent::__construct(self::SERVER_NAME, self::USERNAME, self::PASSWORD, self::DATABASE, self::PORT);        
+    }
+
+    public function __destruct(){
+        $this->close();
     }
 
     //> SET GLOBAL lc_time_names = 'es_PE'; 

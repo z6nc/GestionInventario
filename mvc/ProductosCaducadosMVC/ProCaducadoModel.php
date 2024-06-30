@@ -9,11 +9,11 @@ class ProductoCaducidoMode
     }
     function ProductosCaducido()
     {
-        $sql = "SELECT NOM_PRODUCTO, FECHA_CADUCIDAD, URL_IMG
-FROM PRODUCTO 
-WHERE FECHA_CADUCIDAD <= CURDATE() AND ESTADOREVISION = 'Pendiente'
-LIMIT 3;
-";
+        $sql = "SELECT p.NOM_PRODUCTO, t.FECHA_CADUCIDAD, p.URL_IMG
+        FROM transacciones t
+        INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
+        WHERE t.FECHA_CADUCIDAD <= CURDATE() AND t.ESTADO = 'Pendiente'
+        LIMIT 3;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

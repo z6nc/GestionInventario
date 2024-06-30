@@ -12,7 +12,7 @@ class ProductoAñadidoMode
         $sql = "SELECT p.NOM_PRODUCTO, t.STOCK, p.URL_IMG,t.FECHA_COMPRA
             FROM transacciones t
             INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
-            WHERE t.ESTADO = 'revisado' OR t.ESTADO = 'pendiente'
+            WHERE t.ESTADO = 'Revisado' OR t.ESTADO = 'Pendiente'
             ORDER BY t.FECHA_COMPRA DESC 
             LIMIT 3;";
         $stmt = $this->conn->prepare($sql);

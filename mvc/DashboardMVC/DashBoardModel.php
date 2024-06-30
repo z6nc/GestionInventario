@@ -10,10 +10,12 @@ class DashBoardModel
 
     function ProductosMayorStock()
     {
-        $sql = "SELECT NOM_PRODUCTO, STOCK
-                FROM PRODUCTO 
-                ORDER BY STOCK DESC 
-                LIMIT 4";
+        $sql = "SELECT p.NOM_PRODUCTO, t.STOCK, p.URL_IMG
+        FROM transacciones t
+        INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
+        WHERE t.ESTADO = 'Revisado' OR t.ESTADO = 'Pendiente'
+        ORDER BY t.STOCK DESC
+        LIMIT 4;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -32,10 +34,12 @@ class DashBoardModel
         }
     }
     function ProductosPocoStock(){
-        $sql = "SELECT NOM_PRODUCTO, STOCK
-                FROM PRODUCTO 
-                ORDER BY STOCK ASC 
-                LIMIT 4";
+        $sql = "SELECT p.NOM_PRODUCTO, t.STOCK, p.URL_IMG
+            FROM transacciones t
+            INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
+            WHERE t.ESTADO = 'Revisado' OR t.ESTADO = 'Pendiente'
+            ORDER BY t.STOCK ASC
+            LIMIT 4;";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -79,13 +83,13 @@ class DashBoardModel
     function GastoPorMes()
     {
         $sql = "SELECT 
-                    MONTH(FECHA_INGRESO) AS Mes,
-                    YEAR(FECHA_INGRESO) AS Año,
-                    SUM(PRECIOCOMPRA * STOCK) AS GastoPorMes
-                FROM PRODUCTO 
-                WHERE FECHA_INGRESO >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
-                GROUP BY YEAR(FECHA_INGRESO), MONTH(FECHA_INGRESO)
-                ORDER BY Año ASC, Mes ASC";
+        MONTH(FECHA_COMPRA) AS Mes,
+        YEAR(FECHA_COMPRA) AS Año,
+        SUM(MONTO_TOTAL) AS GastoPorMes
+    FROM transacciones 
+    WHERE FECHA_COMPRA >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+    GROUP BY YEAR(FECHA_COMPRA), MONTH(FECHA_COMPRA)
+    ORDER BY Año ASC, Mes ASC";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();

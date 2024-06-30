@@ -1,14 +1,21 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] .'\ProyectoSistemaDistribuido\mvc\BD\BDconexion.php');
-
-
-class ListasProductos extends DataBaseConnection{
+class ListasProductos extends mysqli{
 
     private array $rowTable;
+
+    private const SERVER_NAME = "localhost";
+    private const USERNAME = "root";
+    private const PASSWORD = "";
+    private const DATABASE = "rest_chur";    
+    private const PORT = "3306";
     
     public function __construct(){
-        parent::__construct();        
+        parent::__construct(self::SERVER_NAME, self::USERNAME, self::PASSWORD, self::DATABASE, self::PORT);        
+    }
+
+    public function __destruct(){
+        $this->close();
     }
 
     //> SET GLOBAL lc_time_names = 'es_PE'; 

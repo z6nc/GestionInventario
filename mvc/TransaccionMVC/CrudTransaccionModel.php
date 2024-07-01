@@ -102,13 +102,13 @@ class TransaccionModel {
         return $menuData;
     }
 
-    function UpdateTransacciones($FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado, $IdTransaccion) {
-        $sql = "UPDATE transacciones SET  FECHA_COMPRA = ?, IDPRODUCTO = ?, STOCK = ?, PRECIO = ?, FECHA_CADUCIDAD = ?,  ESTADO = ? WHERE ID_TRANSACCION = ?";
+    function UpdateTransacciones($FechaCompra, $IdProducto, $Stock, $Precio,$FechaCaducidad, $Estado, $IdTransaccion) {
+        $sql = "UPDATE transacciones SET  FECHA_COMPRA = ?, IDPRODUCTO = ?, STOCK = ?, PRECIO = ? ,FECHA_CADUCIDAD = ?,  ESTADO = ? WHERE ID_TRANSACCION = ?";
         $stmt = $this->conn->prepare($sql);
         if ($stmt === false) {
             return false;
         }
-        $stmt->bind_param("siidssi", $FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado, $IdTransaccion);
+        $stmt->bind_param("siidssi", $FechaCompra, $IdProducto, $Stock, $Precio,$FechaCaducidad, $Estado, $IdTransaccion);
         $executeResult = $stmt->execute();
         $stmt->close();
         return $executeResult;

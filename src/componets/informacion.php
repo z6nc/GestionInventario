@@ -5,7 +5,7 @@
       <div class="container-information">
         <div>
         <a href="">Ganancias del dia</a>
-          <p class="count">S/ 3000.000 </p>
+          <p class="count">S/ ----.---- </p>
         </div>
         <i class="fas fa-coins"></i>
       </div>

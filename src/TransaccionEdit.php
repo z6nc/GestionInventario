@@ -1,6 +1,5 @@
 <?php
 include '../mvc/SessionIniciada/Session.php';
-include '../mvc/TransaccionMVC/ListarTransaccionController.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,15 +11,15 @@ include '../mvc/TransaccionMVC/ListarTransaccionController.php';
     <link rel="stylesheet" href="css/EstilosPrincipal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title>Lista Compras</title>
+    <title>Editar Compra</title>
 </head>
 <body class="font-Secundario">
     <main>
-    <?php
-include 'componets/navbar.php';
-include 'componets/navbarSecundario.php';
-include 'componets/ListarTransaccion.php';
-?>
+         <?php
+            include 'componets/navbar.php';
+            include 'componets/navbarSecundario.php';
+            include 'componets/EditarTransaccion.php';
+         ?>
     </main>
 </body>
 

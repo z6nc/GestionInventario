@@ -11,7 +11,7 @@ include '../mvc/TransaccionMVC/ListarIDProductoController.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap">
     <link rel="stylesheet" href="css/EstilosPrincipal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Registrar Menu</title>
+    <title>Registrar Compra</title>
 </head>
 <body class="font-Secundario">
     <main>

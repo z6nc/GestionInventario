@@ -82,7 +82,10 @@ class TransaccionModel {
     }
     
     public function getTransaccionesById($IdTransccion) {
-        $sql = "SELECT * FROM transacciones WHERE ID_TRANSACCION = ?";
+        $sql = "SELECT transacciones.*, producto.NOM_PRODUCTO  FROM transacciones
+        INNER JOIN producto 
+        ON transacciones.IDPRODUCTO = producto.IDPRODUCTO 
+         WHERE ID_TRANSACCION = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $IdTransccion);
         $stmt->execute();

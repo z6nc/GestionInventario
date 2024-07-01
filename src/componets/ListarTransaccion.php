@@ -69,7 +69,7 @@
       <td><?php echo htmlspecialchars($Transaccion['ESTADO']); ?></td>
       <td style="display: flex; justify-content: center; gap: 10px; padding: 10px 0px; ">
         <button style="background-color: #ffcb66 ; padding:8px 10px;  border: none; border-radius: 4px;">
-          <a href="../mvc/AgregarMenuMVC/ObtenerMenuIDController.php?ID_TRANSACCION=<?php echo $Transaccion['ID_TRANSACCION']; ?>">
+          <a href="../mvc/TransaccionMVC/ObtenerTransaccionIDController.php?ID_TRANSACCION=<?php echo $Transaccion['ID_TRANSACCION']; ?>">
             <i style=" color: black; font-size: 18px;" class="fas fa-edit"></i>
            </a>
        </button> 

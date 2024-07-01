@@ -10,6 +10,7 @@ main{
 }
 
 .productos.marco{
+    height: 75vh;
     padding: 20px;
     margin: 0px 25px;
     margin-bottom: 25px;
@@ -46,8 +47,9 @@ main{
 }
 
 .productos .filtros > .fila-3 {
-    padding: 25px 0px;
-    padding-left: 80%;
+    padding: 15px 5px;
+    padding-left: 50%;
+    display: flex;
 }
 
 .productos .filtros > .fila-3 > button {
@@ -55,6 +57,7 @@ main{
     border-radius: 25px;
     padding: 9px 35px;
     background-color: #7acbee;
+    margin: 0px 15px;
     color: white;
 }
 .productos .container-table {
@@ -147,17 +150,29 @@ table button.btn-edit {
 td.estado {
     height: 50px;
 }
-td.estado > span.activo {
+td.estado > button.activo {
     border: 1px #d2fe93 solid;
     background-color: #a3c86d;
     color: white;
     border-radius: 7px;
     padding: 4px 11px;
+    cursor:pointer;
 }
-td.estado > span.inactivo {
+td.estado > button.activo:hover {
+    border: 1px #7b9854 solid;
+    background-color: #8dac5e;
+    color: #e0e0e0;
+}
+td.estado > button.inactivo {
     border: 1px #ff6e6e solid;
     background-color: #ff3131;
     color: white;
     border-radius: 7px;
     padding: 4px;
+    cursor:pointer;
+}
+td.estado > button.inactivo:hover {
+    border: 1px #753232 solid;
+    background-color: #be2525;
+    color: #e0e0e0;
 }

@@ -1,18 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-$fullPath = realpath("..\mvc\BD\BDconexion.php");
-if (!in_array($fullPath, get_included_files())) {
-    require_once($fullPath);
-}
-
-class ListasProductos extends DataBaseConnection{
-=======
 class ListasProductos extends mysqli{
->>>>>>> 8097c03091e51470d900e0f3b8215bcbc3268ff0
 
     private array $rowTable;
-
+    
     private const SERVER_NAME = "localhost";
     private const USERNAME = "root";
     private const PASSWORD = "";
@@ -45,7 +36,7 @@ class ListasProductos extends mysqli{
         while($row = $resultSet->fetch_assoc()) {
             echo '<tr>';
             echo "<td>{$row['IDPRODUCTO']}</td>";
-            echo '<td class="image-contain-table"><img src="//'.$_SERVER['HTTP_HOST'].'/src/images/'. $row['URL_IMG'].'" alt="imagen del producto" /></td>';
+            echo '<td class="image-contain-table"><img src="images/'. $row['URL_IMG'].'" alt="imagen del producto" onerror="this.onerror=null; this.src=\'images/default.gif\'"  /></td>';
             echo "<td>{$row['NOM_PRODUCTO']}</td>";
             echo '<td>'. $row['STOCK'].'</td>';
             echo '<td>'. $row['nomCat'].'</td>';
@@ -71,12 +62,8 @@ class ListasProductos extends mysqli{
      */
     public function comboBoxColumna(string $colName, string $value, string $element,string $SelectValue = null){
         $resultSet = $this->query("SELECT * FROM $colName");
-        if(isset($SelectValue)){
-            $SelectValue = '';
-            
-        }
-
-        echo '<option '.($SelectValue === '' ?'selected':'').' value>seleccionar</option>';
+        
+        echo '<option value>seleccionar</option>';
         while($row = $resultSet->fetch_assoc()) {
             echo '<option '.($SelectValue === strval($row[$value]) ?'selected':'').' value="'.$row[$value].'">'.$row[$element].'</option>';
         }
@@ -94,14 +81,23 @@ class ListasProductos extends mysqli{
         }        
     }
 
-    public function editProducto(string $nomProduct,string $fecha_in, string $fecha_Cad,int $stock, float $precio, string $ubicacion, int $idProvedor, int $idCategoria,string $urlIMG){        
-        $prepareStatement = $this->prepare("UPDATE producto SET NOM_PRODUCTO=?,FECHA_INGRESO=?,FECHA_CADUCIDAD=?,STOCK=?,PRECIOCOMPRA=?,UBICACIONPRODUCTO=?, IDPROVEEDOR=?,idCategoria=?,URL_IMG=? WHERE producto.IDPRODUCTO = ?");
-        $prepareStatement->bind_param("sssidsiis",$nomProduct, $fecha_in, $fecha_Cad,$stock,$precio,$ubicacion,$idProvedor,$idCategoria,$urlIMG);
-        $prepareStatement->execute();
+    public function editProducto(string $nomProduct,string $fecha_in, string $fecha_Cad,int $stock, float $precio, string $ubicacion, int $idProvedor, int $idCategoria,string $urlIMG, int $id){ 
+        try{               
+            $prepareStatement = $this->prepare("UPDATE producto SET NOM_PRODUCTO=?,FECHA_INGRESO=?,FECHA_CADUCIDAD=?,STOCK=?,PRECIOCOMPRA=?,UBICACIONPRODUCTO=?, IDPROVEEDOR=?,idCategoria=?,URL_IMG=? WHERE IDPRODUCTO = ?");
+            $prepareStatement->bind_param("sssidsiisi",$nomProduct, $fecha_in, $fecha_Cad,$stock,$precio,$ubicacion,$idProvedor,$idCategoria,$urlIMG,$id);
+            $prepareStatement->execute();
+        }catch (exception $ex){
+            echo $ex->getMessage();
+            
+        } 
     }
 
     public function removeProducto(int $idProducto){        
-        $prepareStatement = $this->prepare("DELETE FROM producto WHERE producto.IDPRODUCTO = ?");
+        $prepareStatement = $this->prepare("DELETE FROM transacciones WHERE IDPRODUCTO = ?");
+        $prepareStatement->bind_param("i",$idProducto);
+        $prepareStatement->execute();
+
+        $prepareStatement = $this->prepare("DELETE FROM producto WHERE IDPRODUCTO = ?");
         $prepareStatement->bind_param("i",$idProducto);
         $prepareStatement->execute();
     }

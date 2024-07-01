@@ -1,10 +1,5 @@
 <?php
-<<<<<<< HEAD
-require_once($_SERVER['DOCUMENT_ROOT']."/ProyectoSistemaDistribuido/mvc/BD/BDconexion.php");
-class AccesoUsuarios extends DataBaseConnection{
-=======
 class AccesoUsuarios extends mysqli{
->>>>>>> 8097c03091e51470d900e0f3b8215bcbc3268ff0
 
     private array $rowTable = array();
 
@@ -36,9 +31,9 @@ class AccesoUsuarios extends mysqli{
             echo '<td>'.$row['JERARQUIA'].'</td>';
             echo '<td class="estado">';
             if($row['ESTADO']){
-                echo '<span class="activo">ACTIVO</span>';
+                echo '<button class="activo" name="change-status" form="form-options-usuarios" value="'.$row['IDUSUARIO'].'">ACTIVO</button>';
             }else{
-                echo '<span class="inactivo">INACTIVO</span>';
+                echo '<button class="inactivo" name="change-status" form="form-options-usuarios" value="'.$row['IDUSUARIO'].'">INACTIVO</button>';
             }      
             echo '</td>';      
             echo '<td>
@@ -55,7 +50,7 @@ class AccesoUsuarios extends mysqli{
         echo '<option value>seleccionar</option>';
         while($row = $resultSet->fetch_assoc()) {
             $idjer = intval($row['IDJERARQUIA']);
-            echo '<option '.($value === $idjer ?'selected':'').' value="$idjer">'.$row['JERARQUIA'].'</option>';
+            echo '<option '.($value === $idjer ?'selected':'').' value="'.$idjer.'">'.$row['JERARQUIA'].'</option>';
         }        
     }
 
@@ -65,26 +60,22 @@ class AccesoUsuarios extends mysqli{
         $prepareStatement->execute();
     }
 
-    public function editUser(string $nombre,string $apellido, string $usuario,int $jerarquia, string $contra, int $idusuario){        
-        $prepareStatement = $this->prepare("UPDATE usuario SET NOMBRE=?,APELLIDO=?,USUARIO=?,IDJERARQUIA=?,CONTRASEÑA=? WHERE IDUSUARIO=?");
-        $prepareStatement->bind_param("sssis",$nombre,$apellido, $usuario,$jerarquia,$contra,$idusuario);
+    public function editUser(string $nombre,string $apellido, string $usuario,int $jerarquia, string $contra=null, int $idusuario){        
+        $prepareStatement = $this->prepare("UPDATE usuario SET NOMBRE=?,APELLIDO=?,USUARIO=?,IDJERARQUIA=?,CONTRASEÑA=IFNULL(SHA1(?),CONTRASEÑA) WHERE IDUSUARIO=?");
+        $prepareStatement->bind_param("sssisi",$nombre,$apellido, $usuario,$jerarquia,$contra,$idusuario);
         $prepareStatement->execute();
     }
 
-    /**
-     * el ingreso de parametro, 1 es ACTIVO y 0 INACTIVO. 
-     * si se sube un valor diferente a 1 y 0 o cualquier error, retorna false 
-     */
-    public function setUserEstatus(int $status,int $idUsuario):bool{        
-        if($status > 1 || $status < 0) return false;
-        $prepareStatement = $this->prepare("UPDATE usuario SET ESTADO=? WHERE IDUSUARIO=?");
-        $prepareStatement->bind_param("ii",$status,$idUsuario);
+    
+    public function setUserEstatus(int $idUsuario):bool{        
+        $prepareStatement = $this->prepare("UPDATE usuario SET ESTADO = NOT(ESTADO) WHERE IDUSUARIO=?");
+        $prepareStatement->bind_param("i",$idUsuario);
         return $prepareStatement->execute();
     }
 
     public function removeUser(int $idUser){        
         $prepareStatement = $this->prepare("DELETE FROM usuario WHERE usuario.IDUSUARIO = ?");
-        $prepareStatement->bind_param("i",$idProducto);
+        $prepareStatement->bind_param("i",$idUser);
         $prepareStatement->execute();
     }
 

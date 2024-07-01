@@ -42,8 +42,6 @@ class ListasProductos extends mysqli{
             echo '<td>'. $row['nomCat'].'</td>';
             echo '<td>'. $row['PRECIOCOMPRA'].'</td>';
             echo '<td>'. $row['RAZON_SOCIAL'].'</td>';
-            echo '<td>'. $row['FECHA_INGRESO'].'</td>';
-            echo '<td>'. $row['FECHA_CADUCIDAD'].'</td>';
             echo '<td>
                     <button name="btn-edit" class="btn-edit" form="form-options-productos" value="'.$row['IDPRODUCTO'].'"></button>
                     <button name="btn-delete" class="btn-delete" form="form-options-productos" value="'.$row['IDPRODUCTO'].'"></button>

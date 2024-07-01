@@ -85,8 +85,6 @@ $date_end  = isset($_POST['fecha-hasta-producto']) ? $_POST['fecha-hasta-product
                             <th>Categoria</th>
                             <th>Precio</th>
                             <th>Proveedor</th>
-                            <th>Ingreso</th>
-                            <th>Vencimiento</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>

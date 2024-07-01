@@ -24,8 +24,8 @@ include 'componets/navbarSecundario.php';
         </div>
         <form action="../mvc/lista-ProductosMVC/ListaProductosControll.php" method="post" id="form-agregar-productos" enctype="multipart/form-data" >
             <div class="fila-2">
-                <label>Nombre: <input type="text" name="nombre" value="<?= $productosFila['NOM_PRODUCTO'] ?? '' ?>"><br><span style="color:red"><?=isset($_GET['ERRNAME'])?'Ese nombre ya existe':''?></span></label>
-                <label>Ubicacion del producto: <input type="text" name="ubicacion" value="<?= $productosFila['UBICACIONPRODUCTO'] ?? '' ?>"></label>
+                <label>Nombre: <input type="text" name="nombre" placeholder="Nombre del producto" value="<?= $productosFila['NOM_PRODUCTO'] ?? '' ?>"><br><span style="color:red"><?=isset($_GET['ERRNAME'])?'Ese nombre ya existe':''?></span></label>
+                <label>Ubicacion del producto: <input type="text" name="ubicacion" placeholder="Lugar del almacen" value="<?= $productosFila['UBICACIONPRODUCTO'] ?? '' ?>"></label>
                 <label>Proveedor:
                     <select name="proveedor">
                         <?php 
@@ -40,19 +40,18 @@ include 'componets/navbarSecundario.php';
                         ?>
                     </select>
                 </label>
-                <label>Stock: <input type="number" name="stock" min="0" value="<?= $productosFila['STOCK'] ?? null ?>"></label>
-                <label>Precio Compra: <input type="text" name="precio" value="<?= $productosFila['PRECIOCOMPRA']?? null ?>"></label>
+                <label>Stock: <input type="number" name="stock" min="0" max="999"  value="<?= $productosFila['STOCK'] ?? null ?>"></label>
+                <label>Precio Compra: <input type="text" name="precio" placeholder="Cuanto costo" value="<?= $productosFila['PRECIOCOMPRA']?? null ?>"></label>
                 <label>Fecha Ingreso: <input type="date" name="fecha-ingreso" value="<?= $productosFila['FECHA_INGRESO']?? null ?>"></label>
                 <label>Fecha Vencimiento: <input type="date" name="fecha-vencimiento" value="<?= $productosFila['FECHA_CADUCIDAD'] ?? null?>"></label>
-                <label>Imagen: <input type="file" name="fileToUpload"></label>                       
+                <label>Imagen: <input type="file" name="fileToUpload"  accept="image/*" value="<?= $productosFila['URL_IMG'] ?? null ?>"></label>     
+                <input type="hidden" name="ID" value="<?= $productosFila['IDPRODUCTO'] ?? '' ?>">
+                <input type="hidden" name="oldFile" value="<?= $productosFila['URL_IMG'] ?? '' ?>">                  
             </div>
         </form> 
         <div class="fila-3">
             <?php
             if(isset($_GET['IDP'])){
-                
-                echo '<input type="hidden" name="ID" value="'.($productosFila['IDPRODUCTO'] ?? '').'">';
-                echo '<input type="hidden" name="oldFile" value="'.($productosFila['URL_IMG'] ?? 'null').'">';
                 echo '<button type="submit" form="form-agregar-productos" name="submit-editar-productos">Editar Producto</button>';
             }else{
                 echo '<button type="submit" form="form-agregar-productos" name="submit-agregar-productos">Agregar Producto</button>';

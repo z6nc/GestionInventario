@@ -15,17 +15,18 @@ class FileSenderFTP{
     }
 
     public function saveFile(string $file_name, string $file_temp){
-        if(!$this->login){
-            echo "Error permision, not possible login.";
-            return;
+        try{
+            if(!$this->login){
+                echo "Error permision, not possible login.";
+                return;
+            }    
+            $this->file_name = $file_name;
+            ftp_put($this->connection, $file_name, $file_temp, FTP_BINARY);
+        }catch (exception $ex){
+            echo $ex->getMessage();
+            exit();
         }
-
-        $this->file_name = $file_name;
-        if (ftp_put($this->connection, $file_name, $file_temp, FTP_BINARY)){
-            echo "Successfully uploaded $file_name.";
-        } else {
-            echo "Error uploading $file_name.";
-        } 
+        
     }
 
     public function deleteFile(string $file_name){

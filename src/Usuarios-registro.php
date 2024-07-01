@@ -14,6 +14,8 @@ $accesoUsuarios = new AccesoUsuarios();
 </head>
 <body class="font-Secundario">
 <form action="..\mvc\acceso-usuarios\Acceso-UsuariosControll.php" method="post" id="form-options-usuarios"></form>
+
+</form>
     <main>
 <?php
 include 'componets/navbar.php';

@@ -39,12 +39,12 @@ $date_end  = isset($_POST['fecha-hasta-producto']) ? $_POST['fecha-hasta-product
     <title>Productos</title>
 </head>
 <body class="font-Secundario">
-<form action="..\mvc\lista-ProductosMVC\ListaProductosControll.php" method="post" id="form-options-productos"></form>
+    <form action="..\mvc\lista-ProductosMVC\ListaProductosControll.php" method="post" id="form-options-productos"></form>
     <main>
-<?php
-include 'componets/navbar.php';
-include 'componets/navbarSecundario.php';
-?>
+    <?php
+    include 'componets/navbar.php';
+    include 'componets/navbarSecundario.php';
+    ?>
        
         <div class="productos marco" >
             <div class="encabezado">

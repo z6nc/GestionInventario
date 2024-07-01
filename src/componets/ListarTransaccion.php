@@ -94,5 +94,5 @@
 </div>
 </section>
 
-<script src="js/AlertaRespuestCrudMenu.js"></script>
+<script src="js/AlertaRespuestCrudTransacciones.js"></script>
 <script src="js/exportExcelTransaccion.js"> </script>

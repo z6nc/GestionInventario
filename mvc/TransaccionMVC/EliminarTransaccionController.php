@@ -6,9 +6,9 @@ $TransaccionModel = new TransaccionModel($conn);
 
 $result = $TransaccionModel->DeleteTransacciones($IdTransaccion , $conn);
 if ($result) {
-    header('Location: ../../src/Transaccion.php?success=TransaccionDeletedSuccessfully');
+    header('Location: ../../src/Transaccion.php?success=TransaccionesDeletedSuccessfully');
 } else {
-    header('Location: ../../src/Transaccion.php?error=TransaccionNotDeletedSuccessfull');
+    header('Location: ../../src/Transaccion.php?error=TransaccionesNotDeletedSuccessfull');
 }
 
     $conn->close();

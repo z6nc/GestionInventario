@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       $result = $TransaccionModel->InsertTransaccion($FechaCompra, $IDProducto, $StockProducto, $Precio, $FechaCaducidad, $Estado);
       if ($result) {
-         header('Location: ../../src/Transaccion.php?success=TransaccionRegisteredSuccessfully');
+         header('Location: ../../src/Transaccion.php?success=TransaccionesRegisteredSuccessfully');
       } else {
-         header('Location: ../../src/Transaccion.php?errorTransaccionNotRegisteredSuccessfull');
+         header('Location: ../../src/Transaccion.php?error=TransaccionesNotRegisteredSuccessfull');
       }
    }
 

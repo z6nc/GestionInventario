@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $result = $TransaccionModel->UpdateTransacciones($FechaCompra, $ProductoID, $Stock, $Precio ,$FechaCaducidad, $Estado, $IDTransaccion);
     if ($result) {
-       header('Location: ../../src/Transaccion.php?success=TransaccionEdited');
+       header('Location: ../../src/Transaccion.php?success=TransaccionesEdited');
        
     } else{
-       header('Location: ../../src/Transaccion.php?error=TransaccionNotTransaccionEdited');
+       header('Location: ../../src/Transaccion.php?error=TransaccionesNotTransaccionesEdited');
     }
 
     $conn->close();

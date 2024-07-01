@@ -1,6 +1,8 @@
 
 <head>
   <link rel="stylesheet" href="css/ListarMenu.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-style/0.8.13/xlsx-style.min.js"></script>
 </head>
 <section style="background-color: #f1f1f1;position: relative; " class="Container-Menu">
   
@@ -13,10 +15,10 @@
      <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
         <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="ProveedorAdd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
-        <button class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
+        <button id="exportButton"  class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">
-          <input type="text" placeholder="Buscar Proveedor" style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; ">
+       <input type="text" id="buscar-producto" onkeyup="barraBusqueda('buscar-producto')" placeholder="Buscar Proveedor" style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; ">
           <button style="padding: 10px 20px; border: none; border-radius: 4px; margin: 10px 0px; background-color: #16a085; color: white; "><i class="fas fa-search"></i></button>
        </div>
        <div class="Container_Result">
@@ -36,7 +38,7 @@
    
     
 
-<table class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
+<table id="menuTable" class="shadows" style=" width: 100%; background-color: white; max-width: 90%; margin: auto; margin-top: 20px; ">
 <thead class=" " style=" background-color:  #16a085; "  >
 
     <tr class="" style="color: white;" >
@@ -113,5 +115,6 @@ window.onload = function () {
     });
   };
 
-
 </script>
+<script src="js/exportExcelProveedor.js"></script>
+<script src="js/buscadorProveedor.js"></script>

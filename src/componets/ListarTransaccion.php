@@ -83,7 +83,7 @@
     <?php  endforeach; ?>
   </tbody>
 </table>
-<div id="alerta" class="VistaRespuesta " role="alert">
+<div id="alerta" class="VistaRespuesta " role="alerta">
     <div style="display: grid; grid-template-columns: 70px 1fr; gap: 10px; ">
       <div class=" " style="background-color: #77c0b5; display: flex; align-items: center; justify-content: center; ">
       <i  style="font-size: 22px; color: white; " class="fas fa-check-circle"></i>

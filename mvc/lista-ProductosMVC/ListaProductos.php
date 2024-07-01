@@ -36,7 +36,7 @@ class ListasProductos extends mysqli{
         while($row = $resultSet->fetch_assoc()) {
             echo '<tr>';
             echo "<td>{$row['IDPRODUCTO']}</td>";
-            echo '<td class="image-contain-table"><img src="images/'. $row['URL_IMG'].'" alt="imagen del producto" onerror="this.onerror=null; this.src=\'images/default.gif\'"  /></td>';
+            echo '<td class="image-contain-table"><img src="'. $row['URL_IMG'].'" alt="imagen del producto" onerror="this.onerror=null; this.src=\'images/default.gif\'"  /></td>';
             echo "<td>{$row['NOM_PRODUCTO']}</td>";
             echo '<td>'. $row['STOCK'].'</td>';
             echo '<td>'. $row['nomCat'].'</td>';

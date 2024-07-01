@@ -5,13 +5,16 @@ $TransaccionModel = new TransaccionModel($conn);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $FechaCompra = $_POST['FechaCompra'];
    $IDProducto = $_POST['IDProducto'];
-   $EstadoMenu = $_POST['EstadoMenu'];
+   $StockProducto = $_POST['StockProducto'];
+   $Precio = $_POST['Precio'];
+    $FechaCaducidad = $_POST['FechaCaducidad'];
+    $Estado = $_POST['EstadoTransaccion'];
 
-      $result = $TransaccionModel->InsertTransaccion($FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado);
+      $result = $TransaccionModel->InsertTransaccion($FechaCompra, $IDProducto, $StockProducto, $Precio, $FechaCaducidad, $Estado);
       if ($result) {
-         header('Location: ../../src/Menu.php?success=MenuRegisteredSuccessfully');
+         header('Location: ../../src/Transaccion.php?success=TransaccionRegisteredSuccessfully');
       } else {
-         header('Location: ../../src/Menu.php?error=MenuNotRegisteredSuccessfull');
+         header('Location: ../../src/Transaccion.php?errorTransaccionNotRegisteredSuccessfull');
       }
    }
 

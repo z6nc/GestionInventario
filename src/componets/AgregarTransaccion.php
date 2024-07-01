@@ -1,6 +1,6 @@
 <section style="background-color: whitesmoke; ">
 
-  <form class="shadows" action="../mvc/AgregarMenuMVC/AgregarTransaccionController.php" method="POST">
+  <form class="shadows" action="../mvc/TransaccionMVC/AgregarTransaccionController.php" method="POST">
     <div style="background-color: #16a085;">
       <h1 style=" margin-top: 20px;color: white; padding-left: 20px; ">REGISTRAR NUEVA COMPRA</h1>
     </div>
@@ -20,7 +20,7 @@
       
         <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
             <label style="font-size: 18px; color: gray;"  class="form-label">Cantidad:</label>
-            <input style="padding: 3px 3px; font-size: 17px;" type="number" name="Cantidad" required>
+            <input style="padding: 3px 3px; font-size: 17px;" type="number" name="StockProducto" required>
         </div>
         <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
             <label style="font-size: 18px; color: gray;"  class="form-label">Precio S/:</label>

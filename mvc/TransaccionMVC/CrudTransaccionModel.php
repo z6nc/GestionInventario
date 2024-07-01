@@ -4,7 +4,23 @@ class TransaccionModel {
     public function __construct($conn) {
         $this->conn = $conn;
     }
-    
+    function listarProductos() {
+        $sql = "SELECT * FROM producto";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $ResultadoListarProductos[] = [
+                    'IDPRODUCTO' => $row['IDPRODUCTO'],
+                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
+                ];
+            }
+            return $ResultadoListarProductos;
+        } else {
+            return [];
+        }
+    }
     function ListarTransaccion()
     {
         $sql = "SELECT t.*, p.NOM_PRODUCTO 

@@ -1,28 +1,43 @@
 <section style="background-color: whitesmoke; ">
 
-  <form class="shadows" action="../mvc/AgregarMenuMVC/AgregarMenuController.php" method="POST">
+  <form class="shadows" action="../mvc/AgregarMenuMVC/AgregarTransaccionController.php" method="POST">
     <div style="background-color: #16a085;">
       <h1 style=" margin-top: 20px;color: white; padding-left: 20px; ">REGISTRAR NUEVA COMPRA</h1>
     </div>
     <div class="" style="padding: 23px 15px;  display: flex;  flex-wrap: wrap; gap: 25px; text-align: center;">
-      <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
-        <label style="font-size: 18px; color: gray;"  class="form-label">Nombre del Menu:</label>
-        <input style="padding: 3px 3px; font-size: 17px; text-transform: uppercase;" type="text"  name="NomMenu" required>
+    <div style="display: flex; align-items: center;   flex: 1 1 400px; gap: 9px;">
+        <labe style="font-size: 18px; color: gray;"  class="form-label">Fecha Compra </labe>
+        <input style="padding: 3px 3px; font-size: 17px;" type="date" name="FechaCompra" required >
+      </div> 
+    <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
+        <label style="font-size: 18px; color: gray;"  class="form-label">Nombre del Producto:</label>
+        <select style="padding: 3px 3px; font-size: 17px;" name="IDProducto" required>
+        <?php foreach ($ResultadoListarProductos as $Producto ): ?>
+          <option value="<?php echo $Producto['IDPRODUCTO']; ?>"><?php echo htmlspecialchars($Producto['NOM_PRODUCTO']); ?></option>
+        <?php endforeach; ?>
+        </select>
       </div>
-      <div style="display: flex; align-items: center;   flex: 1 1 400px; gap: 9px;">
-        <labe style="font-size: 18px; color: gray;"  class="form-label">Precio Menu: </labe>
-        <input style="padding: 3px 3px; font-size: 17px;" type="text" name="PrecioMenu" required >
-      </div>
-      <div class="" style=" flex: 1 1 400px; display: flex; align-items: center;gap: 9px;">
-        <label style="font-size: 18px; color: gray;"  class="form-label">Estado del Menu: </label>
-        <select style="padding: 3px 3px; font-size: 17px;" name="EstadoMenu" required>
-          <option value="HABILITADO">HABILITADO</option>
-          <option value="INHABILITADO">INHABILITADO</option>
-    </select>
-      </div>
-
-
-
+      
+        <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
+            <label style="font-size: 18px; color: gray;"  class="form-label">Cantidad:</label>
+            <input style="padding: 3px 3px; font-size: 17px;" type="number" name="Cantidad" required>
+        </div>
+        <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
+            <label style="font-size: 18px; color: gray;"  class="form-label">Precio S/:</label>
+            <input style="padding: 3px 3px; font-size: 17px;" type="number" name="Precio" required>
+        </div>
+        <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
+            <label style="font-size: 18px; color: gray;"  class="form-label">Fecha Caducidad:</label>
+            <input style="padding: 3px 3px; font-size: 17px;" type="date" name="FechaCaducidad" required>
+        </div>
+        <div class="" style="display: flex; align-items: center;  flex: 1 1 400px; gap: 9px;">
+            <label style="font-size: 18px; color: gray;"  class="form-label">Estado de Producto: </label>
+            <select style="padding: 3px 3px; font-size: 17px;" name="EstadoTransaccion" required>
+            <option value="Revisado">Revisado</option>    
+            <option value="Pendiente">Pendiente</option>
+            <option value="Eliminado">Eliminado</option>
+            </select>
+        </div>
     </div>
     <div class="" style="display: flex; justify-content: center; gap: 9px; margin: 3% 0px;">
       <button class="Botones" style="background-color: #007cfd; "> <i class="fas fa-save"></i> Guardar</button>

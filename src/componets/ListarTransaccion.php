@@ -14,7 +14,7 @@
 
      <div style="display: flex; align-items: center; justify-content: space-between;" class="Container_Filtro">
       <div class="Container_files">
-        <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="Menuadd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
+        <button class="butomsCustmomers" style="background-color: #007cfd; "><a href="TransaccionAdd.php" style="text-decoration: none ;color: white; font-size: 12px; font-weight: 600;"><i class="fas fa-plus-circle"></i> AGREGAR NUEVO</a></button>
         <button id="exportButton"  class="butomsCustmomers" style="background-color: gray; "><a href=""style="text-decoration: none ;color: white; font-size: 12px;font-weight: 600;"> <i class="fas fa-upload"></i> EXPORTAR</a></button>
       </div>
        <div class="Container_Search">

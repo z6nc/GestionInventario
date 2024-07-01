@@ -44,9 +44,8 @@ include 'componets/navbarSecundario.php';
                 <label>Precio Compra: <input type="text" name="precio" placeholder="Cuanto costo" value="<?= $productosFila['PRECIOCOMPRA']?? null ?>"></label>
                 <label>Fecha Ingreso: <input type="date" name="fecha-ingreso" value="<?= $productosFila['FECHA_INGRESO']?? null ?>"></label>
                 <label>Fecha Vencimiento: <input type="date" name="fecha-vencimiento" value="<?= $productosFila['FECHA_CADUCIDAD'] ?? null?>"></label>
-                <label>Imagen: <input type="file" name="fileToUpload"  accept="image/*" value="<?= $productosFila['URL_IMG'] ?? null ?>"></label>     
-                <input type="hidden" name="ID" value="<?= $productosFila['IDPRODUCTO'] ?? '' ?>">
-                <input type="hidden" name="oldFile" value="<?= $productosFila['URL_IMG'] ?? '' ?>">                  
+                <label>Imagen: <input type="text" name="url" placeholder="URL de la imagen" value="<?= $productosFila['URL_IMG'] ?? null ?>"></label>     
+                <input type="hidden" name="ID" value="<?= $productosFila['IDPRODUCTO'] ?? '' ?>">             
             </div>
         </form> 
         <div class="fila-3">

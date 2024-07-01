@@ -36,14 +36,12 @@ class ListasProductos extends mysqli{
         while($row = $resultSet->fetch_assoc()) {
             echo '<tr>';
             echo "<td>{$row['IDPRODUCTO']}</td>";
-            echo '<td class="image-contain-table"><img src="images/'. $row['URL_IMG'].'" alt="imagen del producto" onerror="this.onerror=null; this.src=\'images/default.gif\'"  /></td>';
+            echo '<td class="image-contain-table"><img src="'. $row['URL_IMG'].'" alt="imagen del producto" onerror="this.onerror=null; this.src=\'images/default.gif\'"  /></td>';
             echo "<td>{$row['NOM_PRODUCTO']}</td>";
             echo '<td>'. $row['STOCK'].'</td>';
             echo '<td>'. $row['nomCat'].'</td>';
             echo '<td>'. $row['PRECIOCOMPRA'].'</td>';
             echo '<td>'. $row['RAZON_SOCIAL'].'</td>';
-            echo '<td>'. $row['FECHA_INGRESO'].'</td>';
-            echo '<td>'. $row['FECHA_CADUCIDAD'].'</td>';
             echo '<td>
                     <button name="btn-edit" class="btn-edit" form="form-options-productos" value="'.$row['IDPRODUCTO'].'"></button>
                     <button name="btn-delete" class="btn-delete" form="form-options-productos" value="'.$row['IDPRODUCTO'].'"></button>

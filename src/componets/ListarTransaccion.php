@@ -23,13 +23,13 @@
        </div>
        <div class="Container_Result">
        <label for="opciones">Resultado</label>
-        <select style="border: none; padding: 3px 7px;" id="opciones" name="opciones">
-            <option value="opcion1">5</option>
-            <option value="opcion2">10</option>
-            <option value="opcion3">20</option>
-            <option value="opcion3">Todos</option>
-
+       <form action="../mvc/TransaccionMVC/ListarTransaccionController.php" method="GET">
+        <select style="border: none; padding: 3px 7px;" id="opciones" name="value" onchange="this.form.submit()">
+            <option value="5">Mostrar 5 resultados</option>
+            <option value="10">Mostrar 10 resultados</option>
+            <option value="20">Mostrar 20 resultados</option>
         </select>
+        </form>
        </div>
 
      </div>

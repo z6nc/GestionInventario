@@ -21,6 +21,7 @@
         <select style="border: none; padding: 3px 7px;" id="opciones" name="opciones">
             <option value="opcion1">5</option>
             <option value="opcion2">10</option>
+            <option value="opcion2">15</option>
             <option value="opcion3">20</option>
             <option value="opcion3">Todos</option>
 

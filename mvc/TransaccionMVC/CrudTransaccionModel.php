@@ -21,12 +21,14 @@ class TransaccionModel {
             return [];
         }
     }
-    function ListarTransaccion()
+    function ListarTransaccion($value)
     {
         $sql = "SELECT t.*, p.NOM_PRODUCTO 
             FROM transacciones t
-            INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO";
+            INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO 
+            LIMIT ?";
         $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $value);
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
@@ -48,6 +50,12 @@ class TransaccionModel {
             return [];
         }
     }
+
+   
+   
+
+
+
    
     function InsertTransaccion($FechaCompra, $IdProducto, $Stock, $Precio, $FechaCaducidad, $Estado) {
         $sql = "INSERT INTO transacciones (FECHA_COMPRA, IDPRODUCTO, STOCK,PRECIO,FECHA_CADUCIDAD,ESTADO) VALUES (?, ?, ?,?,?,?)";

@@ -65,6 +65,8 @@
    flex-direction: column;
    height: 100vh;
    grid-area: a;
+   position: sticky;
+   top: 0px;
   }
   .navbar .container{
    background-color:#16A085 ;

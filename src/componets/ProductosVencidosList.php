@@ -1,7 +1,5 @@
 
-
 <head>
-  <link rel="stylesheet" href="css/ListarMenu.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-style/0.8.13/xlsx-style.min.js"></script>
 </head>
@@ -47,7 +45,7 @@
   <tbody class="table-group-divider " style="text-align: center;">
     <?php foreach ($ResultadoProductoVencidos as $productoVencidos) : ?>
     <tr style="color:gray;  ">
-      <td  style=" " scope="row"><img width="10%" src="<?php echo htmlspecialchars($productoVencidos['URL_IMG']); ?>" alt=""></td>
+      <td  style=" width: 40%;" scope="row"><img width="10%" src="<?php echo htmlspecialchars($productoVencidos['URL_IMG']); ?>" alt=""></td>
       <td style="text-transform: uppercase;"><?php echo htmlspecialchars($productoVencidos['NOM_PRODUCTO']); ?></td>
       <td><?php echo htmlspecialchars($productoVencidos['FECHA_CADUCIDAD']); ?></td>
     </tr>
@@ -64,6 +62,52 @@
     <span style="padding-right: 9px; cursor: pointer;">X</span>
 </div>
 </section>
+
+<style>
+  .VistaRespuesta{
+    position: absolute;
+    top: 0px;
+    width: 90%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: 21px;
+    margin-left: 5%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+     display: none;
+  }
+.StyleSuceess{
+  background-color: #e4f2f0;
+  color: #47736d;
+}
+.StyleError{
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.shadows{
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.borders{
+  border-bottom: 2px solid black;
+}
+tr:hover>:not(th){
+  background-color: #f1f1f19c;
+}
+
+.butomsCustmomers{
+  border: none; 
+  padding: 9px 12px;
+  border-radius: 5px; 
+  transition: all 0.1s ease-in-out;
+}
+.butomsCustmomers:hover{
+  transform: scale(1.05);
+}
+</style>
 
 <script src="js/AlertaRespuestCrudMenu.js"></script>
 <script src="js/exportExcel.js"> </script>

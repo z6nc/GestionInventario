@@ -1,6 +1,8 @@
 <?php
 include '../mvc/SessionIniciada/Session.php';
 include '../mvc/TransaccionMVC/ListarTransaccionController.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

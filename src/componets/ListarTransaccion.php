@@ -23,11 +23,12 @@
        </div>
        <div class="Container_Result">
        <label for="opciones">Resultado</label>
-       <form action="../mvc/TransaccionMVC/ListarTransaccionController.php" method="GET">
+       <form action="../mvc/TransaccionMVC/ListarTransaccionesFiltroController.php" method="GET">
         <select style="border: none; padding: 3px 7px;" id="opciones" name="value" onchange="this.form.submit()">
             <option value="5">Mostrar 5 resultados</option>
             <option value="10">Mostrar 10 resultados</option>
             <option value="20">Mostrar 20 resultados</option>
+            <option value="500">Mostrar todo</option>
         </select>
         </form>
        </div>

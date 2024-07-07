@@ -41,7 +41,7 @@
     </div>
     <div class="" style="display: flex; justify-content: center; gap: 9px; margin: 3% 0px;">
       <button class="Botones" style="background-color: #007cfd; "> <i class="fas fa-save"></i> Guardar</button>
-      <a class="Botones" style="background-color: red; " href="../src/Menu.php"> <i class="fas fa-arrow-left"></i> Volver</a>
+      <a class="Botones" style="background-color: red; " href="../src/Transaccion.php"> <i class="fas fa-arrow-left"></i> Volver</a>
     </div>
 
 

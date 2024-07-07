@@ -21,7 +21,35 @@ class TransaccionModel {
             return [];
         }
     }
-    function ListarTransaccion($value)
+
+    function ListarTransaccion()
+    {
+        $sql = "SELECT t.*, p.NOM_PRODUCTO 
+            FROM transacciones t
+            INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO ;";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $ResultadoListarTransaccion[] = [
+                    'ID_TRANSACCION' => $row['ID_TRANSACCION'],
+                    'IDPRODUCTO' => $row['IDPRODUCTO'],
+                    'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
+                    'FECHA_COMPRA' => $row['FECHA_COMPRA'],
+                    'STOCK' => $row['STOCK'],
+                    'PRECIO' => $row['PRECIO'],
+                    'FECHA_CADUCIDAD' => $row['FECHA_CADUCIDAD'],
+                    'MONTO_TOTAL' => $row['MONTO_TOTAL'],
+                    'ESTADO' => $row['ESTADO'],
+                ];
+            }
+            return $ResultadoListarTransaccion;
+        } else {
+            return [];
+        }
+    }
+    function ListarTransacciones($value)
     {
         $sql = "SELECT t.*, p.NOM_PRODUCTO 
             FROM transacciones t

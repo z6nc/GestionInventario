@@ -11,7 +11,7 @@ $usuarioInf = (isset($_GET['IDU']))?$accesoUsuarios->getRowTable($_GET['IDU']):n
     <?php include 'componets/head-elements.php';?>
     <title>Productos opciones</title>
 </head>
-<body>
+<body  class="font-Secundario">
 <main>
 <?php
 include 'componets/navbar.php';

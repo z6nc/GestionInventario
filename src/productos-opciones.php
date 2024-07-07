@@ -12,7 +12,7 @@ $productosFila = (isset($_GET['IDP']))?$listaProductos->getRowTable($_GET['IDP']
     <?php include 'componets/head-elements.php';?>
     <title>Productos opciones</title>
 </head>
-<body>
+<body class="font-Secundario">
 <main>
 <?php
 include 'componets/navbar.php';

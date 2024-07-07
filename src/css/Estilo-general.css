@@ -9,14 +9,7 @@ main{
 
 }
 
-.productos.marco{
-    height: 75vh;
-    padding: 20px;
-    margin: 0px 25px;
-    margin-bottom: 25px;
-    border: 1px black solid;
-    
-}
+
 
 .productos .encabezado{
     display:flex;

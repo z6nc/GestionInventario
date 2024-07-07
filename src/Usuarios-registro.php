@@ -21,8 +21,9 @@ $accesoUsuarios = new AccesoUsuarios();
 include 'componets/navbar.php';
 include 'componets/navbarSecundario.php';
 ?>
-       
-        <div class="productos marco" >
+    <section class="ContainerTableUsuario">
+        
+        <div class="productos marco"  >
             <div class="encabezado">
                 <h1>Usuarios Registrados</h1>
                 <button type="button" onclick="window.location.href = 'Agregar-usuario.php' ">Agregar Usuario</button>
@@ -49,6 +50,26 @@ include 'componets/navbarSecundario.php';
                 </table>
             </div>
         </div>
+    </section>
+
     </main>
+    <style>
+        .ContainerTableUsuario{
+            background-color: whitesmoke;
+            width: 100%;
+        }
+        .productos{
+            background-color: white;
+        }
+       
+        .productos.marco{
+    height: 75vh;
+    padding: 20px;
+    margin: 0px 25px;
+    margin-bottom: 25px;
+    border: 1px black solid;
+    
+}
+    </style>
 </body>
 </html>

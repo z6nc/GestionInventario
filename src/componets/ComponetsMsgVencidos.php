@@ -24,10 +24,11 @@
   padding: 9px;
   height: auto;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
-  background-image: url('https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/20280659.jpg');
+  background-image: url('https://plazavea.vteximg.com.br/arquivos/ids/169268-1000-1000/arveja-americana-bolsa-kg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 .ContainerMsg .cerrar{
   display: flex;

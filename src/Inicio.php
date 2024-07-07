@@ -24,6 +24,7 @@ include '../mvc/ProductosCaducadosMVC/ProCaducadoController.php';
 include 'componets/navbar.php';
 include 'componets/navbarSecundario.php';
 include 'componets/informacion.php';
+include 'componets/ComponetsMsgVencidos.php';
 ?>
 </main>
 <style>
@@ -34,7 +35,10 @@ include 'componets/informacion.php';
   grid-template-areas: 
   "a b "
   "a c ";
+  position: relative;
+
   }
+  
 </style>
 </body>
 

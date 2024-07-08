@@ -1,4 +1,12 @@
-<section class="ContainerMsg" >
+<?php
+$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/20280659.jpg";
+?>
+
+<section class="ContainerMsg"  style="background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ), url(<?php echo $urlImg?>);">
     <span class="cerrar">X</span>
     <div class="msgAlert">
         <p >¿Desea eliminar el producto vencido<span class="NomProducto">Pan integral</span> ?</p>
@@ -23,12 +31,13 @@
   border-radius: 9px;
   padding: 9px;
   height: auto;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
-  background-image: url('https://plazavea.vteximg.com.br/arquivos/ids/169268-1000-1000/arveja-americana-bolsa-kg.jpg');
+  box-shadow: 0 4px 6px -1px rgb(0 0 0), 1px 2px 4px -2px rgb(0 0 0);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  background-size: 100%;
+ 
 }
 .ContainerMsg .cerrar{
   display: flex;
@@ -36,6 +45,7 @@
   padding-top: 3px;
   padding-right: 12px;
   cursor: pointer;
+  color: white;
 
 
 }
@@ -44,6 +54,7 @@
 }
 .ContainerMsg .msgAlert p{
   font-size: 20px;
+  color: white;
 }
 .ContainerMsg .msgAlert .NomProducto{
   font-weight: 900;

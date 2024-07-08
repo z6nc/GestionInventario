@@ -53,20 +53,28 @@
         </div>
         <?php  endforeach; ?>
       </div>
-      <div class="Container-table-Vencer">
+      <div class="Container-table-Vencer" >
         <h2 >Productos vencidos - Pendientes</h2>
         <?php foreach ($ResultadoProductoCaducidos as $productoCaducidos) : ?>
-        <div>
+          <a id="ContainerVencido"  href="">
           <img loading="lazy"
           width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoCaducidos['NOM_PRODUCTO']); ?></h4><span>/</span>
           <p> Vencido el <span><?php echo htmlspecialchars($productoCaducidos['FECHA_CADUCIDAD']); ?></span></p>
-        </div>
+        </a>
         <?php  endforeach; ?>
       </div>
     </aside>
   </article>
 </section>
+
+<script>
+  const ContainerVencido = document.getElementById('ContainerVencido');
+  ContainerVencido.addEventListener('click',()=>{
+  const ContainerMsg = document.querySelector('.ContainerMsg');
+    ContainerMsg.style.display = 'block';
+  });
+</script>
 <style>
   .Informacion {
     background-color: #F1F2F7;
@@ -238,11 +246,12 @@
     padding: 10px  25px;
     border-left: 9px solid red;
   }
-  .main-Container .main-Container-table .Container-table-Vencer div{
+  .main-Container .main-Container-table .Container-table-Vencer a{
     display: flex;
     text-align: center;
     gap: 10px;
     align-items: center;
+    text-decoration: none;
     margin: 10px 0;
     padding: 9px 0;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 1px 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -253,11 +262,12 @@
     font-weight: 900;
     text-transform: uppercase;
   }
-  .main-Container .main-Container-table .Container-table-Vencer div h4{
+  .main-Container .main-Container-table .Container-table-Vencer a h4{
    font-size: 15px;
+   color: black;
    cursor: default;
   }
-  .main-Container .main-Container-table .Container-table-Vencer div p{
+  .main-Container .main-Container-table .Container-table-Vencer a p{
     font-size: 14px;
     color: gray;
     cursor: default;

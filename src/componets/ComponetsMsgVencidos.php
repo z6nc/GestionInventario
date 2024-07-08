@@ -1,21 +1,21 @@
 <?php
-$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/169268-1000-1000/arveja-americana-bolsa-kg.jpg";
+$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/19913605-1000-1000/20314529.jpg";
 ?>
 
-<section class="ContainerMsg"  style="background-image: linear-gradient(
+<section id="" class="ContainerMsg"  style="background-image: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
           ), url(<?php echo $urlImg?>);">
           <div class="subContainer">
-          <span class="cerrar">X</span>
+          <span id="Close" class="cerrar">X</span>
     <div class="msgAlert">
         <p >¿Desea eliminar el producto vencido<span class="NomProducto">Pan integral</span> ?</p>
         <div class="SubMsgAlert">
-            <buttom class="btnTrue" >
+            <buttom class="btnTrue"  onclick="">
                 Si, Acepto
             </buttom>
-            <buttom  class="btnFalse">
+            <buttom  class="btnFalse" onclick="">
                  No,Cancelar
             </buttom>
         </div>
@@ -23,6 +23,16 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/169268-1000-1000/arveja-a
           </div>
     
 </section>
+
+<script>
+ const Close = document.getElementById('Close');
+  const ContainerMsg = document.querySelector('.ContainerMsg');
+
+  Close.addEventListener('click',()=>{
+    ContainerMsg.style.display = 'none';
+  });
+</script>
+
 
 <style>
 .ContainerMsg {

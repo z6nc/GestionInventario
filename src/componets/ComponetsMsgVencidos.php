@@ -1,5 +1,5 @@
 <?php
-$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/20280659.jpg";
+$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/29033710-1000-1000/20402655.jpg";
 ?>
 
 <section class="ContainerMsg"  style="background-image: linear-gradient(
@@ -7,7 +7,8 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
           ), url(<?php echo $urlImg?>);">
-    <span class="cerrar">X</span>
+          <div class="subContainer">
+          <span class="cerrar">X</span>
     <div class="msgAlert">
         <p >¿Desea eliminar el producto vencido<span class="NomProducto">Pan integral</span> ?</p>
         <div class="SubMsgAlert">
@@ -19,6 +20,8 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
             </buttom>
         </div>
     </div>
+          </div>
+    
 </section>
 
 <style>
@@ -29,7 +32,6 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
   top: 30%;
   left: 40%; 
   border-radius: 9px;
-  padding: 9px;
   height: auto;
   box-shadow: 0 4px 6px -1px rgb(0 0 0), 1px 2px 4px -2px rgb(0 0 0);
   background-repeat: no-repeat;
@@ -39,24 +41,31 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
   background-size: 100%;
  
 }
-.ContainerMsg .cerrar{
+.ContainerMsg .subContainer{
+  background-color: rgb(155 155 155 / 30%);
+  width: 100%;
+  padding: 9px;
+}
+.ContainerMsg .subContainer .cerrar{
   display: flex;
   justify-content: end;
   padding-top: 3px;
-  padding-right: 12px;
+  padding-right: 19px;
   cursor: pointer;
   color: white;
 
 
 }
-.ContainerMsg .msgAlert{
+.ContainerMsg .subContainer .msgAlert{
   padding: 9px 30px;
+  
+  
 }
-.ContainerMsg .msgAlert p{
+.ContainerMsg .subContainer .msgAlert p{
   font-size: 20px;
   color: white;
 }
-.ContainerMsg .msgAlert .NomProducto{
+.ContainerMsg .subContainer .msgAlert .NomProducto{
   font-weight: 900;
   padding-left: 4px;
 }
@@ -65,7 +74,7 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
   justify-content:space-evenly;
   padding-bottom: 25px;
 }
-.ContainerMsg .SubMsgAlert .btnTrue{
+.ContainerMsg .subContainer .SubMsgAlert .btnTrue{
   background-color: rgb(27, 67, 243);
   padding: 9px 20px;
   border-radius: 5px;
@@ -74,7 +83,7 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
   font-weight: 900;
   font-size: 15px;
 }
-.ContainerMsg .SubMsgAlert .btnTrue:hover{
+.ContainerMsg .subContainer .SubMsgAlert .btnTrue:hover{
   background-color: blue;
 }
 .ContainerMsg .SubMsgAlert .btnFalse{
@@ -87,7 +96,7 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/16382367-1000-1000/202806
   font-size: 15px;
 
 }
-.ContainerMsg .SubMsgAlert .btnFalse:hover{
+.ContainerMsg .subContainer .SubMsgAlert .btnFalse:hover{
   background-color: red;
 }
 

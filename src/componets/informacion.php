@@ -56,7 +56,7 @@
       <div class="Container-table-Vencer" >
         <h2 >Productos vencidos - Pendientes</h2>
         <?php foreach ($ResultadoProductoCaducidos as $productoCaducidos) : ?>
-          <a id="ContainerVencido"  href="">
+          <a id="ContainerVencido"  href="../mvc/ProductosCaducadosMVC/ProductoIDVencidoController.php?ID_TRANSACCION=<?php echo $productoCaducidos['ID_TRANSACCION']; ?>">
           <img loading="lazy"
           width="15%" src=<?php echo htmlspecialchars($productoCaducidos['URL_IMG']); ?> alt="">
           <h4 style="text-transform: uppercase;"><?php echo htmlspecialchars($productoCaducidos['NOM_PRODUCTO']); ?></h4><span>/</span>

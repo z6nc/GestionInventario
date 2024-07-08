@@ -9,7 +9,7 @@ class ProductoCaducidoMode
     }
     function ProductosCaducido()
     {
-        $sql = "SELECT p.NOM_PRODUCTO, t.FECHA_CADUCIDAD, p.URL_IMG
+        $sql = "SELECT t.ID_TRANSACCION, p.NOM_PRODUCTO, t.FECHA_CADUCIDAD, p.URL_IMG 
         FROM transacciones t
         INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
         WHERE t.FECHA_CADUCIDAD <= CURDATE() AND t.ESTADO = 'Pendiente'
@@ -20,6 +20,7 @@ class ProductoCaducidoMode
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $ResultadoProductosCaducido[] = [
+                    'ID_TRANSACCION' => $row['ID_TRANSACCION'],
                     'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
                     'FECHA_CADUCIDAD'=>$row['FECHA_CADUCIDAD'],
                     'URL_IMG' => $row['URL_IMG']

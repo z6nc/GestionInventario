@@ -1,5 +1,5 @@
 <?php
-$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/29033710-1000-1000/20402655.jpg";
+$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/169268-1000-1000/arveja-americana-bolsa-kg.jpg";
 ?>
 
 <section class="ContainerMsg"  style="background-image: linear-gradient(
@@ -39,6 +39,7 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/29033710-1000-1000/204026
   background-position: center;
   overflow: hidden;
   background-size: 100%;
+  display: none;
  
 }
 .ContainerMsg .subContainer{

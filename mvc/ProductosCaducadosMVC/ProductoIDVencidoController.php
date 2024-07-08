@@ -1,0 +1,5 @@
+<?php
+$ID_TRANSACCION = $_GET['ID_TRANSACCION'];
+echo $ID_TRANSACCION;
+
+?>

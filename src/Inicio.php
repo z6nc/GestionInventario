@@ -25,7 +25,9 @@ include 'componets/navbar.php';
 include 'componets/navbarSecundario.php';
 include 'componets/informacion.php';
 include 'componets/ComponetsMsgVencidos.php';
+
 ?>
+
 </main>
 <style>
     main{

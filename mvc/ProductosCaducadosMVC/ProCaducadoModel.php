@@ -31,6 +31,29 @@ class ProductoCaducidoMode
             return [];
         }
     }
+    function ProductosCaducadoID($ID_TRANSACCION)
+    {
+    $sql = "SELECT t.ID_TRANSACCION, p.NOM_PRODUCTO , p.URL_IMG ,t.ESTADO
+    from transacciones t 
+    INNER JOIN producto p ON t.IDPRODUCTO = p.IDPRODUCTO
+    WHERE t.ID_TRANSACCION = ?;";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bind_param("i", $ID_TRANSACCION);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $ResultadoProductosCaducadoID = [
+            'ID_TRANSACCION' => $row['ID_TRANSACCION'],
+            'NOM_PRODUCTO' => $row['NOM_PRODUCTO'],
+            'URL_IMG' => $row['URL_IMG'],
+            'ESTADO' => $row['ESTADO']
+        ];
+        return $ResultadoProductosCaducadoID;
+    } else{
+        return [];
+    }
+    }
 }
 
 

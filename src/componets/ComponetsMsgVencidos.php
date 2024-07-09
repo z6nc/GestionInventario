@@ -1,16 +1,29 @@
 <?php
-$urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/19913605-1000-1000/20314529.jpg";
+if (isset($_GET['ID_TRANSACCION'])) {
+  echo "  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelector('.ContainerMsg').style.display = 'block';
+  })
+</script>";
+  $ID_TRANSACCION = $_GET['ID_TRANSACCION'];
+$NOM_PRODUCTO = $_GET['NOM_PRODUCTO'];
+$URL_IMG = $_GET['URL_IMG'];
+
+} else{
+   echo " ";
+}
+
 ?>
 
 <section id="" class="ContainerMsg"  style="background-image: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
-          ), url(<?php echo $urlImg?>);">
+          ), url(<?php echo $URL_IMG?>);">
           <div class="subContainer">
           <span id="Close" class="cerrar">X</span>
     <div class="msgAlert">
-        <p >¿Desea eliminar el producto vencido<span class="NomProducto">Pan integral</span> ?</p>
+        <p >¿Desea eliminar el producto vencido<span class="NomProducto"><?php echo $NOM_PRODUCTO?></span> ?</p>
         <div class="SubMsgAlert">
             <buttom class="btnTrue"  onclick="">
                 Si, Acepto
@@ -31,6 +44,8 @@ $urlImg ="https://plazavea.vteximg.com.br/arquivos/ids/19913605-1000-1000/203145
   Close.addEventListener('click',()=>{
     ContainerMsg.style.display = 'none';
   });
+
+
 </script>
 
 

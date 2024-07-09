@@ -68,13 +68,7 @@
   </article>
 </section>
 
-<script>
-  const ContainerVencido = document.getElementById('ContainerVencido');
-  ContainerVencido.addEventListener('click',()=>{
-  const ContainerMsg = document.querySelector('.ContainerMsg');
-    ContainerMsg.style.display = 'block';
-  });
-</script>
+
 <style>
   .Informacion {
     background-color: #F1F2F7;

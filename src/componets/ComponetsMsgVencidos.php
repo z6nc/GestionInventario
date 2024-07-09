@@ -54,7 +54,7 @@ $URL_IMG = $_GET['URL_IMG'];
   background-color: rgb(255, 255, 255);
   z-index: 200;
   position: absolute;
-  top: 30%;
+  top: 19%;
   left: 40%; 
   border-radius: 9px;
   height: auto;

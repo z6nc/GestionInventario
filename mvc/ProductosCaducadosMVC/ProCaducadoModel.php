@@ -54,7 +54,17 @@ class ProductoCaducidoMode
         return [];
     }
     }
+    function UpdateEstado($ID_TRANSACCION)
+    {
+        $sql = "UPDATE transacciones SET ESTADO = 'Eliminado' WHERE ID_TRANSACCION = ?;";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $ID_TRANSACCION);
+        $ResultUpdate = $stmt->execute();
+        $stmt->close();
+        return $ResultUpdate;
+    }
 }
+
 
 
 ?>

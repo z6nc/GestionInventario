@@ -37,12 +37,13 @@ include 'componets/ComponetsMsgVencidos.php';
   grid-template-areas: 
   "a b "
   "a c ";
-  position: relative;
 
   }
   
 </style>
-</body>
+
+  <script src="js/AlertaRespuestaEstado.js"></script>
+  </body>
 
 
 </html>

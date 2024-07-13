@@ -1,4 +1,5 @@
 <section class="Informacion">
+  <?php include "alertaRespuesta.php" ?>
   <article class="main-Container">
 
     <aside class="main-Container-grid">
@@ -67,12 +68,12 @@
     </aside>
   </article>
 </section>
-
-
 <style>
   .Informacion {
     background-color: #F1F2F7;
     grid-area: c;
+
+
   }
 
   .main-Container {

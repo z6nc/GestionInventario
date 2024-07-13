@@ -25,12 +25,15 @@ $URL_IMG = $_GET['URL_IMG'];
     <div class="msgAlert">
         <p >¿Desea eliminar el producto vencido<span class="NomProducto"><?php echo $NOM_PRODUCTO?></span> ?</p>
         <div class="SubMsgAlert">
-            <buttom class="btnTrue"  onclick="">
+       <form action="../mvc/ProductosCaducadosMVC/UpdateEstadoController.php" method="POST">
+            <input type="hidden" name="ID_TRANSACCION" value="<?php echo htmlspecialchars($ID_TRANSACCION); ?>">
+            <button class="btnTrue" type="submit" name="action" value="accept">
                 Si, Acepto
-            </buttom>
-            <buttom  class="btnFalse" onclick="">
+            </button>
+        </form>
+            <button  class="btnFalse" onclick="">
                  No,Cancelar
-            </buttom>
+            </button>
         </div>
     </div>
           </div>
